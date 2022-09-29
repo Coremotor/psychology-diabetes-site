@@ -1,0 +1,38 @@
+<header class="header">
+  <img class="logo" src="/assets/icons/logo.png" alt="LOGO" />
+
+  <ul class="list">
+    <li class="list-item"><a class="link" href="#about-me">Обо мне</a></li>
+    <li class="list-item">
+      <a class="link" href="#clients-types">Кому я буду полезна</a>
+    </li>
+    <li class="list-item"><a class="link" href="#">Образование</a></li>
+    <li class="list-item"><a class="link" href="#">Терапия</a></li>
+    <li class="list-item"><a class="link" href="#">Контакты</a></li>
+  </ul>
+</header>
+
+<style>
+  .header {
+    max-width: 1180px;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    margin: 0 auto;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list-item:not(:last-child) {
+    margin-right: 30px;
+  }
+  .link {
+    text-decoration: none;
+  }
+</style>

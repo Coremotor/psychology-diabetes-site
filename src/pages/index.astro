@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ClientsTypes from '../components/ClientsTypes.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Problems from '../components/Problems.astro';
+import Consultation from '../components/ Consultation.astro';
+import Details from '../components/Details.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<div class='container'>
+		<Header />
+		<Hero />
+		<ClientsTypes />
+		<AboutMe />
+		<Problems />
+		<Consultation />
+		<Details />
+	</div>
+</Layout>
+
+<style>
+	.container {
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+</style>

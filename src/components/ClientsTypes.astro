@@ -1,0 +1,88 @@
+<section id="clients-types" class="clients-types">
+  <h2 class="title">Кому я буду полезна</h2>
+  <ul class="list">
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/type-one.svg" alt="Icon" />
+      </div>
+      <span class="text">Люди с сахарным диабетом 1 типа</span>
+    </li>
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/type-two.svg" alt="Icon" />
+      </div>
+      <span class="text">Люди с сахарным диабетом 2 типа</span>
+    </li>
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/family.svg" alt="Icon" />
+      </div>
+      <span class="text">Родители детей с сахарным диабетом</span>
+    </li>
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/children.svg" alt="Icon" />
+      </div>
+      <span class="text">Дети и подростки с сахарным диабетом</span>
+    </li>
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/pregnancy.svg" alt="Icon" />
+      </div>
+      <span class="text"
+        >Беременные и планирующие беременность женщины с сахарным диабетом 1
+        типа
+      </span>
+    </li>
+    <li class="list-item">
+      <div class="icon-wrapper">
+        <img class="icon" src="/assets/icons/old.svg" alt="Icon" />
+      </div>
+      <span class="text">Родственники людей с сахарным диабетом</span>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .clients-types {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto 120px;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list-item {
+    width: 220px;
+    text-align: center;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .icon-wrapper {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-bg-second);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 860px) {
+    .list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
