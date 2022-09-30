@@ -6,10 +6,11 @@
     <li class="list-item">
       <a class="link" href="#clients-types">Кому я буду полезна</a>
     </li>
-    <li class="list-item"><a class="link" href="#">Образование</a></li>
-    <li class="list-item"><a class="link" href="#">Терапия</a></li>
-    <li class="list-item"><a class="link" href="#">Контакты</a></li>
+    <li class="list-item"><a class="link" href="#education">Образование</a></li>
+    <li class="list-item"><a class="link" href="#therapy">Терапия</a></li>
+    <li class="list-item"><a class="link" href="#footer">Контакты</a></li>
   </ul>
+  <img class="burger" src="/assets/icons/burger.svg" alt="buger" />
 </header>
 
 <style>
@@ -17,7 +18,7 @@
     max-width: 1180px;
     display: flex;
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 20px;
     margin: 0 auto;
   }
   .logo {
@@ -34,5 +35,17 @@
   }
   .link {
     text-decoration: none;
+  }
+  .burger {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .list {
+      display: none;
+    }
+    .burger {
+      display: block;
+    }
   }
 </style>

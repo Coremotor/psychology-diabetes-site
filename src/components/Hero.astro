@@ -1,7 +1,8 @@
 <section id="hero" class="hero">
   <img class="image" src="/assets/images/hero.jpg" alt="hero image" />
   <div class="desc">
-    <span class="text">Психологическая поддержка людей с сахарным диабетом</span>
+    <span class="text">Психологическая поддержка людей с сахарным диабетом</span
+    >
   </div>
 </section>
 
@@ -15,29 +16,47 @@
     object-fit: cover;
   }
   .desc {
-    width: 520px;
-    height: 500px;
+    width: 35%;
     position: absolute;
     top: 140px;
     right: 150px;
     display: flex;
     flex-direction: column;
     background-color: #033277;
-    padding: 120px 40px 0 40px;
+    padding: 120px 40px 200px 40px;
   }
   .text {
-    font-size: 52px;
+    font-size: var(--font-size-xl);
     color: #ffffff;
   }
-  /* @media (max-width: 1520px) {
+
+  @media (max-width: 1520px) {
+    .hero {
+      margin-bottom: 160px;
+    }
     .desc {
-      height: 300px;
       width: 80%;
       top: 600px;
       left: 50%;
       transform: translate(-50%, 0);
-      padding: 80px 40px 0 40px;
-
+      text-align: center;
+      padding: 40px;
     }
-  } */
+  }
+
+  @media (max-width: 880px) {
+    .hero {
+      margin-bottom: 220px;
+    }
+    .image {
+      transform: translate(-10%, 0);
+    }
+  }
+
+
+  @media (max-width: 620px) {
+    .image {
+      transform: translate(-15%, 0);
+    }
+  }
 </style>

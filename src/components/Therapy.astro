@@ -1,0 +1,69 @@
+<section id="therapy" class="therapy">
+  <h2 class="title">Направление терапии</h2>
+  <img class="image" src="/assets/images/therapy.jpg" alt="image" />
+  <ul class="list">
+    <li class="list-item">Индивидуальное консультирование</li>
+    <li class="list-item">Родительское консультирование</li>
+    <li class="list-item">Помощь подросткам</li>
+  </ul>
+</section>
+
+<style>
+  .therapy {
+    max-width: 1180px;
+    display: grid;
+    grid-template-areas:
+      "title image"
+      "list image"
+      "list image";
+    padding: 0 10px;
+    margin: 0 auto 120px;
+  }
+  .image {
+    grid-area: image;
+  }
+  .title {
+    grid-area: title;
+  }
+  .list {
+    grid-area: list;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .list-item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .image {
+    object-fit: cover;
+    margin-left: 40px;
+  }
+  .title {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .therapy {
+      grid-template-areas:
+        "title"
+        "list"
+        "image";
+      justify-items: center;
+    }
+    .title {
+      text-align: center;
+    }
+    .image {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .list-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+</style>

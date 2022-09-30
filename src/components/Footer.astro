@@ -1,0 +1,141 @@
+---
+const contacts = [
+  {
+    src: "/assets/icons/whatsapp-white.svg",
+    href: "https://wa.me/79391137735",
+  },
+  {
+    src: "/assets/icons/telegram-white.svg",
+    href: "https://t.me/+79391137735",
+  },
+  {
+    src: "/assets/icons/viber-white.svg",
+    href: "viber://chat?number=%2B79391137735",
+  },
+  { src: "/assets/icons/VK-white.svg", href: "https://vk.com/demakovaks" },
+  { src: "/assets/icons/mail-white.svg", href: "mailto:demakovaks@mail.ru" },
+];
+---
+
+<footer id="footer" class="footer">
+  <div class="wrapper">
+    <div class="logo-wrapper">
+      <img class="logo" src="/assets/icons/logo-in-footer.png" alt="LOGO" />
+    </div>
+
+    <ul class="list">
+      <li class="list-item"><a class="link" href="#about-me">Обо мне</a></li>
+      <li class="list-item">
+        <a class="link" href="#clients-types">Кому я буду полезна</a>
+      </li>
+      <li class="list-item">
+        <a class="link" href="#education">Образование</a>
+      </li>
+      <li class="list-item"><a class="link" href="#therapy">Терапия</a></li>
+      <li class="list-item"><a class="link" href="#">Контакты</a></li>
+    </ul>
+
+    <div class="contacts-list-wrapper">
+      <ul class="contacts-list">
+        {
+          contacts.map((c) => (
+            <li class="contacts-list-item">
+              <a href={c.href} class="contacts-list-item-link" target="_blank">
+                <img
+                  src={c.src}
+                  alt={c.href}
+                  class="contacts-list-item-link-image"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <small class="copyright"
+    >Психология диабета Клиническйи психолог Ксения Демакова 2022</small
+  >
+</footer>
+
+<style>
+  .footer {
+    color: white;
+    background-color: #00112a;
+    padding: 40px 10px;
+  }
+  .wrapper {
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto 60px;
+  }
+  .logo-wrapper {
+    width: 33%;
+  }
+  .list {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list-item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .link {
+    color: white;
+    text-decoration: none;
+  }
+  .contacts-list-wrapper {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .contacts-list {
+    width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .contacts-list-item-link-image {
+    width: 40px;
+    height: 40px;
+  }
+  .contacts-list-item {
+    margin-bottom: 20px;
+  }
+  .contacts-list-item:not(:last-child) {
+    margin-right: 20px;
+  }
+  .contacts-list-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .copyright {
+    display: block;
+    text-align: center;
+  }
+
+  @media (max-width: 860px) {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .list {
+      margin-bottom: 60px;
+    }
+  }
+</style>

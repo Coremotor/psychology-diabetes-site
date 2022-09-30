@@ -5,9 +5,12 @@ import Hero from '../components/Hero.astro';
 import ClientsTypes from '../components/ClientsTypes.astro';
 import AboutMe from '../components/AboutMe.astro';
 import Problems from '../components/Problems.astro';
-import Consultation from '../components/ Consultation.astro';
+import Consultation from '../components/Consultation.astro';
 import Details from '../components/Details.astro';
-
+import Therapy from '../components/Therapy.astro';
+import Education from '../components/Education.astro';
+import Gallery from '../components/Gallery.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,12 +22,17 @@ import Details from '../components/Details.astro';
 		<Problems />
 		<Consultation />
 		<Details />
+		<Therapy />
+		<Education />
+		<Gallery />
+		<Footer />
 	</div>
 </Layout>
 
 <style>
 	.container {
 		max-width: 1600px;
+		overflow-x: hidden;
 		margin: 0 auto;
 	}
 </style>

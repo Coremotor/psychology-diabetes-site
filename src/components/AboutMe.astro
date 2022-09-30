@@ -1,7 +1,7 @@
 <section id="about-me" class="about-me">
+  <h2 class="title">Обо мне</h2>
   <img class="image" src="/assets/images/about-me.jpg" alt="image" />
   <div class="desc">
-    <h2 class="title">Обо мне</h2>
     <p class="paragraph">
       Ксения Демакова – клинический психолог с сахарным диабетом с 2002 года.
     </p>
@@ -40,18 +40,42 @@
 <style>
   .about-me {
     max-width: 1180px;
-    display: flex;
-    padding: 0 10px;
+    display: grid;
+    grid-template-areas:
+      "image title"
+      "image desc";
+    padding: 0 20px;
     margin: 0 auto 120px;
   }
   .image {
-    object-fit: contain;
-    margin-right: 40px;
+    grid-area: image;
+  }
+  .title {
+    grid-area: title;
   }
   .desc {
+    grid-area: desc;
+  }
+  .image {
+    object-fit: cover;
+    margin-right: 40px;
   }
   .title {
     text-align: center;
     margin-top: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .about-me {
+      grid-template-areas:
+        "title"
+        "image"
+        "desc";
+        justify-items: center;
+    }
+    .image {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 </style>
