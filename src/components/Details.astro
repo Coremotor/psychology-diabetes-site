@@ -4,7 +4,7 @@
 
 <style>
   .details {
-    background-color: #033277;
+    background-color: var(--color-bg-third);
     text-align: center;
     padding: 40px 10px;
     margin: 0 auto 120px;
@@ -12,5 +12,11 @@
   .text {
     font-size: var(--font-size-xl);
     color: white;
+  }
+
+  @media (max-width: 520px) {
+    .details {
+      margin-bottom: 80px;
+    }
   }
 </style>

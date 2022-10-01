@@ -1,16 +1,10 @@
+---
+import { Navigation } from "./Navigation";
+---
+
 <header class="header">
   <img class="logo" src="/assets/icons/logo.png" alt="LOGO" />
-
-  <ul class="list">
-    <li class="list-item"><a class="link" href="#about-me">Обо мне</a></li>
-    <li class="list-item">
-      <a class="link" href="#clients-types">Кому я буду полезна</a>
-    </li>
-    <li class="list-item"><a class="link" href="#education">Образование</a></li>
-    <li class="list-item"><a class="link" href="#therapy">Терапия</a></li>
-    <li class="list-item"><a class="link" href="#footer">Контакты</a></li>
-  </ul>
-  <img class="burger" src="/assets/icons/burger.svg" alt="buger" />
+  <Navigation client:load />
 </header>
 
 <style>
@@ -23,29 +17,5 @@
   }
   .logo {
     margin-right: auto;
-  }
-  .list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .list-item:not(:last-child) {
-    margin-right: 30px;
-  }
-  .link {
-    text-decoration: none;
-  }
-  .burger {
-    display: none;
-  }
-
-  @media (max-width: 1024px) {
-    .list {
-      display: none;
-    }
-    .burger {
-      display: block;
-    }
   }
 </style>

@@ -1,20 +1,6 @@
 ---
-const contacts = [
-  {
-    src: "/assets/icons/whatsapp-white.svg",
-    href: "https://wa.me/79391137735",
-  },
-  {
-    src: "/assets/icons/telegram-white.svg",
-    href: "https://t.me/+79391137735",
-  },
-  {
-    src: "/assets/icons/viber-white.svg",
-    href: "viber://chat?number=%2B79391137735",
-  },
-  { src: "/assets/icons/VK-white.svg", href: "https://vk.com/demakovaks" },
-  { src: "/assets/icons/mail-white.svg", href: "mailto:demakovaks@mail.ru" },
-];
+import { navItems } from "../data/nav";
+import { contacts } from "../data/contacts";
 ---
 
 <footer id="footer" class="footer">
@@ -24,15 +10,15 @@ const contacts = [
     </div>
 
     <ul class="list">
-      <li class="list-item"><a class="link" href="#about-me">Обо мне</a></li>
-      <li class="list-item">
-        <a class="link" href="#clients-types">Кому я буду полезна</a>
-      </li>
-      <li class="list-item">
-        <a class="link" href="#education">Образование</a>
-      </li>
-      <li class="list-item"><a class="link" href="#therapy">Терапия</a></li>
-      <li class="list-item"><a class="link" href="#">Контакты</a></li>
+      {
+        navItems.map((item) => (
+          <li class="list-item">
+            <a class="link" href={item.href}>
+              {item.title}
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <div class="contacts-list-wrapper">
@@ -89,6 +75,7 @@ const contacts = [
   .link {
     color: white;
     text-decoration: none;
+    white-space: nowrap;
   }
   .contacts-list-wrapper {
     width: 33%;
@@ -136,6 +123,20 @@ const contacts = [
     }
     .list {
       margin-bottom: 60px;
+    }
+    .contacts-list-wrapper {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .contacts-list-item-link-image {
+      width: 30px;
+      height: 30px;
+    }
+    .contacts-list {
+      width: 140px;
     }
   }
 </style>
