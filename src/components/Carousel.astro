@@ -1,0 +1,82 @@
+---
+interface Props {
+  DOMId: string
+  title: string;
+  images: {
+    title: string;
+    src: string;
+  }[];
+}
+
+const { title, images, DOMId }: Props = Astro.props;
+---
+
+<script>
+  import Swiper, { Navigation } from "swiper";
+  import "swiper/css";
+  import "swiper/css/navigation";
+
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
+      },
+    },
+  });
+</script>
+
+<section id={DOMId} class="container">
+  <h2 class="title">{title}</h2>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {
+        images.map((i) => (
+          <div class="swiper-slide">
+            <img class="pic" src={i.src} />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto 120px;
+  }
+  .title {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .pic {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 520px) {
+    .container {
+      margin-bottom: 60px;
+    }
+  }
+</style>

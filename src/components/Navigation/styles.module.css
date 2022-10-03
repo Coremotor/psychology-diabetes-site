@@ -40,7 +40,7 @@
 }
 
 .mobileList {
-    position: fixed;
+    position: absolute;
     top: 110px;
     left: 0;
     right: 0;

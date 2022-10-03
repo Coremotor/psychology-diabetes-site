@@ -1,10 +1,8 @@
 <section id="hero" class="hero">
   <picture>
-    <source srcset="/assets/images/hero-small.jpg" media="(max-width: 520px)" />
-    <img class="image" src="/assets/images/hero.jpg" alt="hero image" />
+    <img class="image" src="/assets/images/hero-v2.png" alt="hero image" />
   </picture>
 
-  <!-- <img class="image" src="/assets/images/hero.jpg" alt="hero image" /> -->
   <div class="desc">
     <span class="text">Психологическая поддержка людей с сахарным диабетом</span
     >
@@ -15,10 +13,12 @@
   .hero {
     width: 100%;
     position: relative;
+    background: var(--color-bg-gradient);
     margin-bottom: 120px;
   }
   .image {
     object-fit: cover;
+    margin-left: 60px;
   }
   .desc {
     width: 35%;
@@ -28,16 +28,17 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-third);
-    padding: 120px 40px 300px 40px;
+    padding: 120px 40px 280px 40px;
   }
   .text {
     font-size: var(--font-size-xl);
     color: #ffffff;
+    font-family: "Comfortaa", sans-serif;
   }
 
-  @media (max-width: 1520px) {
+  @media (max-width: 1200px) {
     .hero {
-      margin-bottom: 160px;
+      margin-bottom: 120px;
     }
     .desc {
       width: 80%;
@@ -51,16 +52,7 @@
 
   @media (max-width: 880px) {
     .hero {
-      margin-bottom: 120px;
-    }
-    .image {
-      transform: translate(-10%, 0);
-    }
-  }
-
-  @media (max-width: 620px) {
-    .image {
-      transform: translate(-15%, 0);
+      margin-bottom: 140px;
     }
   }
 
@@ -68,13 +60,14 @@
     .hero {
       display: flex;
       justify-content: center;
+      /* margin-bottom: 120px; */
     }
     picture {
       width: 100%;
     }
     .image {
       width: 100%;
-      transform: translate(0, 0);
+      margin-left: 0;
     }
     .desc {
       top: 90%;

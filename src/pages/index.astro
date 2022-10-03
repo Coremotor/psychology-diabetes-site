@@ -1,39 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import ClientsTypes from '../components/ClientsTypes.astro';
-import AboutMe from '../components/AboutMe.astro';
-import Problems from '../components/Problems.astro';
-import Consultation from '../components/Consultation.astro';
-import Details from '../components/Details.astro';
-import Therapy from '../components/Therapy.astro';
-import Education from '../components/Education.astro';
-import Gallery from '../components/Gallery.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import ClientsTypes from "../components/ClientsTypes.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Problems from "../components/Problems.astro";
+import Consultation from "../components/Consultation.astro";
+import { Details } from "../components/Details";
+import Therapy from "../components/Therapy.astro";
+import Carousel from "../components/Carousel.astro";
+import Footer from "../components/Footer.astro";
+
+import { diploms, photos } from "../data/pictures";
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class='container'>
-		<Header />
-		<Hero />
-		<ClientsTypes />
-		<AboutMe />
-		<Problems />
-		<Consultation />
-		<Details />
-		<Therapy />
-		<Education />
-		<Gallery />
-		<Footer />
-	</div>
+  <div class="container">
+    <Header />
+    <Hero />
+    <ClientsTypes />
+    <AboutMe />
+    <Problems />
+    <Consultation />
+    <Details client:load />
+    <Therapy />
+    <Carousel DOMId="education" title="Образование" images={diploms} />
+    <Carousel DOMId="gallary" title="Галерея" images={photos} />
+    <Footer />
+  </div>
 </Layout>
 
 <style>
-	.container {
-		min-width: 360px;
-		max-width: 1600px;
-		overflow-x: hidden;
-		margin: 0 auto;
-	}
+  .container {
+    min-width: 360px;
+    max-width: 1600px;
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
 </style>
