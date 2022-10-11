@@ -1,0 +1,55 @@
+---
+interface Props {
+  DOMId: string;
+  title: string;
+}
+
+const { DOMId, title }: Props = Astro.props;
+---
+
+<section id={DOMId} class="problems">
+  <div class="banner">
+    <h2 class="title">{title}</h2>
+  </div>
+  <div class="desc">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .problems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+  .banner {
+    background-color: var(--color-bg);
+    border: 2px solid #033277;
+    padding: 20px 40px;
+    margin-bottom: -60px;
+    z-index: 10;
+  }
+  .desc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg-second);
+    padding: 100px 60px 60px;
+  }
+  .list {
+    padding: 0 40px;
+  }
+  .item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 500px) {
+    .problems {
+      margin-bottom: 80px;
+    }
+    .banner {
+      margin-bottom: -100px;
+    }
+  }
+</style>

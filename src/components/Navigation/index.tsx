@@ -1,15 +1,20 @@
-import { useState } from "react";
-import { navItems } from "../../data/nav";
+import { FC, useEffect, useState } from "react";
+import { navItemsHeader, navItemsHeaderFull } from "../../data/nav";
 
 import styles from "./styles.module.css";
 
-export const Navigation = () => {
+interface Props {
+  isMainPage: boolean;
+}
+
+export const Navigation: FC<Props> = ({ isMainPage }) => {
   const [showNav, setShowNav] = useState(false);
-  const toggleNav = () => setShowNav((prev) => !prev);
+  const toggleNav = () => setShowNav((prev) => !prev); 
+
   return (
     <nav>
       <ul className={styles.list}>
-        {navItems.map((item) => (
+        {(isMainPage ? navItemsHeader : navItemsHeaderFull).map((item) => (
           <li key={item.title} className={styles.listItem}>
             <a className={styles.link} href={item.href}>
               {item.title}
@@ -27,8 +32,12 @@ export const Navigation = () => {
 
       {showNav && (
         <ul className={styles.mobileList}>
-          {navItems.map((item) => (
-            <li onClick={toggleNav} key={item.title} className={styles.mobileListItem}>
+          {navItemsHeader.map((item) => (
+            <li
+              onClick={toggleNav}
+              key={item.title}
+              className={styles.mobileListItem}
+            >
               <a className={styles.mobileLink} href={item.href}>
                 {item.title}
               </a>

@@ -1,10 +1,18 @@
 ---
 import { Navigation } from "./Navigation";
+
+export interface Props {
+  isMainPage: boolean;
+}
+
+const { isMainPage }: Props = Astro.props;
 ---
 
-<header class="header">
-  <img class="logo" src="/assets/icons/logo.png" alt="LOGO" />
-  <Navigation client:load />
+<header id="header" class="header">
+  <a class="logo" href="/">
+    <img src="/assets/icons/logo.png" alt="LOGO" />
+  </a>
+  <Navigation client:load isMainPage={isMainPage}/>
 </header>
 
 <style>

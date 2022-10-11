@@ -1,68 +1,38 @@
-<section id="problems" class="problems">
-  <div class="banner">
-    <h2 class="title">Какие проблемы я помогу Вам решить</h2>
-  </div>
-  <div class="desc">
-    <ul class="list">
-      <li class="item">Как принять диабет</li>
-      <li class="item">Как найти мотивацию для успешной компенсации СД</li>
-      <li class="item">Как постоить отношения, имее СД: любовь, секс, семья</li>
-      <li class="item">
-        Как побороть страхи при планировании беременности с СД
-      </li>
-      <li class="item">
-        Как не допустить эмоциональное выгорание при СД: помощь, стратегии,
-        поддержка
-      </li>
-      <li class="item">
-        Как построить и сохранить гармоничные отношения с ребенком, у которого
-        СД
-      </li>
-      <li class="item">
-        Как побороть страх гипогликемии и поздних осложнений диабета
-      </li>
-      <li class="item">Панические атаки при СД</li>
-      <li class="item">
-        Модификация образа жизни – работа с пищевыми привычками
-      </li>
-    </ul>
-  </div>
-</section>
+---
+import About from "../layouts/About.astro";
+---
+
+<About DOMId="problems" title="Какие проблемы я помогу Вам решить">
+  <ul class="list">
+    <li class="item">Как принять диабет</li>
+    <li class="item">Как найти мотивацию для успешной компенсации СД</li>
+    <li class="item">Как постоить отношения, имее СД: любовь, секс, семья</li>
+    <li class="item">
+      Как побороть страхи при планировании беременности с СД
+    </li>
+    <li class="item">
+      Как не допустить эмоциональное выгорание при СД: помощь, стратегии,
+      поддержка
+    </li>
+    <li class="item">
+      Как построить и сохранить гармоничные отношения с ребенком, у которого
+      СД
+    </li>
+    <li class="item">
+      Как побороть страх гипогликемии и поздних осложнений диабета
+    </li>
+    <li class="item">Панические атаки при СД</li>
+    <li class="item">
+      Модификация образа жизни – работа с пищевыми привычками
+    </li>
+  </ul>
+</About>
 
 <style>
-  .problems {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 120px;
-  }
-  .banner {
-    background-color: var(--color-bg);
-    border: 2px solid #033277;
-    padding: 20px 40px;
-    margin-bottom: -60px;
-    z-index: 10;
-  }
-  .desc {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--color-bg-second);
-    padding: 100px 60px 60px;
-  }
   .list {
     padding: 0 40px;
   }
   .item:not(:last-child) {
     margin-bottom: 10px;
-  }
-
-  @media (max-width: 500px) {
-    .problems {
-      margin-bottom: 80px;
-    }
-    .banner {
-      margin-bottom: -100px;
-    }
   }
 </style>

@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import ClientsTypes from "../components/ClientsTypes.astro";
 import AboutMe from "../components/AboutMe.astro";
@@ -9,32 +8,25 @@ import Consultation from "../components/Consultation.astro";
 import { Details } from "../components/Details";
 import Therapy from "../components/Therapy.astro";
 import Carousel from "../components/Carousel.astro";
-import Footer from "../components/Footer.astro";
 
 import { diploms, photos } from "../data/pictures";
 ---
 
-<Layout title="Психология диабета">
+<Layout title="Психология диабета" isMainPage>
   <div class="container">
-    <Header />
-    <Hero />
+    <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
     <ClientsTypes />
     <AboutMe />
     <Problems />
     <Consultation />
     <Details client:load />
     <Therapy />
-    <Carousel DOMId="education" title="Образование" images={diploms} />
-    <Carousel DOMId="gallary" title="Галерея" images={photos} />
-    <Footer />
+    <Carousel DOMId="education" title="Образование" images={diploms} withLink />
+    <Carousel
+      DOMId="gallary"
+      title="Галерея"
+      images={photos}
+      withLink={false}
+    />
   </div>
 </Layout>
-
-<style>
-  .container {
-    min-width: 360px;
-    max-width: 1600px;
-    overflow-x: hidden;
-    margin: 0 auto;
-  }
-</style>

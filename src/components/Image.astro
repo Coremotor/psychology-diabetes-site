@@ -1,0 +1,30 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<div class="image-wrapper">
+  <img class="image" src={src} alt="diplom" />
+</div>
+
+<style>
+  .image-wrapper {
+    max-width: 1180px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px;
+    margin: 0 auto 40px;
+  }
+  .image {
+    width: 80%;
+  }
+
+  @media (max-width: 500px) {
+    .image {
+      width: 100%;
+    }
+  }
+</style>

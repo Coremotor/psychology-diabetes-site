@@ -1,17 +1,25 @@
 ---
-import { navItems } from "../data/nav";
+import { navItemsFooter, navItemsFooterFull } from "../data/nav";
 import { contacts } from "../data/contacts";
+
+export interface Props {
+  isMainPage: boolean;
+}
+
+const { isMainPage }: Props = Astro.props;
 ---
 
 <footer id="footer" class="footer">
   <div class="wrapper">
     <div class="logo-wrapper">
-      <img class="logo" src="/assets/icons/logo-in-footer.png" alt="LOGO" />
+      <a href="/#header">
+        <img class="logo" src="/assets/icons/logo-in-footer.png" alt="LOGO" />
+      </a>
     </div>
 
     <ul class="list">
       {
-        navItems.map((item) => (
+        (isMainPage ? navItemsFooter : navItemsFooterFull).map((item) => (
           <li class="list-item">
             <a class="link" href={item.href}>
               {item.title}

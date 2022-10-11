@@ -1,10 +1,19 @@
+---
+interface Props {
+  desc: string;
+}
+
+const { desc }: Props = Astro.props;
+---
+
+
 <section id="hero" class="hero">
   <picture>
     <img class="image" src="/assets/images/hero-v2.png" alt="hero image" />
   </picture>
 
   <div class="desc">
-    <span class="text">Психологическая поддержка людей с сахарным диабетом</span
+    <span class="text">{desc}</span
     >
   </div>
 </section>
@@ -22,6 +31,7 @@
   }
   .desc {
     width: 35%;
+    max-width: 640px;
     position: absolute;
     top: 140px;
     right: 150px;
@@ -47,6 +57,12 @@
       transform: translate(-50%, 0);
       text-align: center;
       padding: 40px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .text {
+      font-size: 50px;
     }
   }
 
