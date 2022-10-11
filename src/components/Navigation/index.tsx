@@ -32,7 +32,7 @@ export const Navigation: FC<Props> = ({ isMainPage }) => {
 
       {showNav && (
         <ul className={styles.mobileList}>
-          {navItemsHeader.map((item) => (
+          {(isMainPage ? navItemsHeader : navItemsHeaderFull).map((item) => (
             <li
               onClick={toggleNav}
               key={item.title}
