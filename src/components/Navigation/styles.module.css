@@ -56,6 +56,7 @@
 }
 
 .mobileLink {
+    cursor: pointer;
     text-decoration: none;
 }
 .mobileLink:hover {

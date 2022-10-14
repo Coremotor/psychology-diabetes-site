@@ -13,20 +13,27 @@ import { diploms, photos } from "../data/pictures";
 ---
 
 <Layout title="Психология диабета" isMainPage>
-  <div class="container">
-    <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
-    <ClientsTypes />
-    <AboutMe />
-    <Problems />
-    <Consultation />
-    <Details client:load />
-    <Therapy />
-    <Carousel DOMId="education" title="Образование" images={diploms} withLink />
-    <Carousel
-      DOMId="gallary"
-      title="Галерея"
-      images={photos}
-      withLink={false}
-    />
-  </div>
+  <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
+  <ClientsTypes />
+  <AboutMe />
+  <Problems />
+  <Consultation />
+  <Details client:load />
+  <Therapy />
+  <Carousel
+    DOMId="education"
+    title="Образование"
+    images={diploms}
+    withLink
+    withBackground
+    withTitle
+  />
+  <Carousel
+    DOMId="gallary"
+    title="Галерея"
+    images={photos}
+    withLink={false}
+    withBackground={false}
+    withTitle={false}
+  />
 </Layout>

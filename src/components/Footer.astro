@@ -13,7 +13,7 @@ const { isMainPage }: Props = Astro.props;
   <div class="wrapper">
     <div class="logo-wrapper">
       <a href="/#header">
-        <img class="logo" src="/assets/icons/logo-in-footer.png" alt="LOGO" />
+        <img class="logo" src="/assets/images/logo-in-footer.svg" alt="LOGO" />
       </a>
     </div>
 
@@ -48,12 +48,14 @@ const { isMainPage }: Props = Astro.props;
     </div>
   </div>
   <small class="copyright"
-    >&copy;&nbsp;Психология диабета Клиническйи психолог Ксения Демакова 2022</small
+    >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2022</small
   >
+  <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i">Сreated by</a>
 </footer>
 
 <style>
   .footer {
+    position: relative;
     color: white;
     background-color: #00112a;
     padding: 40px 10px;
@@ -116,6 +118,16 @@ const { isMainPage }: Props = Astro.props;
   .copyright {
     display: block;
     text-align: center;
+  }
+
+  .link-dev {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
   }
 
   @media (max-width: 860px) {

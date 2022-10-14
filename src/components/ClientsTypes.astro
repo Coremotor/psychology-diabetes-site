@@ -1,45 +1,46 @@
+---
+const list = [
+  {
+    icon: "/assets/icons/type-one.svg",
+    title: "Люди с сахарным диабетом 1 типа",
+  },
+  {
+    icon: "/assets/icons/type-two.svg",
+    title: "Люди с сахарным диабетом 2 типа",
+  },
+  {
+    icon: "/assets/icons/family.svg",
+    title: "Родители детей с сахарным диабетом",
+  },
+  {
+    icon: "/assets/icons/children.svg",
+    title: "Дети и подростки с сахарным диабетом",
+  },
+  {
+    icon: "/assets/icons/pregnancy.svg",
+    title:
+      "Беременные и планирующие беременность женщины с сахарным диабетом 1 типа",
+  },
+  {
+    icon: "/assets/icons/old.svg",
+    title: "Родственники людей с сахарным диабетом",
+  },
+];
+---
+
 <section id="clients-types" class="clients-types">
   <h2 class="title">Кому я буду полезна</h2>
   <ul class="list">
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/type-one.svg" alt="Icon" />
-      </div>
-      <span class="text">Люди с сахарным диабетом 1 типа</span>
-    </li>
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/type-two.svg" alt="Icon" />
-      </div>
-      <span class="text">Люди с сахарным диабетом 2 типа</span>
-    </li>
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/family.svg" alt="Icon" />
-      </div>
-      <span class="text">Родители детей с сахарным диабетом</span>
-    </li>
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/children.svg" alt="Icon" />
-      </div>
-      <span class="text">Дети и подростки с сахарным диабетом</span>
-    </li>
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/pregnancy.svg" alt="Icon" />
-      </div>
-      <span class="text"
-        >Беременные и планирующие беременность женщины с сахарным диабетом 1
-        типа
-      </span>
-    </li>
-    <li class="list-item">
-      <div class="icon-wrapper">
-        <img class="icon" src="/assets/icons/old.svg" alt="Icon" />
-      </div>
-      <span class="text">Родственники людей с сахарным диабетом</span>
-    </li>
+    {
+      list.map((item) => (
+        <li class="list-item">
+          <div class="icon-wrapper">
+            <img class="icon" src={item.icon} alt="Icon" />
+          </div>
+          <span class="text">{item.title}</span>
+        </li>
+      ))
+    }
   </ul>
 </section>
 

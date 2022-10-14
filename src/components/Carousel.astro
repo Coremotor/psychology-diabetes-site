@@ -8,9 +8,12 @@ interface Props {
     page?: string;
   }[];
   withLink: boolean;
+  withBackground: boolean;
+  withTitle: boolean;
 }
 
-const { title, images, DOMId, withLink }: Props = Astro.props;
+const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
+  Astro.props;
 ---
 
 <script>
@@ -34,31 +37,45 @@ const { title, images, DOMId, withLink }: Props = Astro.props;
   });
 </script>
 
-<section id={DOMId} class="container">
-  <h2 class="title">{title}</h2>
+<div class={`${withBackground ? "bg" : ""} wrapper`}>
+  <section id={DOMId} class="container">
+    <h2 class="title">{title}</h2>
 
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      {
-        images.map((i) => (
-          <div class="swiper-slide image-container">
-            <img class="pic" src={i.src} />
-            {withLink && <a class="link" href={i.page}>Подробнее</a>}
-          </div>
-        ))
-      }
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          images.map((i) => (
+            <div class="swiper-slide image-container">
+              <img class="pic" src={i.src} />
+              {withLink && (
+                <span class="desc">{i.title}</span>
+                <a class="link" href={i.page}>
+                  Подробнее
+                </a>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</section>
+  </section>
+</div>
 
 <style>
+  .wrapper {
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
   .container {
     max-width: 1180px;
     padding: 0 10px;
-    margin: 0 auto 120px;
+    margin: 0 auto;
+  }
+  .bg {
+    background-color: var(--color-bg-second);
   }
   .title {
     text-align: center;
@@ -78,7 +95,8 @@ const { title, images, DOMId, withLink }: Props = Astro.props;
   }
   .link {
     border: 1px solid var(--color-bg-third);
-    border-radius: 4px;
+    color: var(--color-bg-third);
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     padding: 10px 20px;
@@ -87,16 +105,15 @@ const { title, images, DOMId, withLink }: Props = Astro.props;
   .link:hover {
     background-color: var(--color-bg-third);
     color: white;
-    transition: .3s;
+    transition: 0.3s;
+  }
+  .desc {
+    width: 60%;
+    text-align: center;
+    margin-top: 20px;
   }
   .pic {
     width: 100%;
     object-fit: cover;
-  }
-
-  @media (max-width: 520px) {
-    .container {
-      margin-bottom: 60px;
-    }
   }
 </style>

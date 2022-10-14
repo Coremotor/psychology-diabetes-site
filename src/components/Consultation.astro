@@ -1,48 +1,25 @@
+---
+const list = [
+  "Вы сформулируете суть своей проблемы и поймете в каком направлении двигаться для ее решения.",
+  "Понимание и поддержка психолога поможет вам обрести уверенность в своих силах для решения проблемы.",
+  "Вы научитесь работать со своими мыслями и убеждениями, что успешно помогает бороться со своими страхами",
+  "Обретете новые знания, которые в дальнейшем сможете применять в своей жизни.",
+  "Вы посмотрите на свой диагноз под другим углом – не диабет управляет вами, а вы им.",
+  "Я помогу вам понять, в чем ваша сила, почувствовать ее и поверить в себя!",
+];
+---
+
 <section id="consultation" class="consultation">
   <h2 class="title">Что вы получите в результате онлайн консультации?</h2>
   <ul class="list">
-    <li class="item">
-      <div class="number">1</div>
-      <div class="desc">
-        Вы сформулируете суть своей проблемы и поймете в каком направлении
-        двигаться для ее решения.
-      </div>
-    </li>
-    <li class="item">
-      <div class="number">2</div>
-      <div class="desc">
-        Понимание и поддержка психолога поможет вам обрести уверенность в своих
-        силах для решения проблемы.
-      </div>
-    </li>
-    <li class="item">
-      <div class="number">3</div>
-      <div class="desc">
-        Вы научитесь работать со своими мыслями и убеждениями., что успешно
-        помогает бороться со своими страхами
-      </div>
-    </li>
-    <li class="item">
-      <div class="number">4</div>
-      <div class="desc">
-        Обретете новые знания, которые в дальнейшем сможете применять в своей
-        жизни.
-      </div>
-    </li>
-    <li class="item">
-      <div class="number">5</div>
-      <div class="desc">
-        Вы посмотрите на свой диагноз под другим углом – не диабет управляет
-        вами, а вы им.
-      </div>
-    </li>
-    <li class="item">
-      <div class="number">6</div>
-      <div class="desc">
-        Я помогу вам понять, в чем ваша сила, почувствовать ее и поверить в
-        себя!
-      </div>
-    </li>
+    {
+      list.map((item, index) => (
+        <li class="item">
+          <div class="number">{index + 1}</div>
+          <div class="desc">{item}</div>
+        </li>
+      ))
+    }
   </ul>
 </section>
 
@@ -70,7 +47,8 @@
   }
   .number {
     color: var(--color-bg-third);
-    font-family: 'MrDafoe-Regular', sans-serif;
+    font-family: "Lucida Handwriting", sans-serif;
+    font-style: italic;
     font-size: 100px;
     font-weight: 700;
     margin-right: 30px;
@@ -80,7 +58,11 @@
     .list {
       grid-template-columns: 1fr;
       justify-items: start;
-      row-gap: 1px;
+      row-gap: 0;
+      column-gap: 0;
+    }
+    .item:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
 </style>

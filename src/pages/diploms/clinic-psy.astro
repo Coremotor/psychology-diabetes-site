@@ -4,6 +4,9 @@ import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
 import AboutDiplom from "../../components/AboutDiplom.astro";
 import Image from "../../components/Image.astro";
+import { routesList } from "../../data/routes";
+import { nextPage } from "../../helpers";
+import Buttons from "../../components/Buttons.astro";
 
 const list = [
   "компетенции в вовпросах нейропсихологии, патопсихологии и психотерапии;",
@@ -13,6 +16,8 @@ const list = [
   "клиническая психология в геронталогии;",
   "клиническая психология в онкологии.",
 ];
+
+const next = nextPage(routesList(), Astro.url.pathname)
 ---
 
 <Layout title="Психология диабета" isMainPage={false}>
@@ -27,4 +32,6 @@ const list = [
       vkr="Практикумы"
     />
   </About>
+
+  <Buttons link={next}/>
 </Layout>

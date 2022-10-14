@@ -7,7 +7,7 @@ interface Props {
 const { DOMId, title }: Props = Astro.props;
 ---
 
-<section id={DOMId} class="problems">
+<section id={DOMId} class="section">
   <div class="banner">
     <h2 class="title">{title}</h2>
   </div>
@@ -17,7 +17,7 @@ const { DOMId, title }: Props = Astro.props;
 </section>
 
 <style>
-  .problems {
+  .section {
     display: flex;
     flex-direction: column;
     align-items: center;

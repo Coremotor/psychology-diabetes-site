@@ -3,7 +3,7 @@ export const navItemsHeader = [
   { title: "Кому я буду полезна", href: "/#clients-types" },
   { title: "Терапия", href: "/#therapy" },
   { title: "Образование", href: "/#education" },
-  { title: "Контакты", href: "/#footer" },
+  // { title: "Контакты", href: "/#footer" },
 ];
 
 export const navItemsHeaderFull = [
@@ -19,7 +19,7 @@ export const navItemsFooter = [
   { title: "Терапия", href: "/#therapy" },
   { title: "Образование", href: "/#education" },
   { title: "Галерея", href: "/#gallary" },
-  { title: "Контакты", href: "/#footer" },
+  { title: "Контакты", href: "/#header" },
 ];
 
 export const navItemsFooterFull = [

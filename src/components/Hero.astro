@@ -6,24 +6,30 @@ interface Props {
 const { desc }: Props = Astro.props;
 ---
 
+<div class="container">
+  <section id="hero" class="hero">
+    <picture>
+      <img class="image" src="/assets/images/hero-v2.png" alt="hero image" />
+    </picture>
 
-<section id="hero" class="hero">
-  <picture>
-    <img class="image" src="/assets/images/hero-v2.png" alt="hero image" />
-  </picture>
-
-  <div class="desc">
-    <span class="text">{desc}</span
-    >
-  </div>
-</section>
+    <div class="desc">
+      <span class="text">{desc}</span>
+    </div>
+  </section>
+</div>
 
 <style>
-  .hero {
-    width: 100%;
-    position: relative;
+  .container {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
     background: var(--color-bg-gradient);
     margin-bottom: 120px;
+  }
+  .hero {
+    width: 100%;
+    max-width: 1600px;
+    position: relative;
   }
   .image {
     object-fit: cover;
@@ -35,8 +41,6 @@ const { desc }: Props = Astro.props;
     position: absolute;
     top: 140px;
     right: 150px;
-    display: flex;
-    flex-direction: column;
     background-color: var(--color-bg-third);
     padding: 120px 40px 280px 40px;
   }
@@ -46,9 +50,15 @@ const { desc }: Props = Astro.props;
     font-family: "Comfortaa", sans-serif;
   }
 
+  @media (min-width: 1600px) {
+    .text {
+      font-size: 50px;
+    }
+  }
+
   @media (max-width: 1200px) {
-    .hero {
-      margin-bottom: 120px;
+    .container {
+      margin-bottom: 180px;
     }
     .desc {
       width: 80%;
@@ -60,23 +70,13 @@ const { desc }: Props = Astro.props;
     }
   }
 
-  @media (min-width: 1600px) {
-    .text {
-      font-size: 50px;
-    }
-  }
-
-  @media (max-width: 880px) {
-    .hero {
-      margin-bottom: 140px;
-    }
-  }
-
   @media (max-width: 520px) {
+    .container {
+      margin-bottom: 120px;
+    }
     .hero {
       display: flex;
       justify-content: center;
-      /* margin-bottom: 120px; */
     }
     picture {
       width: 100%;

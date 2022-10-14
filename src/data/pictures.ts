@@ -1,18 +1,20 @@
+import { routes } from "./routes";
+
 export const diploms = [
   {
     title: "Квалификация - фельдшер по специальности “Лечебное дело”",
     src: "/assets/images/carousel/dip-1.jpg",
-    page: '/diploms/lechebnoe-delo'
+    page: routes.lechebnoe_delo
   },
   {
     title: "Квалификация - бакалавр по специальности “Психология”",
     src: "/assets/images/carousel/dip-2.jpg",
-    page: '/diploms/psihologiya'
+    page: routes.psihologiya
   },
   {
     title: "Квалификация - клинический психолог профессиональная переподготовка",
     src: "/assets/images/carousel/dip-3.jpg",
-    page: '/diploms/clinic-psy'
+    page: routes.clinic_psy
   },
 ];
 

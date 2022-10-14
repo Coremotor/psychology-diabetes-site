@@ -10,9 +10,9 @@ const { isMainPage }: Props = Astro.props;
 
 <header id="header" class="header">
   <a class="logo" href="/">
-    <img src="/assets/icons/logo.png" alt="LOGO" />
+    <img class="image" src="/assets/images/logo.svg" alt="LOGO" />
   </a>
-  <Navigation client:load isMainPage={isMainPage}/>
+  <Navigation client:load isMainPage={isMainPage} />
 </header>
 
 <style>
@@ -26,5 +26,11 @@ const { isMainPage }: Props = Astro.props;
   }
   .logo {
     margin-right: auto;
+  }
+
+  @media (max-width: 500px) {
+    .image {
+      width: 90%;
+    }
   }
 </style>
