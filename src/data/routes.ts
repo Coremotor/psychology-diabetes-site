@@ -1,9 +1,9 @@
 export const routes: {
   [key: string]: string;
 } = {
-  lechebnoe_delo: "/diploms/lechebnoe-delo",
-  psihologiya: "/diploms/psihologiya",
-  clinic_psy: "/diploms/clinic-psy",
+  lechebnoe_delo: "/diploms/lechebnoe-delo/",
+  psihologiya: "/diploms/psihologiya/",
+  clinic_psy: "/diploms/clinic-psy/",
 };
 
 export const routesList = () => {
