@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../layouts/About.astro";
+import AboutDiplom from "../../components/AboutDiplom.astro";
+import Image from "../../components/Image.astro";
+import { routesList } from "../../data/routes";
+import { nextPage } from "../../helpers";
+import Buttons from "../../components/Buttons.astro";
+
+const list = [
+  "актуализация ресурсов клиента;",
+  "МАК в работе с психотравмами и кризисными состояниями;",
+  "метафорические карты в работе с отношениями;",
+  "МАК-техники в работе с детско-родительскими отношениями;",
+  "МАК в коучинге;",
+  "работа с финансовыми запросами;",
+  "МАК-техники, направленные на достижение целей;",
+  "МАК в работе с детьми и подростками.",
+];
+
+const next = nextPage(routesList(), Astro.url.pathname);
+---
+
+<Layout title="Психология диабета" isMainPage={false}>
+  <Hero desc="Метафорические ассоциативные карты как инструмент работы психолога" />
+  <Image src="/assets/images/carousel/diploms/6.jpg" />
+
+  <About DOMId="mac" title="Область профессиональной деятельности">
+    <AboutDiplom
+      desc="Метафорические ассоциативные карты - проективная методика, которая помогает психологу установить контакт с клиентом, визуализировать проблему, найти новые варианты ее решения. Карточки с различными изображениями, словами, фразами подходят для групповой и индивидуальной работы, для оффлайн и онлайн сессий, для коучинга."
+      list={list}
+      diplom="«выявление особенностей детско-родительских отношений» и «путь к цели»."
+      vkr="Практикумы:"
+    />
+  </About>
+
+  <Buttons link={next} />
+</Layout>

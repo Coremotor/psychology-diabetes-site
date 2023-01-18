@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../layouts/About.astro";
+import AboutDiplom from "../../components/AboutDiplom.astro";
+import Image from "../../components/Image.astro";
+import { routesList } from "../../data/routes";
+import { nextPage } from "../../helpers";
+import Buttons from "../../components/Buttons.astro";
+
+const list = [
+  "психология семьи, детская практическая психология;",
+  "семейная диагностика;",
+  "детско-родительские отношения, конфликты (причины, методы диагностики, консультирования и терапии);",
+  "психотерапия в работе с семьей (системно-семейная психотерапия, психодрама, трансактный анализ);",
+  "работа в кризисных ситуациях (развод, физическое насилие, инцест, утраты, рождение ребенка с особыми потребностями);",
+  "психологическое консультирование по проблемам в детско-родительских отношениях. Тренинг детско-родительских отношений.",
+];
+
+const next = nextPage(routesList(), Astro.url.pathname);
+---
+
+<Layout title="Психология диабета" isMainPage={false}>
+  <Hero
+    desc="Семейное и детское психологическое консультирование"
+  />
+  <Image src="/assets/images/carousel/diploms/5.jpg" />
+
+  <About DOMId="family" title="Область профессиональной деятельности">
+    <AboutDiplom
+      desc="Психология в медицине или клиническая психология — область медицинской психологии, изучающая психические факторы происхождения и течения болезней, влияние болезней на личность, психологические аспекты целебных воздействий."
+      list={list}
+      diplom="«по семейной терапии»."
+      vkr="Практикум:"
+    />
+  </About>
+
+  <Buttons link={next} />
+</Layout>

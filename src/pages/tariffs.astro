@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Тарифы" isMainPage={false}>
+  <h2 class="title">Тарифы и цены</h2>
+  <div class="table">
+    <div class="row">
+      <div class="desc">
+        <h4 class="desc-title">Индивидуальный</h4>
+        <div class="desc-text">
+          Индивидуальное консультирование онлайн. Длительность консультации
+          1-1,5 часа.
+        </div>
+      </div>
+      <div class="price">1200 ₽</div>
+    </div>
+
+    <div class="row">
+      <div class="desc">
+        <h4 class="desc-title">Родитель-ребенок</h4>
+        <div class="desc-text">
+          Две отдельные онлайн консультации для родителя и для ребенка, каждая
+          длится 1-1,5 часа. Работа с парой родитель-ребенок - одна из наиболее
+          эффективных форм психологической помощи. Предполагает еженедельные
+          встречи как с родителем, так и с ребенком.
+        </div>
+      </div>
+      <div class="price">2000 ₽</div>
+    </div>
+
+    <div class="row">
+      <div class="desc">
+        <h4 class="desc-title">Комплекс из 4 консультативных сессий</h4>
+        <div class="desc-text">
+          Индивидуальное онлайн консультирование. Включает в себя еженедельные
+          встречи в течение одного месяца. Оплата производится вперед за весь
+          месяц - 4 консультации.
+        </div>
+      </div>
+      <div class="price">4000 ₽</div>
+    </div>
+
+    <div class="row">
+      <div class="desc">
+        <h4 class="desc-title">
+          Комплекс родитель-ребенок 4+4 консультативных сессий
+        </h4>
+        <div class="desc-text">
+          По 4 отдельные онлайн консультации для родителя и для ребенка, каждая
+          длится 1-1,5 часа. Работа с парой родитель-ребенок - одна из наиболее
+          эффективных форм психологической помощи. Предполагает еженедельные
+          встречи как с родителем, так и с ребенком в течение 1 месяца. Оплата
+          производится вперед за весь месяц - 8 консультаций.
+        </div>
+      </div>
+      <div class="price">6800 ₽</div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .table {
+    max-width: 1180px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin: 0 auto 100px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .row:nth-child(odd) {
+    background-color: var(--color-bg-second);
+  }
+  .desc {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  .desc-title {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .price {
+    min-width: 100px;
+    font-weight: 700;
+    text-align: end;
+  }
+
+  @media (max-width: 800px) {
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+    .desc {
+      text-align: center;
+      margin-right: 0;
+    }
+    .desc-title {
+      text-align: center;
+    }
+    .price {
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+</style>

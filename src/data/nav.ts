@@ -8,7 +8,7 @@ export const navItemsHeader = [
 
 export const navItemsHeaderFull = [
   { title: "Главная", href: "/" },
-  ...navItemsHeader
+  ...navItemsHeader,
 ]
 
 export const navItemsFooter = [
@@ -20,6 +20,7 @@ export const navItemsFooter = [
   { title: "Образование", href: "/#education" },
   { title: "Галерея", href: "/#gallary" },
   { title: "Контакты", href: "/#header" },
+  { title: "Тарифы", href: "/tariffs" },
 ];
 
 export const navItemsFooterFull = [

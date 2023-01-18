@@ -9,7 +9,7 @@ const { desc }: Props = Astro.props;
 <div class="container">
   <section id="hero" class="hero">
     <picture>
-      <img class="image" src="/assets/images/hero-v2.png" alt="hero image" />
+      <img class="image" src="/assets/images/hero-v3.png" alt="hero image" />
     </picture>
 
     <div class="desc">
@@ -41,8 +41,10 @@ const { desc }: Props = Astro.props;
     position: absolute;
     top: 140px;
     right: 150px;
+    bottom: -40px;
     background-color: var(--color-bg-third);
-    padding: 120px 40px 280px 40px;
+    padding: 120px 40px;
+
   }
   .text {
     font-size: var(--font-size-xl);
@@ -56,7 +58,7 @@ const { desc }: Props = Astro.props;
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     .container {
       margin-bottom: 180px;
     }
@@ -64,6 +66,7 @@ const { desc }: Props = Astro.props;
       width: 80%;
       top: 600px;
       left: 50%;
+      bottom: auto;
       transform: translate(-50%, 0);
       text-align: center;
       padding: 40px;

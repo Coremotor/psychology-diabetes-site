@@ -9,7 +9,7 @@ import { Details } from "../components/Details";
 import Therapy from "../components/Therapy.astro";
 import Carousel from "../components/Carousel.astro";
 
-import { diploms, photos } from "../data/pictures";
+import { diploms, makePhotosArray } from "../data/pictures";
 ---
 
 <Layout title="Психология диабета" isMainPage>
@@ -31,7 +31,7 @@ import { diploms, photos } from "../data/pictures";
   <Carousel
     DOMId="gallary"
     title="Галерея"
-    images={photos}
+    images={makePhotosArray()}
     withLink={false}
     withBackground={false}
     withTitle={false}

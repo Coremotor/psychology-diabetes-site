@@ -32,11 +32,16 @@ export const Navigation: FC<Props> = ({ isMainPage }) => {
         <li
           onClick={toggleNav}
           key="Контакты"
-          className={styles.mobileListItem}
+          className={styles.listItem}
         >
           <div className={styles.mobileLink} onClick={togglePopUp}>
             Контакты
           </div>
+        </li>
+        <li key="Тарифы" className={styles.listItem}>
+          <a className={styles.link} href="/tariffs">
+            Тарифы
+          </a>
         </li>
       </ul>
 
@@ -69,6 +74,15 @@ export const Navigation: FC<Props> = ({ isMainPage }) => {
               Контакты
             </div>
           </li>
+          <li
+              onClick={toggleNav}
+              key="Тарифы"
+              className={styles.mobileListItem}
+            >
+              <a className={styles.mobileLink} href="/tariffs">
+                Тарифы
+              </a>
+            </li>
         </ul>
       )}
     </nav>

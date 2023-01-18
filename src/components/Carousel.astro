@@ -58,8 +58,12 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
         }
       </div>
 
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev">
+        <!-- <img src="assets/icons/left.png"> -->
+      </div>
+      <div class="swiper-button-next">
+        <!-- <img src="assets/icons/right.png"> -->
+      </div>
     </div>
   </section>
 </div>
@@ -84,6 +88,26 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
   .swiper {
     width: 100%;
   }
+  /* .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 20px;
+  }
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 20px;
+  }
+  .swiper-button-prev::after {
+    content: '';
+  }
+  .swiper-button-next::after {
+    content: '';
+  } */
   .swiper-slide {
     display: flex;
     justify-content: center;
@@ -108,7 +132,7 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
     transition: 0.3s;
   }
   .desc {
-    width: 60%;
+    width: 70%;
     text-align: center;
     margin-top: 20px;
   }

@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../layouts/About.astro";
+import AboutDiplom from "../../components/AboutDiplom.astro";
+import Image from "../../components/Image.astro";
+import { routesList } from "../../data/routes";
+import { nextPage } from "../../helpers";
+import Buttons from "../../components/Buttons.astro";
+
+const list = [
+  "КПТ в работе с аддикцией;",
+  "КПТ в работе с депрессивными симптомами;",
+  "КПТ в работе с тревожностью, фобиями;",
+  "КПТ в работе с расстройствами пищевого поведения;",
+  "КПТ в работе с обсессивно-компульсивными расстройствами;",
+  "КПТ в преодолении прокрастинации;",
+  "метакогнитивный подход;",
+  "Mindfullness – терапия, основанная на осознанности;",
+  "диалектико-поведенческая терапия;",
+  "десенсебилизация и переработка движениями глаз;",
+  "схематерапия.",
+];
+
+const next = nextPage(routesList(), Astro.url.pathname);
+---
+
+<Layout title="Психология диабета" isMainPage={false}>
+  <Hero desc="Когнитивно-поведенческая психотерапия в практике психолога" />
+  <Image src="/assets/images/carousel/diploms/4.jpg" />
+
+  <About DOMId="kpt" title="Область профессиональной деятельности">
+    <AboutDiplom
+      desc="Когнитивно-поведенческая психотерапия помогает клиенту увидеть и понять причины психологических проблем, найти внутренние ресурсы для их решения, научиться позитивному поведению, принять себя."
+      list={list}
+      diplom=""
+      vkr=""
+    />
+  </About>
+
+  <Buttons link={next} />
+</Layout>
