@@ -1,6 +1,9 @@
 ---
 import { navItemsFooter, navItemsFooterFull } from "../data/nav";
 import { contacts } from "../data/contacts";
+import { PopUp } from "./popUp";
+import { NavigationInFooter } from "./NavigationInFooter";
+import { ContactsListInFooter } from "./ContactsInFooter";
 
 export interface Props {
   isMainPage: boolean;
@@ -17,40 +20,16 @@ const { isMainPage }: Props = Astro.props;
       </a>
     </div>
 
-    <ul class="list">
-      {
-        (isMainPage ? navItemsFooter : navItemsFooterFull).map((item) => (
-          <li class="list-item">
-            <a class="link" href={item.href}>
-              {item.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <NavigationInFooter client:load isMainPage={isMainPage} />
 
-    <div class="contacts-list-wrapper">
-      <ul class="contacts-list">
-        {
-          contacts.map((c) => (
-            <li class="contacts-list-item">
-              <a href={c.href} class="contacts-list-item-link" target="_blank">
-                <img
-                  src={c.src}
-                  alt={c.href}
-                  class="contacts-list-item-link-image"
-                />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <ContactsListInFooter client:load />
   </div>
   <small class="copyright"
     >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2023</small
   >
-  <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i">Сreated by</a>
+  <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
+    >Сreated by</a
+  >
 </footer>
 
 <style>
@@ -87,34 +66,6 @@ const { isMainPage }: Props = Astro.props;
     text-decoration: none;
     white-space: nowrap;
   }
-  .contacts-list-wrapper {
-    width: 33%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .contacts-list {
-    width: 180px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .contacts-list-item-link-image {
-    width: 40px;
-    height: 40px;
-  }
-  .contacts-list-item {
-    margin-bottom: 20px;
-  }
-  .contacts-list-item:not(:last-child) {
-    margin-right: 20px;
-  }
-  .contacts-list-item:nth-child(3) {
-    margin-right: 0;
-  }
   .copyright {
     display: block;
     text-align: center;
@@ -144,17 +95,9 @@ const { isMainPage }: Props = Astro.props;
     .list {
       margin-bottom: 60px;
     }
-    .contacts-list-wrapper {
-      width: 100%;
-      justify-content: center;
-    }
   }
 
   @media (max-width: 520px) {
-    .contacts-list-item-link-image {
-      width: 30px;
-      height: 30px;
-    }
     .contacts-list {
       width: 140px;
     }

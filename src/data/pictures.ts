@@ -8,7 +8,7 @@ export const diploms = [
   },
   {
     title:
-      "Квалификация - клинический психолог.",
+      "Квалификация - клинический психолог, профессиональная переподготовка",
     src: "/assets/images/carousel/diploms/3.jpg",
     page: routes.clinic_psy,
   },
@@ -28,12 +28,12 @@ export const diploms = [
     src: "/assets/images/carousel/diploms/6.jpg",
     page: routes.family,
   },
-  {
-    title:
-      "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
-    src: "/assets/images/carousel/diploms/7.jpg",
-    page: routes.eating_behavior,
-  },
+  // {
+  //   title:
+  //     "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
+  //   src: "/assets/images/carousel/diploms/7.jpg",
+  //   page: routes.eating_behavior,
+  // },
   {
     title: "Квалификация - фельдшер по специальности «Лечебное дело»",
     src: "/assets/images/carousel/diploms/1.jpg",
@@ -43,7 +43,7 @@ export const diploms = [
 
 export const makePhotosArray = () => {
   const a = [];
-  for (let index = 1; index < 25; index++) {
+  for (let index = 1; index < 26; index++) {
     a.push({
       title: index.toString(),
       src: `/assets/images/carousel/gallary/${index}.jpg`,

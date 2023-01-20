@@ -10,25 +10,25 @@ interface Props {
   withLink: boolean;
   withBackground: boolean;
   withTitle: boolean;
+  arrowsUp: boolean;
 }
 
-const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
+const { title, images, DOMId, withLink, withBackground, arrowsUp }: Props =
   Astro.props;
 ---
 
 <script>
-  import Swiper, { Navigation } from "swiper";
+  import Swiper, { Navigation, Pagination } from "swiper";
   import "swiper/css";
   import "swiper/css/navigation";
 
   const swiper = new Swiper(".swiper", {
-    modules: [Navigation],
+    modules: [Navigation, Pagination],
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     slidesPerView: 1,
-    spaceBetween: 10,
     breakpoints: {
       1024: {
         slidesPerView: 2,
@@ -46,7 +46,7 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
         {
           images.map((i) => (
             <div class="swiper-slide image-container">
-              <img class="pic" src={i.src} />
+              <img class="image" src={i.src} />
               {withLink && (
                 <span class="desc">{i.title}</span>
                 <a class="link" href={i.page}>
@@ -58,11 +58,11 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
         }
       </div>
 
-      <div class="swiper-button-prev">
-        <!-- <img src="assets/icons/left.png"> -->
+      <div class={`swiper-button-prev ${arrowsUp ? 'up' : ''}`}>
+        <img class="swiper-button-prev-img" src="assets/icons/arrow.svg">
       </div>
-      <div class="swiper-button-next">
-        <!-- <img src="assets/icons/right.png"> -->
+      <div class={`swiper-button-next ${arrowsUp ? 'up' : ''}`}>
+        <img class="swiper-button-next-img" src="assets/icons/arrow.svg">
       </div>
     </div>
   </section>
@@ -74,12 +74,15 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
     margin-bottom: 40px;
   }
   .container {
-    max-width: 1180px;
+    max-width: 1280px;
     padding: 0 10px;
     margin: 0 auto;
   }
   .bg {
     background-color: var(--color-bg-second);
+  }
+  .up {
+    top: 40%;
   }
   .title {
     text-align: center;
@@ -88,26 +91,24 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
   .swiper {
     width: 100%;
   }
-  /* .swiper-button-prev {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    margin-left: 20px;
+  .swiper-button-prev {
+    left: -5px;
   }
   .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    margin-right: 20px;
+    right: -5px;
   }
   .swiper-button-prev::after {
     content: '';
   }
   .swiper-button-next::after {
     content: '';
-  } */
+  }
+  .swiper-button-prev-img {
+    transform: rotate(180deg);
+  }
+  .swiper-pagination {
+
+  }
   .swiper-slide {
     display: flex;
     justify-content: center;
@@ -116,6 +117,10 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .image {
+    width: 85%;
+    object-fit: cover;
   }
   .link {
     border: 1px solid var(--color-bg-third);
@@ -136,8 +141,11 @@ const { title, images, DOMId, withLink, withBackground, withTitle }: Props =
     text-align: center;
     margin-top: 20px;
   }
-  .pic {
-    width: 100%;
-    object-fit: cover;
+
+  @media (max-width: 500px) {
+    .swiper {
+      width: 100%;
+      margin-left: -10px;
   }
+}
 </style>

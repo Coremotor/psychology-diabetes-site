@@ -11,7 +11,9 @@
 }
 
 .window {
+    background-blend-mode: multiply;
     background-image: url('/assets/images/popup-bg.jpg');
+    background-color: #033277;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,6 +46,10 @@
     text-decoration: none;
 }
 
+.listItemLink:hover > span {
+    color: red;
+}
+
 .listItemLinkImage {
     width: 32px;
     height: 32px;
@@ -54,7 +60,7 @@
     color: white;
     font-weight: 700;
 }
-
+/* 
 .listItemDesc:hover {
-    color: var(--color-bg-third);
-}
+    color: red;
+} */

@@ -2,21 +2,14 @@ import { FC, useState } from "react";
 import { contacts } from "../../data/contacts";
 import styles from "./styles.module.css";
 
-interface Props {
-  togglePopUp: () => void;
-}
-
-export const PopUp: FC<Props> = ({ togglePopUp }) => {
+export const ContactsListInFooter = () => {
   return (
-    <div className={styles.popup} onClick={togglePopUp}>
-      <div className={styles.window}>
-        <h2 className={styles.title}>Узнать подробности о консультации</h2>
-        <ul className={styles.list}>
-          {contacts.map((c) => (
-            <Item item={c} key={c.href} />
-          ))}
-        </ul>
-      </div>
+    <div className={styles.contactsListWrapper}>
+      <ul className={styles.contactsList}>
+        {contacts.map((c) => (
+          <Item item={c} />
+        ))}
+      </ul>
     </div>
   );
 };
@@ -35,20 +28,19 @@ const Item: FC<ItemProps> = ({ item }) => {
   const toggleHover = () => setHover(!hover);
 
   return (
-    <li key={item.desc} className={styles.listItem}>
+    <li className={styles.contactsListItem}>
       <a
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
         href={item.href}
-        className={styles.listItemLink}
+        className={styles.contactsListItemLink}
         target="_blank"
       >
         <img
           src={hover ? item.srcRed : item.srcWhite}
           alt={item.href}
-          className={styles.listItemLinkImage}
+          className={styles.contactsListItemLinkImage}
         />
-        <span className={styles.listItemDesc}>{item.desc}</span>
       </a>
     </li>
   );
