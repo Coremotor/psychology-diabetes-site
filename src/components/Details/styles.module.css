@@ -2,8 +2,12 @@
     background-color: var(--color-bg-third);
     text-align: center;
     cursor: pointer;
+    transition: 0.5s;
     padding: 40px 10px;
     margin: 0 auto 120px;
+}
+.details:hover {
+    transform: scale(1.1);
 }
 .text {
     font-size: var(--font-size-xl);

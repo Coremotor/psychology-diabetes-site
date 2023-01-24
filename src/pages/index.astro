@@ -10,13 +10,14 @@ import Therapy from "../components/Therapy.astro";
 import Carousel from "../components/Carousel.astro";
 
 import { diploms, makePhotosArray } from "../data/pictures";
+import About from "../layouts/About.astro";
 ---
 
 <Layout title="Психология диабета" isMainPage>
   <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
   <ClientsTypes />
-  <AboutMe />
   <Problems />
+  <AboutMe />
   <Consultation />
   <Details client:load />
   <Therapy />

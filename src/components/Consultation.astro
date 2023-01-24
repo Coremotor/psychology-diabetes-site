@@ -1,4 +1,6 @@
 ---
+import About from "../layouts/About.astro";
+
 const list = [
   "Вы сформулируете суть своей проблемы и поймете в каком направлении двигаться для ее решения.",
   "Понимание и поддержка психолога поможет вам обрести уверенность в своих силах для решения проблемы.",
@@ -9,29 +11,29 @@ const list = [
 ];
 ---
 
-<section id="consultation" class="consultation">
-  <h2 class="title">Что вы получите в результате онлайн консультации?</h2>
-  <ul class="list">
-    {
-      list.map((item, index) => (
-        <li class="item">
-          <div class="number">{index + 1}</div>
-          <div class="desc">{item}</div>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<About
+  DOMId="consultation"
+  title="Что Вы получите в результате онлайн консультации?"
+>
+  <section id="consultation" class="consultation">
+    <ul class="list">
+      {
+        list.map((item, index) => (
+          <li class="item">
+            <div class="number">{index + 1}</div>
+            <div class="desc">{item}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</About>
 
 <style>
   .consultation {
     max-width: 1180px;
     padding: 0 10px;
-    margin: 0 auto 60px;
-  }
-  .title {
-    text-align: center;
-    margin-top: 0;
+    margin: 0 auto;
   }
   .list {
     display: grid;

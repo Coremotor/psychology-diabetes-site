@@ -7,7 +7,7 @@ export const routes: {
   kpt: "/diploms/kpt/",
   family: "/diploms/family/",
   mac: "/diploms/mac/",
-  eating_behavior: "/diploms/eating-behavior/",
+  // eating_behavior: "/diploms/eating-behavior/",
   // tariffs: "/tariffs/",
 };
 
