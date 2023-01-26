@@ -1,17 +1,16 @@
 .details {
     background-color: var(--color-bg-third);
+    color: white;
     text-align: center;
     cursor: pointer;
-    transition: 0.5s;
     padding: 40px 10px;
     margin: 0 auto 120px;
 }
 .details:hover {
-    transform: scale(1.1);
+    color: red;
 }
 .text {
     font-size: var(--font-size-xl);
-    color: white;
 }
 
 @media (max-width: 520px) {
