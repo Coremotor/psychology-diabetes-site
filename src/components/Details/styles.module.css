@@ -5,6 +5,7 @@
     cursor: pointer;
     padding: 40px 10px;
     margin: 0 auto 120px;
+    transition: 0.5s;
 }
 .details:hover {
     color: red;

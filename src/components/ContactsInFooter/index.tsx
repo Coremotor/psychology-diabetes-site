@@ -7,7 +7,7 @@ export const ContactsListInFooter = () => {
     <div className={styles.contactsListWrapper}>
       <ul className={styles.contactsList}>
         {contacts.map((c) => (
-          <Item item={c} />
+          <Item item={c} key={c.href} />
         ))}
       </ul>
     </div>

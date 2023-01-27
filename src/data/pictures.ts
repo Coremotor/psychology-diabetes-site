@@ -3,30 +3,30 @@ import { routes } from "./routes";
 export const diploms = [
   {
     title: "Квалификация - бакалавр по специальности «Психология»",
-    src: "/assets/images/carousel/diploms/2.jpg",
+    src: "/assets/images/carousel/diploms/psihologiya.jpg",
     page: routes.psihologiya,
   },
   {
     title:
       "Квалификация - клинический психолог, профессиональная переподготовка",
-    src: "/assets/images/carousel/diploms/3.jpg",
+    src: "/assets/images/carousel/diploms/clinic_psy.jpg",
     page: routes.clinic_psy,
   },
   {
     title: "Когнитивно-поведенческая психотерапия в практике психолога",
-    src: "/assets/images/carousel/diploms/4.jpg",
+    src: "/assets/images/carousel/diploms/kpt.jpg",
     page: routes.kpt,
   },
   {
     title:
       "Семейное и детское психологическое консультирование",
-    src: "/assets/images/carousel/diploms/5.jpg",
+    src: "/assets/images/carousel/diploms/family.jpg",
     page: routes.family,
   },
   {
     title: "Метафорические ассоциативные карты как инструмент работы психолога",
-    src: "/assets/images/carousel/diploms/6.jpg",
-    page: routes.family,
+    src: "/assets/images/carousel/diploms/mac.jpg",
+    page: routes.mac,
   },
   // {
   //   title:
@@ -36,7 +36,7 @@ export const diploms = [
   // },
   {
     title: "Квалификация - фельдшер по специальности «Лечебное дело»",
-    src: "/assets/images/carousel/diploms/1.jpg",
+    src: "/assets/images/carousel/diploms/lechebnoe_delo_1.jpg",
     page: routes.lechebnoe_delo,
   },
 ];
