@@ -15,121 +15,130 @@ const { title, isMainPage } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Психологическая поддержка людей с сахарным диабетом. Семейная психология. Расстройство пищевого поведения. Когнитивно-поведенческая терапия"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <div class="container">
-      <Header isMainPage={isMainPage}/>
+      <Header isMainPage={isMainPage} />
       <slot />
-      <Footer isMainPage={isMainPage}/>
+      <Footer isMainPage={isMainPage} />
     </div>
-    
-  </body>
-</html>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-  (function (m, e, t, r, i, k, a) {
-    m[i] =
-      m[i] ||
-      function () {
-        (m[i].a = m[i].a || []).push(arguments);
-      };
-    m[i].l = 1 * new Date();
-    for (var j = 0; j < document.scripts.length; j++) {
-      if (document.scripts[j].src === r) {
-        return;
-      }
-    }
-    (k = e.createElement(t)),
-      (a = e.getElementsByTagName(t)[0]),
-      (k.async = 1),
-      (k.src = r),
-      a.parentNode.insertBefore(k, a);
-  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-  ym(90648789, "init", {
-    clickmap: true,
-    trackLinks: true,
-    accurateTrackBounce: true,
-    webvisor: true,
-  });
-</script>
-<noscript
-  ><div>
-    <img
-      src="https://mc.yandex.ru/watch/90648789"
-      style="position:absolute; left:-9999px;"
-      alt=""
-    />
-  </div>
-  <!-- /Yandex.Metrika counter -->
-</noscript>
+      ym(90648789, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/90648789"
+          style="position:absolute; left:-9999px;"
+          alt=""
+        />
+      </div>
+      <!-- /Yandex.Metrika counter -->
+    </noscript>
 
-<style is:global>
-  :root {
-    /* --font-size-base: clamp(1.1rem, 0.2vw + 0.91rem, 1.3rem);
+    <style is:global>
+      :root {
+        /* --font-size-base: clamp(1.1rem, 0.2vw + 0.91rem, 1.3rem);
     --font-size-lg: clamp(1.4rem, 0.8vw + 1.2rem, 1.6rem);
     --font-size-xl: clamp(2rem, 2vw + 1.85rem, 3rem); */
 
-    --font-size-base: calc(0.2vw + 1rem);
-    --font-size-lg: calc(0.8vw + 1rem);
-    --font-size-xl: calc(2vw + 1rem);
+        --font-size-base: calc(0.2vw + 1rem);
+        --font-size-lg: calc(0.8vw + 1rem);
+        --font-size-xl: calc(2vw + 1rem);
 
-    --color-text: black;
-    --color-bg: white;
-    --color-bg-second: #e6ebf1;
-    --color-bg-third: #033277;
-    --color-bg-gradient: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      #21386c 100%
-    );
-  }
+        --color-text: black;
+        --color-bg: white;
+        --color-bg-second: #e6ebf1;
+        --color-bg-third: #033277;
+        --color-bg-gradient: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          #21386c 100%
+        );
+      }
 
-  html {
-    width: 100%;
-    font-family: system-ui, sans-serif;
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-  }
+      html {
+        width: 100%;
+        font-family: system-ui, sans-serif;
+        font-size: var(--font-size-base);
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
 
-  a {
-    color: var(--color-text);
-  }
+      a {
+        color: var(--color-text);
+      }
 
-  h2 {
-    font-size: var(--font-size-lg);
-  }
+      h2 {
+        font-size: var(--font-size-lg);
+      }
 
-  body {
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-  }
+      body {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
 
-  .container {
-    min-width: 360px;
-    overflow-x: hidden;
-    margin: 0 auto;
-  }
+      .container {
+        min-width: 360px;
+        overflow-x: hidden;
+        margin: 0 auto;
+      }
 
-  @font-face {
-    font-family: "Lucida Handwriting";
-    src: url("/fonts/lucidahandwriting_italic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-  }
+      @font-face {
+        font-family: "Lucida Handwriting";
+        src: url("/fonts/lucidahandwriting_italic.ttf") format("truetype");
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+      }
 
-  @font-face {
-    font-family: "Comfortaa";
-    src: url("/fonts/Comfortaa.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-</style>
+      @font-face {
+        font-family: "Comfortaa";
+        src: url("/fonts/Comfortaa.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+  </body>
+</html>
+<!-- Yandex.Metrika counter -->
