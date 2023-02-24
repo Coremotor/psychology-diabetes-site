@@ -28,6 +28,11 @@ export const diploms = [
     src: "/assets/images/carousel/diploms/mac.jpg",
     page: routes.mac,
   },
+  {
+    title: "Онлайн - тренинг: Мир детских эмоций",
+    src: "/assets/images/carousel/diploms/world_children_emotions.jpg",
+    page: routes.worldChildrenEmotions,
+  },
   // {
   //   title:
   //     "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
