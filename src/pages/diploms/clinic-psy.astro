@@ -17,12 +17,15 @@ const list = [
   "клиническая психология в онкологии.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname)
+const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Клинический психолог" isMainPage={false}>
-  <Hero desc="Квалификация - клинический психолог" />
-  <Image src="/assets/images/carousel/diploms/clinic_psy.jpg"/>
+  <Hero
+    desc="Квалификация - клинический психолог"
+    imgUrl="/assets/images/clinic_psy.png"
+  />
+  <Image src="/assets/images/carousel/diploms/clinic_psy.jpg" />
 
   <About DOMId="clinic-psy" title="Область профессиональной деятельности">
     <AboutDiplom
@@ -33,5 +36,5 @@ const next = nextPage(routesList(), Astro.url.pathname)
     />
   </About>
 
-  <Buttons link={next}/>
+  <Buttons link={next} />
 </Layout>

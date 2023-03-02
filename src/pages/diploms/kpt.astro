@@ -26,7 +26,10 @@ const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Когнитивно-поведенческая психотерапия" isMainPage={false}>
-  <Hero desc="Когнитивно-поведенческая психотерапия в практике психолога" />
+  <Hero
+    desc="Когнитивно-поведенческая психотерапия в практике психолога"
+    imgUrl="/assets/images/kpt.png"
+  />
   <Image src="/assets/images/carousel/diploms/kpt.jpg" />
 
   <About DOMId="kpt" title="Область профессиональной деятельности">

@@ -16,12 +16,15 @@ const list = [
   "формирование установок, направленных на гармоничное развитие, продуктивное преодоление жизненных трудностей, толерантности во взаимодействии с окружающим миром.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname)
+const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Психология диабета" isMainPage={false}>
-  <Hero desc="Квалификация - бакалавр по специальности “Психология”" />
-  <Image src="/assets/images/carousel/diploms/psihologiya.jpg"/>
+  <Hero
+    desc="Квалификация - бакалавр по специальности “Психология”"
+    imgUrl="/assets/images/psihologiya.png"
+  />
+  <Image src="/assets/images/carousel/diploms/psihologiya.jpg" />
 
   <About DOMId="psihologiya" title="Область профессиональной деятельности">
     <AboutDiplom
@@ -32,5 +35,5 @@ const next = nextPage(routesList(), Astro.url.pathname)
     />
   </About>
 
-  <Buttons link={next}/>
+  <Buttons link={next} />
 </Layout>

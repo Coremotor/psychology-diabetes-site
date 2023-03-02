@@ -23,7 +23,10 @@ const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Метафорические ассоциативные карты" isMainPage={false}>
-  <Hero desc="Метафорические ассоциативные карты как инструмент работы психолога" />
+  <Hero
+    desc="Метафорические ассоциативные карты как инструмент работы психолога"
+    imgUrl="/assets/images/mac.png"
+  />
   <Image src="/assets/images/carousel/diploms/mac.jpg" />
 
   <About DOMId="mac" title="Область профессиональной деятельности">

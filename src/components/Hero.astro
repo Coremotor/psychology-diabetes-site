@@ -1,15 +1,16 @@
 ---
 interface Props {
   desc: string;
+  imgUrl?: string;
 }
 
-const { desc }: Props = Astro.props;
+const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 ---
 
 <div class="container">
   <section id="hero" class="hero">
     <picture>
-      <img class="image" src="/assets/images/hero-v3.png" alt="hero image" />
+      <img class="image" src={imgUrl} alt="hero image" />
     </picture>
 
     <div class="desc">
@@ -44,7 +45,6 @@ const { desc }: Props = Astro.props;
     bottom: -40px;
     background-color: var(--color-bg-third);
     padding: 120px 40px;
-
   }
   .text {
     font-size: var(--font-size-xl);
