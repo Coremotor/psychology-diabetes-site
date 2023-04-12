@@ -7,7 +7,7 @@ interface Props {
 const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 ---
 
-<div class="container">
+<div class="hero-container">
   <section id="hero" class="hero">
     <picture>
       <img class="image" src={imgUrl} alt="hero image" />
@@ -20,7 +20,7 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 </div>
 
 <style>
-  .container {
+  .hero-container {
     display: flex;
     justify-content: center;
     overflow: visible;

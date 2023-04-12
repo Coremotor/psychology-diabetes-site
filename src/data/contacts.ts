@@ -23,10 +23,10 @@ export const contacts = [
     href: "https://vk.com/demakovaks",
     desc: "https://vk.com/demakovaks",
   },
-  {
-    srcWhite: "/assets/icons/mail-white.svg",
-    srcRed: "/assets/icons/mail-red.svg",
-    href: "mailto:demakovaks@list.ru",
-    desc: "demakovaks@list.ru",
-  },
+  // {
+  //   srcWhite: "/assets/icons/mail-white.svg",
+  //   srcRed: "/assets/icons/mail-red.svg",
+  //   href: "mailto:demakovaks@list.ru",
+  //   desc: "demakovaks@list.ru",
+  // },
 ];

@@ -5,7 +5,7 @@
 }
 
 .contactsList {
-    width: 180px;
+    /* width: 180px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,16 +21,16 @@
 }
 
 .contactsListItem {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .contactsListItem:not(:last-child) {
     margin-right: 20px;
 }
 
-.contactsListItem:nth-child(3) {
+/* .contactsListItem:nth-child(3) {
     margin-right: 0;
-}
+} */
 
 @media (max-width: 860px) {
     .contactsListWrapper {
@@ -45,7 +45,7 @@
         height: 30px;
     }
 
-    .contactsList {
+    /* .contactsList {
         width: 140px;
-    }
+    } */
 }
