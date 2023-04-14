@@ -2,7 +2,7 @@
 interface Props {
   desc: string;
   list: string[];
-  vkr: string
+  vkr: string;
   diplom: string;
 }
 
@@ -29,14 +29,17 @@ const { desc, list, diplom, vkr } = Astro.props;
     flex-direction: column;
     align-items: center;
   }
+
   .desc {
     width: 50%;
     margin-top: 20px;
   }
+
   .list {
     width: 50%;
-    padding: 0 20px 0 60px; 
+    padding: 0 20px 0 60px;
   }
+
   .item:not(:last-child) {
     margin-bottom: 10px;
   }
@@ -45,15 +48,18 @@ const { desc, list, diplom, vkr } = Astro.props;
     .desc {
       width: 80%;
     }
+
     .list {
       width: 80%;
     }
   }
+
   @media (max-width: 500px) {
     .desc {
       width: 90%;
       margin-top: 20px;
     }
+
     .list {
       width: 90%;
     }

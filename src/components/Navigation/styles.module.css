@@ -59,6 +59,7 @@
     cursor: pointer;
     text-decoration: none;
 }
+
 .mobileLink:hover {
     color: #d60015;
 }

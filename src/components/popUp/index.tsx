@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
-import { contacts } from "../../data/contacts";
+import { contacts } from "data/contacts";
+
 import styles from "./styles.module.css";
 
 interface Props {

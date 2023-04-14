@@ -1,9 +1,9 @@
 ---
-import { navItemsFooter, navItemsFooterFull } from "../data/nav";
-import { contacts } from "../data/contacts";
-import { PopUp } from "./popUp";
-import { NavigationInFooter } from "./NavigationInFooter";
-import { ContactsListInFooter } from "./ContactsInFooter";
+import { navItemsFooter, navItemsFooterFull } from "data/nav";
+import { contacts } from "data/contacts";
+import { PopUp } from "components/popUp";
+import { NavigationInFooter } from "components/NavigationInFooter";
+import { ContactsListInFooter } from "components/ContactsInFooter";
 
 export interface Props {
   isMainPage: boolean;
@@ -28,7 +28,7 @@ const { isMainPage }: Props = Astro.props;
     >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2023</small
   >
   <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
-    >Сreated by</a
+    >Created by</a
   >
 </footer>
 
@@ -39,6 +39,7 @@ const { isMainPage }: Props = Astro.props;
     background-color: #00112a;
     padding: 40px 10px;
   }
+
   .wrapper {
     max-width: 1180px;
     display: flex;
@@ -46,9 +47,11 @@ const { isMainPage }: Props = Astro.props;
     align-items: flex-start;
     margin: 0 auto 60px;
   }
+
   .logo-wrapper {
     width: 33%;
   }
+
   .list {
     width: 33%;
     display: flex;
@@ -58,14 +61,17 @@ const { isMainPage }: Props = Astro.props;
     padding: 0;
     margin: 0;
   }
+
   .list-item:not(:last-child) {
     margin-bottom: 20px;
   }
+
   .link {
     color: white;
     text-decoration: none;
     white-space: nowrap;
   }
+
   .copyright {
     display: block;
     text-align: center;
@@ -86,12 +92,14 @@ const { isMainPage }: Props = Astro.props;
       flex-direction: column;
       align-items: center;
     }
+
     .logo-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
       margin-bottom: 40px;
     }
+
     .list {
       margin-bottom: 60px;
     }

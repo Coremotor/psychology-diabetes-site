@@ -4,8 +4,8 @@ import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
 import AboutDiplom from "../../components/AboutDiplom.astro";
 import Image from "../../components/Image.astro";
-import { routesList } from "../../data/routes";
-import { nextPage } from "../../helpers";
+import { routesList } from "data/routes";
+import { nextPage } from "helpers";
 import Buttons from "../../components/Buttons.astro";
 
 const list = [
@@ -22,7 +22,9 @@ const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Психология пищевого поведения" isMainPage={false}>
-  <Hero desc="Квалификация - консультант по коррекции веса и психологии пищевого поведения." />
+  <Hero
+    desc="Квалификация - консультант по коррекции веса и психологии пищевого поведения."
+  />
   <Image src="/assets/images/carousel/diploms/7.jpg" />
 
   <About DOMId="eating-behavior" title="Область профессиональной деятельности">

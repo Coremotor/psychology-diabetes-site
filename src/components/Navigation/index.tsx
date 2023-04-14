@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { navItemsHeader, navItemsHeaderFull } from "../../data/nav";
+import { navItemsHeader, navItemsHeaderFull } from "data/nav";
 import { PopUp } from "../popUp";
 
 import styles from "./styles.module.css";
@@ -8,7 +8,7 @@ interface Props {
   isMainPage: boolean;
 }
 
-export const Navigation: FC<Props> = ({ isMainPage }) => {
+const Navigation: FC<Props> = ({ isMainPage }) => {
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => setShowNav((prev) => !prev);
 
@@ -29,11 +29,7 @@ export const Navigation: FC<Props> = ({ isMainPage }) => {
             </a>
           </li>
         ))}
-        <li
-          onClick={toggleNav}
-          key="Контакты"
-          className={styles.listItem}
-        >
+        <li onClick={toggleNav} key="Контакты" className={styles.listItem}>
           <div className={styles.mobileLink} onClick={togglePopUp}>
             Контакты
           </div>
@@ -75,16 +71,18 @@ export const Navigation: FC<Props> = ({ isMainPage }) => {
             </div>
           </li>
           <li
-              onClick={toggleNav}
-              key="Тарифы"
-              className={styles.mobileListItem}
-            >
-              <a className={styles.mobileLink} href="/tariffs">
-                Тарифы
-              </a>
-            </li>
+            onClick={toggleNav}
+            key="Тарифы"
+            className={styles.mobileListItem}
+          >
+            <a className={styles.mobileLink} href="/tariffs">
+              Тарифы
+            </a>
+          </li>
         </ul>
       )}
     </nav>
   );
 };
+
+export default Navigation;

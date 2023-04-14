@@ -5,8 +5,8 @@ import About from "../../layouts/About.astro";
 import AboutDiplom from "../../components/AboutDiplom.astro";
 import Image from "../../components/Image.astro";
 import Buttons from "../../components/Buttons.astro";
-import { routesList } from "../../data/routes";
-import { nextPage } from "../../helpers";
+import { routesList } from "data/routes";
+import { nextPage } from "helpers";
 
 const list = [
   "учимся определять эмоции;",
@@ -15,14 +15,17 @@ const list = [
   "обучение управлению эмоциями.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname)
+const next = nextPage(routesList(), Astro.url.pathname);
 ---
 
 <Layout title="Мир детских эмоций" isMainPage={false}>
   <Hero desc="Онлайн - тренинг: Мир детских эмоций" />
-  <Image src="/assets/images/carousel/diploms/world_children_emotions.jpg"/>
+  <Image src="/assets/images/carousel/diploms/world_children_emotions.jpg" />
 
-  <About DOMId="world-children-emotions" title="Область профессиональной деятельности">
+  <About
+    DOMId="world-children-emotions"
+    title="Область профессиональной деятельности"
+  >
     <AboutDiplom
       desc="Эмоции – важная часть нашей жизни. Они организуют и мотивируют поведение, помогая преодолевать жизненные трудности и препятствия. А положительные эмоции делают нашу жизнь насыщеннее и ярче!"
       list={list}
@@ -31,5 +34,5 @@ const next = nextPage(routesList(), Astro.url.pathname)
     />
   </About>
 
-  <Buttons link={next}/>
+  <Buttons link={next} />
 </Layout>
