@@ -22,7 +22,10 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Педагог дополнительного образования" isMainPage={false}>
-  <Hero desc="Педагог дополнительного образования детей и взрослых" />
+  <Hero
+    desc="Педагог дополнительного образования детей и взрослых"
+    imgUrl="/assets/images/teacher.png"
+  />
   <Image src="/assets/images/diploms/teacher.jpg" />
 
   <About DOMId="teacher" title="Область профессиональной деятельности">

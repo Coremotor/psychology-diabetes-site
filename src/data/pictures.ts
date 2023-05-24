@@ -1,4 +1,4 @@
-import { certificatesRoutes, diplomsRoutes } from "./routes";
+import { diplomsRoutes } from "./routes";
 
 export const diploms = [
   {
@@ -60,16 +60,23 @@ export const certificates = [
   {
     title: "Онлайн - тренинг: Мир детских эмоций",
     src: "/assets/images/certificates/world_children_emotions.jpg",
-    // page: certificatesRoutes.worldChildrenEmotions,
   },
   {
     title: "Онлайн - тренинг: МАМА.ПАПА",
     src: "/assets/images/certificates/mother-father.jpg",
-    // page: certificatesRoutes.worldChildrenEmotions,
   },
   {
     title: "Онлайн - тренинг: АРХЕТИПЫ И ОТНОШЕНИЯ",
     src: "/assets/images/certificates/archetypes-relationships.jpg",
-    // page: certificatesRoutes.worldChildrenEmotions,
   },
+];
+
+export const reviews = [
+  { src: "/assets/images/reviews/1.jpg" },
+  { src: "/assets/images/reviews/2.jpg" },
+  { src: "/assets/images/reviews/3.jpg" },
+  { src: "/assets/images/reviews/4.jpg" },
+  { src: "/assets/images/reviews/5.jpg" },
+  { src: "/assets/images/reviews/6.jpg" },
+  { src: "/assets/images/reviews/7.jpg" },
 ];

@@ -3,17 +3,16 @@ interface Props {
   DOMId: string;
   title: string;
   images: {
-    title: string;
+    title?: string;
     src: string;
     page?: string;
   }[];
   withLink: boolean;
   withBackground: boolean;
   withTitle: boolean;
-  arrowsUp: boolean;
 }
 
-const {title, images, DOMId, withLink, withBackground, arrowsUp}: Props =
+const {title, images, DOMId, withLink, withBackground}: Props =
   Astro.props;
 ---
 
@@ -58,10 +57,10 @@ const {title, images, DOMId, withLink, withBackground, arrowsUp}: Props =
               }
             </div>
 
-            <div class={`swiper-button-prev ${arrowsUp ? 'up' : ''}`}>
+            <div class={`swiper-button-prev ${withLink ? 'up' : ''}`}>
                 <img class="swiper-button-prev-img" src="assets/icons/arrow.svg" alt="image">
             </div>
-            <div class={`swiper-button-next ${arrowsUp ? 'up' : ''}`}>
+            <div class={`swiper-button-next ${withLink ? 'up' : ''}`}>
                 <img class="swiper-button-next-img" src="assets/icons/arrow.svg" alt="image">
             </div>
         </div>

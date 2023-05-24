@@ -8,11 +8,12 @@ import Consultation from "components/Consultation.astro";
 import Details from "components/Details";
 import Therapy from "components/Therapy.astro";
 import Carousel from "components/Carousel.astro";
-
+import Carousel_v2 from "components/Carousel_v2.astro";
 import { diploms, certificates, makePhotosArray } from "../data/pictures";
+import { reviews } from "data/pictures";
 ---
 
-<Layout title="Клинический психолог с сахарным диабетом" isMainPage>
+<Layout title="Клинический психолог с сахарным диабетом" isMainPage={true}>
   <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
   <ClientsTypes />
   <Problems />
@@ -24,32 +25,28 @@ import { diploms, certificates, makePhotosArray } from "../data/pictures";
     DOMId="education"
     title="Образование"
     images={diploms}
-    withLink
-    withBackground
-    withTitle
-    arrowsUp
+    withLink={true}
+    withBackground={true}
+    withTitle={true}
   />
-  <div
-    style={{ height: "500px", backgroundColor: "white", textAlign: "center" }}
-  >
-    Отзывы
-  </div>
+  <Carousel_v2
+    DOMId="reviews"
+    title="Отзывы"
+    images={reviews}
+    withBackground={false}
+  />
   <Carousel
     DOMId="certificates"
     title="Сертификаты"
     images={certificates}
     withLink={false}
-    withBackground
+    withBackground={true}
     withTitle={false}
-    arrowsUp={false}
   />
-  <Carousel
+  <Carousel_v2
     DOMId="gallery"
     title="Галерея"
     images={makePhotosArray()}
-    withLink={false}
     withBackground={false}
-    withTitle={false}
-    arrowsUp={false}
   />
 </Layout>
