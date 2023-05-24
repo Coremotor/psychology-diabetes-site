@@ -79,4 +79,5 @@ export const reviews = [
   { src: "/assets/images/reviews/5.jpg" },
   { src: "/assets/images/reviews/6.jpg" },
   { src: "/assets/images/reviews/7.jpg" },
+  { src: "/assets/images/reviews/8.jpg" },
 ];
