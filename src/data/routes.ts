@@ -1,4 +1,4 @@
-export const routes: {
+export const diplomsRoutes: {
   [key: string]: string;
 } = {
   lechebnoe_delo: "/diploms/lechebnoe-delo/",
@@ -7,12 +7,19 @@ export const routes: {
   kpt: "/diploms/kpt/",
   family: "/diploms/family/",
   mac: "/diploms/mac/",
-  worldChildrenEmotions: "/diploms/world-children-emotions/",
-  // eating_behavior: "/diploms/eating-behavior/",
-  // tariffs: "/tariffs/",
+  eating_behavior: "/diploms/eating-behavior/",
+  teacher: "/diploms/teacher/",
 };
 
-export const routesList = () => {
+export const certificatesRoutes: {
+  [key: string]: string;
+} = {
+  worldChildrenEmotions: "/certificates/world-children-emotions/",
+  motherFather: "/certificates/mother-father/",
+  archetypesRelationships: "/certificates/archetypes-relationships/",
+};
+
+export const routesList = (routes: { [key: string]: string }) => {
   let arr: string[] = [];
   for (let key in routes) {
     const str = routes[key];

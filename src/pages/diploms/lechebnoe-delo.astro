@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -17,7 +18,7 @@ const list = [
   "организационно-аналитическая деятельность.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Психолог с медицинским образованием" isMainPage={false}>
@@ -25,8 +26,8 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Квалификация - фельдшер по специальности «Лечебное дело»"
     imgUrl="/assets/images/lechebnoe-delo.png"
   />
-  <Image src="/assets/images/carousel/diploms/lechebnoe_delo_1.jpg" />
-  <Image src="/assets/images/carousel/diploms/lechebnoe_delo_2.jpg" />
+  <Image src="/assets/images/diploms/lechebnoe_delo_1.jpg" />
+  <Image src="/assets/images/diploms/lechebnoe_delo_2.jpg" />
 
   <About DOMId="lechebnoe-delo" title="Область профессиональной деятельности">
     <AboutDiplom

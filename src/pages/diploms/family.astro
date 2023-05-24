@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -17,7 +18,7 @@ const list = [
   "психологическое консультирование по проблемам в детско-родительских отношениях. Тренинг детско-родительских отношений.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Семейная психология" isMainPage={false}>
@@ -25,7 +26,7 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Семейное и детское психологическое консультирование"
     imgUrl="/assets/images/family.png"
   />
-  <Image src="/assets/images/carousel/diploms/family.jpg" />
+  <Image src="/assets/images/diploms/family.jpg" />
 
   <About DOMId="family" title="Область профессиональной деятельности">
     <AboutDiplom

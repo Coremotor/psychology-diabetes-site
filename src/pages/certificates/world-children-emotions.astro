@@ -7,6 +7,7 @@ import Image from "../../components/Image.astro";
 import Buttons from "../../components/Buttons.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
+import { certificatesRoutes } from "data/routes";
 
 const list = [
   "учимся определять эмоции;",
@@ -15,12 +16,12 @@ const list = [
   "обучение управлению эмоциями.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(certificatesRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Мир детских эмоций" isMainPage={false}>
   <Hero desc="Онлайн - тренинг: Мир детских эмоций" />
-  <Image src="/assets/images/carousel/diploms/world_children_emotions.jpg" />
+  <Image src="/assets/images/diploms/world_children_emotions.jpg" />
 
   <About
     DOMId="world-children-emotions"

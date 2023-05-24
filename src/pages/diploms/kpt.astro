@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -22,7 +23,7 @@ const list = [
   "схематерапия.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Когнитивно-поведенческая психотерапия" isMainPage={false}>
@@ -30,7 +31,7 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Когнитивно-поведенческая психотерапия в практике психолога"
     imgUrl="/assets/images/kpt.png"
   />
-  <Image src="/assets/images/carousel/diploms/kpt.jpg" />
+  <Image src="/assets/images/diploms/kpt.jpg" />
 
   <About DOMId="kpt" title="Область профессиональной деятельности">
     <AboutDiplom

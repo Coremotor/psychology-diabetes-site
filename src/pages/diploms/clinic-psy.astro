@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -17,7 +18,7 @@ const list = [
   "клиническая психология в онкологии.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Клинический психолог" isMainPage={false}>
@@ -25,7 +26,7 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Квалификация - клинический психолог"
     imgUrl="/assets/images/clinic_psy.png"
   />
-  <Image src="/assets/images/carousel/diploms/clinic_psy.jpg" />
+  <Image src="/assets/images/diploms/clinic_psy.jpg" />
 
   <About DOMId="clinic-psy" title="Область профессиональной деятельности">
     <AboutDiplom

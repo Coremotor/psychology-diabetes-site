@@ -9,7 +9,7 @@ export const navItemsHeader = [
 export const navItemsHeaderFull = [
   { title: "Главная", href: "/" },
   ...navItemsHeader,
-]
+];
 
 export const navItemsFooter = [
   { title: "Обо мне", href: "/#about-me" },
@@ -18,12 +18,12 @@ export const navItemsFooter = [
   { title: "Результат консультации", href: "/#consultation" },
   { title: "Терапия", href: "/#therapy" },
   { title: "Образование", href: "/#education" },
-  { title: "Галерея", href: "/#gallary" },
+  { title: "Галерея", href: "/#gallery" },
   { title: "Контакты", href: "/#header" },
   { title: "Тарифы", href: "/tariffs" },
 ];
 
 export const navItemsFooterFull = [
   { title: "Главная", href: "/" },
-  ...navItemsFooter
-]
+  ...navItemsFooter,
+];

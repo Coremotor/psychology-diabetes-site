@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -19,7 +20,7 @@ const list = [
   "МАК в работе с детьми и подростками.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Метафорические ассоциативные карты" isMainPage={false}>
@@ -27,7 +28,7 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Метафорические ассоциативные карты как инструмент работы психолога"
     imgUrl="/assets/images/mac.png"
   />
-  <Image src="/assets/images/carousel/diploms/mac.jpg" />
+  <Image src="/assets/images/diploms/mac.jpg" />
 
   <About DOMId="mac" title="Область профессиональной деятельности">
     <AboutDiplom

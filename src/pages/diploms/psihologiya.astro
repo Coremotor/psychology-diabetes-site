@@ -1,4 +1,5 @@
 ---
+import { diplomsRoutes } from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
@@ -16,7 +17,7 @@ const list = [
   "формирование установок, направленных на гармоничное развитие, продуктивное преодоление жизненных трудностей, толерантности во взаимодействии с окружающим миром.",
 ];
 
-const next = nextPage(routesList(), Astro.url.pathname);
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Психология диабета" isMainPage={false}>
@@ -24,7 +25,7 @@ const next = nextPage(routesList(), Astro.url.pathname);
     desc="Квалификация - бакалавр по специальности “Психология”"
     imgUrl="/assets/images/psihologiya.png"
   />
-  <Image src="/assets/images/carousel/diploms/psihologiya.jpg" />
+  <Image src="/assets/images/diploms/psihologiya.jpg" />
 
   <About DOMId="psihologiya" title="Область профессиональной деятельности">
     <AboutDiplom

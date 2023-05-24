@@ -9,7 +9,7 @@ import Details from "components/Details";
 import Therapy from "components/Therapy.astro";
 import Carousel from "components/Carousel.astro";
 
-import { diploms, makePhotosArray } from "../data/pictures";
+import { diploms, certificates, makePhotosArray } from "../data/pictures";
 ---
 
 <Layout title="Клинический психолог с сахарным диабетом" isMainPage>
@@ -29,8 +29,22 @@ import { diploms, makePhotosArray } from "../data/pictures";
     withTitle
     arrowsUp
   />
+  <div
+    style={{ height: "500px", backgroundColor: "white", textAlign: "center" }}
+  >
+    Отзывы
+  </div>
   <Carousel
-    DOMId="gallary"
+    DOMId="certificates"
+    title="Сертификаты"
+    images={certificates}
+    withLink={false}
+    withBackground
+    withTitle={false}
+    arrowsUp={false}
+  />
+  <Carousel
+    DOMId="gallery"
     title="Галерея"
     images={makePhotosArray()}
     withLink={false}

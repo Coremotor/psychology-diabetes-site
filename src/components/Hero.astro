@@ -9,7 +9,7 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 
 <div class="hero-container">
   <section id="hero" class="hero">
-    <picture>
+    <picture class="hero-image-container">
       <img class="image" src={imgUrl} alt="hero image" />
     </picture>
 
@@ -31,6 +31,9 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     width: 100%;
     max-width: 1600px;
     position: relative;
+  }
+  .hero-image-container {
+    display: flex;
   }
   .image {
     object-fit: cover;
