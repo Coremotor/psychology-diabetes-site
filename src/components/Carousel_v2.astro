@@ -33,6 +33,24 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
       },
     },
   });
+
+  const images = document.querySelectorAll("#image");
+  const previewEl = document.querySelector("#preview");
+  const previewImageEl = document.querySelector("#preview-image");
+  const closeEl = document.querySelector("#preview");
+
+  images.forEach((image) => {
+    image.addEventListener("click", () => onImageClick(image));
+  });
+
+  const onImageClick = (image: Element) => {
+    console.log(image.getAttribute("src"));
+    previewImageEl.setAttribute("src", image.getAttribute("src"));
+    previewEl.classList.remove("display-none");
+    closeEl.addEventListener("click", () => {
+      previewEl.classList.add("display-none");
+    });
+  };
 </script>
 
 <div class={`${withBackground ? "bg" : ""} wrapper`}>
@@ -42,14 +60,26 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
     <div class="swiper_v2">
       <div class="swiper-wrapper">
         {
-          images.map((i) => (
+          images.map((i, index) => (
             <div class="swiper-slide image-container">
-              <img class="image" src={i.src} alt="image" />
+              <img
+                id="image"
+                data-id={`image_${index}`}
+                class="image"
+                src={i.src}
+                alt="image"
+              />
             </div>
           ))
         }
       </div>
       <div class="swiper-pagination"></div>
+    </div>
+    <div class="preview display-none" id="preview">
+      <div class="preview-image-wrapper">
+        <!--<div id="close" class="close">Закрыть</div>-->
+        <img src="" class="preview-image" id="preview-image" alt="image" />
+      </div>
     </div>
   </section>
 </div>
@@ -100,6 +130,39 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
   .image {
     width: 85%;
     object-fit: cover;
+  }
+
+  .preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .preview-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+  }
+
+  .close {
+    align-self: end;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .preview-image {
   }
 
   @media (max-width: 500px) {

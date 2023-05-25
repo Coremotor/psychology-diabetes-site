@@ -11,14 +11,6 @@ export const diplomsRoutes: {
   teacher: "/diploms/teacher/",
 };
 
-export const certificatesRoutes: {
-  [key: string]: string;
-} = {
-  worldChildrenEmotions: "/certificates/world-children-emotions/",
-  motherFather: "/certificates/mother-father/",
-  archetypesRelationships: "/certificates/archetypes-relationships/",
-};
-
 export const routesList = (routes: { [key: string]: string }) => {
   let arr: string[] = [];
   for (let key in routes) {

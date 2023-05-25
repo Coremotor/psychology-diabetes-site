@@ -58,6 +58,11 @@ export const makePhotosArray = () => {
 
 export const certificates = [
   {
+    title:
+      "Онлайн - тренинг: Психологическое консультирование с применением метафорических ассоциативных карт",
+    src: "/assets/images/certificates/mac.jpg",
+  },
+  {
     title: "Онлайн - тренинг: Мир детских эмоций",
     src: "/assets/images/certificates/world_children_emotions.jpg",
   },
