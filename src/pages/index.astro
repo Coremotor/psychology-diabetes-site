@@ -11,6 +11,7 @@ import Carousel from "components/Carousel.astro";
 import Carousel_v2 from "components/Carousel_v2.astro";
 import { diploms, certificates, makePhotosArray } from "../data/pictures";
 import { reviews } from "data/pictures";
+import ScrollUp from "components/ScrollUp.astro";
 ---
 
 <Layout title="Клинический психолог с сахарным диабетом" isMainPage={true}>
@@ -49,4 +50,5 @@ import { reviews } from "data/pictures";
     images={makePhotosArray()}
     withBackground={false}
   />
+  <ScrollUp />
 </Layout>
