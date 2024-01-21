@@ -3,10 +3,10 @@ interface Props {
     src: string;
 }
 
-const {src} = Astro.props;
+const {src, maxWidth} = Astro.props;
 ---
 
-<div class="image-wrapper">
+<div class="image-wrapper" style={{maxWidth: `${maxWidth}px`}}>
     <img class="image" src={src} alt="diplom"/>
 </div>
 
@@ -16,7 +16,7 @@ const {src} = Astro.props;
         display: flex;
         justify-content: center;
         padding: 20px 20px;
-        margin: 0 auto 40px;
+        margin: 0 auto 60px;
     }
 
     .image {

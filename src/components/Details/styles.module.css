@@ -1,4 +1,5 @@
 .details {
+    width: 100%;
     background-color: var(--color-bg-third);
     color: white;
     text-align: center;

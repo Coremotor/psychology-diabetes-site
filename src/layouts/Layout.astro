@@ -39,7 +39,7 @@ const {title, isMainPage} = Astro.props;
     <title>{title}</title>
 </head>
 <body>
-<div class="container">
+<div class="layout-container">
     <Header isMainPage={isMainPage}/>
     <slot/>
     <Footer isMainPage={isMainPage}/>
@@ -133,8 +133,11 @@ const {title, isMainPage} = Astro.props;
         margin: 0;
     }
 
-    .container {
+    .layout-container {
+        display: flex;
+        flex-direction: column;
         min-width: 360px;
+        height: 100vh;
         overflow-x: hidden;
         margin: 0 auto;
     }

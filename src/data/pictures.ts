@@ -47,7 +47,7 @@ export const diploms = [
 
 export const makePhotosArray = () => {
     const a = [];
-    for (let index = 1; index < 26; index++) {
+    for (let index = 1; index < 30; index++) {
         a.push({
             title: index.toString(),
             src: `/assets/images/gallery/${index}.jpg`,

@@ -6,6 +6,7 @@ const data = [
         title: "Индивидуальный",
         desc: "Индивидуальное консультирование онлайн. Длительность консультации 1 час.",
         price: 1200,
+        divider: true,
     },
     // {
     //   title: "Родитель-ребенок",
@@ -16,17 +17,18 @@ const data = [
         title: "Комплекс из 4 консультативных сессий",
         desc: "Индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
         price: 4000,
+        divider: false,
     },
     // {
     //   title: "Комплекс родитель-ребенок 4+4 консультативных сессий",
     //   desc: "По 4 отдельные онлайн консультации для родителя и для ребенка, длительность каждой 1 час. Работа с парой родитель-ребенок - одна из наиболее эффективных форм психологической помощи. Предполагает еженедельные встречи как с родителем, так и с ребенком в течение 1 месяца. Оплата производится вперед за весь месяц - 8 консультаций.",
     //   price: 6800,
     // },
-    {
-        title: "Консультации по коррекции веса и психологии пищевого поведения",
-        desc: "индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
-        price: 6000,
-    },
+    // {
+    //     title: "Консультации по коррекции веса и психологии пищевого поведения",
+    //     desc: "индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
+    //     price: 6000,
+    // },
 ];
 ---
 
@@ -35,13 +37,17 @@ const data = [
     <div class="table">
         {
             data.map((item) => (
-                    <div class="row">
-                        <div class="desc">
-                            <h4 class="desc-title">{item.title}</h4>
-                            <div class="desc-text">{item.desc}</div>
+                    <>
+                        <div class="row">
+                            <div class="desc">
+                                <h4 class="desc-title">{item.title}</h4>
+                                <div class="desc-text">{item.desc}</div>
+                            </div>
+                            <div class="price">{item.price} ₽</div>
                         </div>
-                        <div class="price">{item.price} ₽</div>
-                    </div>
+                        {item.divider && <div class="divider" />}
+                    </>
+
             ))
         }
     </div>
@@ -54,23 +60,24 @@ const data = [
     }
 
     .table {
-        max-width: 1180px;
-        min-height: 80vh;
         display: flex;
         flex-direction: column;
+        flex: 1;
         padding: 0 20px;
         margin: 0 auto 100px;
     }
 
     .row {
+        max-width: 1180px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 20px;
     }
 
-    .row:nth-child(odd) {
-        background-color: var(--color-bg-second);
+    .divider {
+        height: 4px;
+        background-color: var(--color-bg-third);
     }
 
     .desc {
@@ -80,8 +87,7 @@ const data = [
     }
 
     .desc-title {
-        margin: 0;
-        margin-bottom: 10px;
+        margin: 0 0 10px;
     }
 
     .price {
