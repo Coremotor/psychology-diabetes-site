@@ -3,92 +3,95 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 export interface Props {
-  title: string;
-  isMainPage: boolean;
+    title: string;
+    isMainPage: boolean;
 }
 
-const { title, isMainPage } = Astro.props;
+const {title, isMainPage} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKS5JXDJ04"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag("config", "G-DKS5JXDJ04");
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+
+        gtag("config", "G-DKS5JXDJ04");
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <meta
-      name="description"
-      content="Психологическая поддержка людей с сахарным диабетом. Семейная психология. Расстройство пищевого поведения. Когнитивно-поведенческая терапия"
+            name="description"
+            content="Психологическая поддержка людей с сахарным диабетом. Семейная психология. Расстройство пищевого поведения. Когнитивно-поведенческая терапия"
     />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
-  </head>
-  <body>
-    <div class="container">
-      <Header isMainPage={isMainPage} />
-      <slot />
-      <Footer isMainPage={isMainPage} />
-    </div>
+</head>
+<body>
+<div class="container">
+    <Header isMainPage={isMainPage}/>
+    <slot/>
+    <Footer isMainPage={isMainPage}/>
+</div>
 
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
         m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
+            m[i] ||
+            function () {
+                (m[i].a = m[i].a || []).push(arguments);
+            };
         m[i].l = 1 * new Date();
         for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
+            if (document.scripts[j].src === r) {
+                return;
+            }
         }
         (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
+            (a = e.getElementsByTagName(t)[0]),
+            (k.async = 1),
+            (k.src = r),
+            a.parentNode.insertBefore(k, a);
+    })(
         window,
         document,
         "script",
         "https://mc.yandex.ru/metrika/tag.js",
         "ym"
-      );
+    );
 
-      ym(90648789, "init", {
+    ym(90648789, "init", {
         clickmap: true,
         trackLinks: true,
         accurateTrackBounce: true,
         webvisor: true,
-      });
-    </script>
-    <noscript
-      ><div>
+    });
+</script>
+<noscript
+>
+    <div>
         <img
-          src="https://mc.yandex.ru/watch/90648789"
-          style="position:absolute; left:-9999px;"
-          alt=""
+                src="https://mc.yandex.ru/watch/90648789"
+                style="position:absolute; left:-9999px;"
+                alt=""
         />
-      </div>
-      <!-- /Yandex.Metrika counter -->
-    </noscript>
+    </div>
+    <!-- /Yandex.Metrika counter -->
+</noscript>
 
-    <style is:global>
-      :root {
+<style is:global>
+    :root {
         /* --font-size-base: clamp(1.1rem, 0.2vw + 0.91rem, 1.3rem);
     --font-size-lg: clamp(1.4rem, 0.8vw + 1.2rem, 1.6rem);
     --font-size-xl: clamp(2rem, 2vw + 1.85rem, 3rem); */
@@ -102,56 +105,56 @@ const { title, isMainPage } = Astro.props;
         --color-bg-second: #e6ebf1;
         --color-bg-third: #033277;
         --color-bg-gradient: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0) 0%,
-          #21386c 100%
+                180deg,
+                rgba(255, 255, 255, 0) 0%,
+                #21386c 100%
         );
-      }
+    }
 
-      html {
+    html {
         width: 100%;
         font-family: system-ui, sans-serif;
         font-size: var(--font-size-base);
         color: var(--color-text);
         background-color: var(--color-bg);
-      }
+    }
 
-      a {
+    a {
         color: var(--color-text);
-      }
+    }
 
-      h2 {
+    h2 {
         font-size: var(--font-size-lg);
-      }
+    }
 
-      body {
+    body {
         min-height: 100vh;
         padding: 0;
         margin: 0;
-      }
+    }
 
-      .container {
+    .container {
         min-width: 360px;
         overflow-x: hidden;
         margin: 0 auto;
-      }
+    }
 
-      @font-face {
+    @font-face {
         font-family: "Lucida Handwriting";
         src: url("/fonts/lucidahandwriting_italic.ttf") format("truetype");
         font-weight: normal;
         font-style: italic;
         font-display: swap;
-      }
+    }
 
-      @font-face {
+    @font-face {
         font-family: "Comfortaa";
         src: url("/fonts/Comfortaa.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
-      }
-    </style>
-  </body>
+    }
+</style>
+</body>
 </html>
 <!-- Yandex.Metrika counter -->

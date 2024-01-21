@@ -1,57 +1,56 @@
 <div id="scroll-up" class="scroll-up">
-  <div class="scroll-up-button"></div>
+    <div class="scroll-up-button"></div>
 </div>
 
 <script>
-  const buttonUpEl = document.querySelector("#scroll-up");
-  buttonUpEl.addEventListener("click", () => {
-    window.scrollTo(0, 0);
-  });
+    const buttonUpEl = document.querySelector("#scroll-up");
+    buttonUpEl.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+    });
 
-  window.addEventListener("scroll", () => {
-    const x = getTopCoords(buttonUpEl);
-    if (x > 3000) {
-      console.log(x);
-      buttonUpEl.style.visibility = "visible";
-    } else {
-      buttonUpEl.style.visibility = "hidden";
+    window.addEventListener("scroll", () => {
+        const x = getTopCoords(buttonUpEl);
+        if (x > 3000) {
+            buttonUpEl.style.visibility = "visible";
+        } else {
+            buttonUpEl.style.visibility = "hidden";
+        }
+    });
+
+    function getTopCoords(elem) {
+        return elem.getBoundingClientRect().top + window.scrollY;
     }
-  });
-
-  function getTopCoords(elem) {
-    return elem.getBoundingClientRect().top + window.scrollY;
-  }
 </script>
 
 <style>
-  .scroll-up {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50%;
-    z-index: 100;
-    cursor: pointer;
-    padding: 20px;
-    visibility: hidden;
-    opacity: 0.5;
-  }
-
-  @media (max-width: 600px) {
     .scroll-up {
-      bottom: 10px;
-      right: 10px;
-      padding: 10px;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 50%;
+        z-index: 100;
+        cursor: pointer;
+        padding: 20px;
+        visibility: hidden;
+        opacity: 0.5;
     }
-  }
 
-  .scroll-up-button {
-    width: 24px;
-    height: 24px;
-    background-image: url("/assets/icons/arrow-up.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+    @media (max-width: 600px) {
+        .scroll-up {
+            bottom: 10px;
+            right: 10px;
+            padding: 10px;
+        }
+    }
+
+    .scroll-up-button {
+        width: 24px;
+        height: 24px;
+        background-image: url("/assets/icons/arrow-up.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 </style>

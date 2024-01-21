@@ -2,35 +2,36 @@
 import Navigation from "./Navigation";
 
 export interface Props {
-  isMainPage: boolean;
+    isMainPage: boolean;
 }
 
-const { isMainPage }: Props = Astro.props;
+const {isMainPage}: Props = Astro.props;
 ---
 
 <header id="header" class="header">
-  <a class="logo" href="/">
-    <img class="image" src="/assets/images/logo.svg" alt="LOGO" />
-  </a>
-  <Navigation client:load isMainPage={isMainPage} />
+    <a class="logo" href="/">
+        <img class="image" src="/assets/images/logo.svg" alt="LOGO"/>
+    </a>
+    <Navigation client:load isMainPage={isMainPage}/>
 </header>
 
 <style>
-  .header {
-    max-width: 1180px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px;
-    margin: 0 auto;
-  }
-  .logo {
-    margin-right: auto;
-  }
-
-  @media (max-width: 500px) {
-    .image {
-      width: 90%;
+    .header {
+        max-width: 1180px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 20px 20px;
+        margin: 0 auto;
     }
-  }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    @media (max-width: 500px) {
+        .image {
+            width: 90%;
+        }
+    }
 </style>

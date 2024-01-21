@@ -1,38 +1,39 @@
 ---
 interface Props {
-  DOMId: string;
-  title: string;
-  images: {
-    title?: string;
-    src: string;
-    page?: string;
-  }[];
-  withLink: boolean;
-  withBackground: boolean;
-  withTitle: boolean;
+    DOMId: string;
+    title: string;
+    images: {
+        title?: string;
+        src: string;
+        page?: string;
+    }[];
+    withLink: boolean;
+    withBackground: boolean;
+    withTitle: boolean;
 }
 
 const {title, images, DOMId, withLink, withBackground}: Props =
-  Astro.props;
+    Astro.props;
 ---
 
 <script>
-  import Swiper, { Navigation, Pagination } from "swiper";
+    import Swiper from "swiper";
+    import {Navigation, Pagination} from 'swiper/modules';
     import "swiper/css";
     import "swiper/css/navigation";
 
     const swiper = new Swiper(".swiper", {
-      modules: [Navigation, Pagination],
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      slidesPerView: 1,
-      breakpoints: {
-        1024: {
-          slidesPerView: 2,
+        modules: [Navigation, Pagination],
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
-      },
+        slidesPerView: 1,
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+            },
+        },
     });
 </script>
 
@@ -42,19 +43,19 @@ const {title, images, DOMId, withLink, withBackground}: Props =
 
         <div class="swiper">
             <div class="swiper-wrapper">
-              {
-                images.map((i) => (
-                        <a href={i.page} class="swiper-slide image-container">
-                            <img class="image" src={i.src} alt="image"/>
-                          {withLink && (
-                                  <span class="desc">{i.title}</span>
-                                  <div class="link">
-                                      Подробнее
-                                  </div>
-                          )}
-                        </a>
-                ))
-              }
+                {
+                    images.map((i) => (
+                            <a href={i.page} class="swiper-slide image-container">
+                                <img class="image" src={i.src} alt="image"/>
+                                {withLink && (
+                                        <span class="desc">{i.title}</span>
+                                        <div class="link">
+                                            Подробнее
+                                        </div>
+                                )}
+                            </a>
+                    ))
+                }
             </div>
 
             <div class={`swiper-button-prev ${withLink ? 'up' : ''}`}>

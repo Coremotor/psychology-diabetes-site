@@ -1,183 +1,183 @@
 ---
 interface Props {
-  DOMId: string;
-  title: string;
-  images: {
+    DOMId: string;
     title: string;
-    src: string;
-    page?: string;
-  }[];
-  withBackground: boolean;
+    images: {
+        title: string;
+        src: string;
+        page?: string;
+    }[];
+    withBackground: boolean;
 }
 
-const { title, images, DOMId, withBackground }: Props = Astro.props;
+const {title, images, DOMId, withBackground}: Props = Astro.props;
 ---
 
 <script>
-  import Swiper, { Pagination, Navigation } from "swiper";
-  import "swiper/css";
-  import "swiper/css/pagination";
-  import "swiper/css/navigation";
+    import Swiper from "swiper";
+    import {Navigation, Pagination} from 'swiper/modules';
+    import "swiper/css";
+    import "swiper/css/pagination";
+    import "swiper/css/navigation";
 
-  const swiper_v2 = new Swiper(".swiper_v2", {
-    modules: [Pagination, Navigation],
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-    },
-    slidesPerView: 1,
-    centeredSlides: true,
-    breakpoints: {
-      1024: {
-        slidesPerView: 2,
-      },
-    },
-  });
-
-  const images = document.querySelectorAll("#image");
-  const previewEl = document.querySelector("#preview");
-  const previewImageEl = document.querySelector("#preview-image");
-  const closeEl = document.querySelector("#preview");
-
-  images.forEach((image) => {
-    image.addEventListener("click", () => onImageClick(image));
-  });
-
-  const onImageClick = (image: Element) => {
-    console.log(image.getAttribute("src"));
-    previewImageEl.setAttribute("src", image.getAttribute("src"));
-    previewEl.classList.remove("display-none");
-    closeEl.addEventListener("click", () => {
-      previewEl.classList.add("display-none");
+    const swiper_v2 = new Swiper(".swiper_v2", {
+        modules: [Pagination, Navigation],
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+        },
+        slidesPerView: 1,
+        centeredSlides: true,
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+            },
+        },
     });
-  };
+
+    const images = document.querySelectorAll("#image");
+    const previewEl = document.querySelector("#preview");
+    const previewImageEl = document.querySelector("#preview-image");
+    const closeEl = document.querySelector("#preview");
+
+    images.forEach((image) => {
+        image.addEventListener("click", () => onImageClick(image));
+    });
+
+    const onImageClick = (image: Element) => {
+        previewImageEl.setAttribute("src", image.getAttribute("src"));
+        previewEl.classList.remove("display-none");
+        closeEl.addEventListener("click", () => {
+            previewEl.classList.add("display-none");
+        });
+    };
 </script>
 
 <div class={`${withBackground ? "bg" : ""} wrapper`}>
-  <section id={DOMId} class="container">
-    <h2 class="title">{title}</h2>
+    <section id={DOMId} class="container">
+        <h2 class="title">{title}</h2>
 
-    <div class="swiper_v2">
-      <div class="swiper-wrapper">
-        {
-          images.map((i, index) => (
-            <div class="swiper-slide image-container">
-              <img
-                id="image"
-                data-id={`image_${index}`}
-                class="image"
-                src={i.src}
-                alt="image"
-              />
+        <div class="swiper_v2">
+            <div class="swiper-wrapper">
+                {
+                    images.map((i, index) => (
+                            <div class="swiper-slide image-container">
+                                <img
+                                        id="image"
+                                        data-id={`image_${index}`}
+                                        class="image"
+                                        src={i.src}
+                                        alt="image"
+                                />
+                            </div>
+                    ))
+                }
             </div>
-          ))
-        }
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <div class="preview display-none" id="preview">
-      <div class="preview-image-wrapper">
-        <!--<div id="close" class="close">Закрыть</div>-->
-        <img src="" class="preview-image" id="preview-image" alt="image" />
-      </div>
-    </div>
-  </section>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="preview display-none" id="preview">
+            <div class="preview-image-wrapper">
+                <!--<div id="close" class="close">Закрыть</div>-->
+                <img src="" class="preview-image" id="preview-image" alt="image"/>
+            </div>
+        </div>
+    </section>
 </div>
 
 <style>
-  .wrapper {
-    padding: 60px 0;
-    margin-bottom: 40px;
-  }
-
-  .container {
-    max-width: 1280px;
-    padding: 0 10px;
-    margin: 0 auto;
-  }
-
-  .bg {
-    background-color: var(--color-bg-second);
-  }
-
-  .title {
-    text-align: center;
-    margin-top: 0;
-  }
-
-  .swiper_v2 {
-    width: 100%;
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-  }
-
-  .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    cursor: zoom-in;
-  }
-
-  .swiper-pagination {
-    bottom: -30px !important;
-  }
-
-  .image {
-    width: 85%;
-    object-fit: cover;
-  }
-
-  .preview {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    cursor: zoom-out;
-  }
-
-  .display-none {
-    display: none;
-  }
-
-  .preview-image-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-  }
-
-  .close {
-    align-self: end;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-
-  .preview-image {
-  }
-
-  @media (max-width: 500px) {
     .wrapper {
-      margin-bottom: 0;
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        max-width: 1280px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .bg {
+        background-color: var(--color-bg-second);
+    }
+
+    .title {
+        text-align: center;
+        margin-top: 0;
     }
 
     .swiper_v2 {
-      width: 100%;
-      margin-left: -10px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        cursor: zoom-in;
+    }
+
+    .swiper-pagination {
+        bottom: -30px !important;
+    }
+
+    .image {
+        width: 85%;
+        object-fit: cover;
+    }
+
+    .preview {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        cursor: zoom-out;
+    }
+
+    .display-none {
+        display: none;
     }
 
     .preview-image-wrapper {
-      width: 90%;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
     }
-  }
+
+    .close {
+        align-self: end;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .preview-image {
+    }
+
+    @media (max-width: 500px) {
+        .wrapper {
+            margin-bottom: 0;
+        }
+
+        .swiper_v2 {
+            width: 100%;
+            margin-left: -10px;
+        }
+
+        .preview-image-wrapper {
+            width: 90%;
+        }
+    }
 </style>

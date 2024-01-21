@@ -1,113 +1,113 @@
 ---
-import { navItemsFooter, navItemsFooterFull } from "data/nav";
-import { contacts } from "data/contacts";
-import { PopUp } from "components/popUp";
-import { NavigationInFooter } from "components/NavigationInFooter";
-import { ContactsListInFooter } from "components/ContactsInFooter";
+import {navItemsFooter, navItemsFooterFull} from "data/nav";
+import {contacts} from "data/contacts";
+import {PopUp} from "components/popUp";
+import {NavigationInFooter} from "components/NavigationInFooter";
+import {ContactsListInFooter} from "components/ContactsInFooter";
 
 export interface Props {
-  isMainPage: boolean;
+    isMainPage: boolean;
 }
 
-const { isMainPage }: Props = Astro.props;
+const {isMainPage}: Props = Astro.props;
 ---
 
 <footer id="footer" class="footer">
-  <div class="wrapper">
-    <div class="logo-wrapper">
-      <a href="/#header">
-        <img class="logo" src="/assets/images/logo-in-footer.svg" alt="LOGO" />
-      </a>
+    <div class="wrapper">
+        <div class="logo-wrapper">
+            <a href="/#header">
+                <img class="logo" src="/assets/images/logo-in-footer.svg" alt="LOGO"/>
+            </a>
+        </div>
+
+        <NavigationInFooter client:load isMainPage={isMainPage}/>
+
+        <ContactsListInFooter client:load/>
     </div>
-
-    <NavigationInFooter client:load isMainPage={isMainPage} />
-
-    <ContactsListInFooter client:load />
-  </div>
-  <small class="copyright"
-    >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2023</small
-  >
-  <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
+    <small class="copyright"
+    >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2024</small
+    >
+    <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
     >Created by</a
-  >
+    >
 </footer>
 
 <style>
-  .footer {
-    position: relative;
-    color: white;
-    background-color: #00112a;
-    padding: 40px 10px;
-  }
+    .footer {
+        position: relative;
+        color: white;
+        background-color: #00112a;
+        padding: 40px 10px;
+    }
 
-  .wrapper {
-    max-width: 1180px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 auto 60px;
-  }
-
-  .logo-wrapper {
-    width: 33%;
-  }
-
-  .list {
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .list-item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .link {
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .copyright {
-    display: block;
-    text-align: center;
-  }
-
-  .link-dev {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: block;
-    color: white;
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  @media (max-width: 860px) {
     .wrapper {
-      flex-direction: column;
-      align-items: center;
+        max-width: 1180px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto 60px;
     }
 
     .logo-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
+        width: 33%;
     }
 
     .list {
-      margin-bottom: 60px;
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
-  }
 
-  @media (max-width: 520px) {
-    .contacts-list {
-      width: 140px;
+    .list-item:not(:last-child) {
+        margin-bottom: 20px;
     }
-  }
+
+    .link {
+        color: white;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .copyright {
+        display: block;
+        text-align: center;
+    }
+
+    .link-dev {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+        color: white;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    @media (max-width: 860px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .list {
+            margin-bottom: 60px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .contacts-list {
+            width: 140px;
+        }
+    }
 </style>

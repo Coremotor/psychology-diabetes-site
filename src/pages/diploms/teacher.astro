@@ -1,39 +1,39 @@
 ---
-import { diplomsRoutes } from "data/routes";
+import {diplomsRoutes} from "data/routes";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../layouts/About.astro";
 import AboutDiplom from "../../components/AboutDiplom.astro";
 import Image from "../../components/Image.astro";
-import { routesList } from "data/routes";
-import { nextPage } from "helpers";
+import {routesList} from "data/routes";
+import {nextPage} from "helpers";
 import Buttons from "../../components/Buttons.astro";
 
 const list = [
-  "исследование способностей и уровня подготовки, индивидуальных особенностей ребенка или взрослого для занятий конкретным видом деятельности;",
-  "комплектация групп и организация образовательного процесса;",
-  "разработка и реализация образовательной программы и уроков с учетом половозрастных, культурных и личностных особенностей учащихся;",
-  "создание безопасной и комфортной атмосферы на занятиях;",
-  "анализ эффективности работы и при необходимости корректировка программы, плана занятий;",
-  "оценка эффективности усвоения программы учениками.",
+    "исследование способностей и уровня подготовки, индивидуальных особенностей ребенка или взрослого для занятий конкретным видом деятельности;",
+    "комплектация групп и организация образовательного процесса;",
+    "разработка и реализация образовательной программы и уроков с учетом половозрастных, культурных и личностных особенностей учащихся;",
+    "создание безопасной и комфортной атмосферы на занятиях;",
+    "анализ эффективности работы и при необходимости корректировка программы, плана занятий;",
+    "оценка эффективности усвоения программы учениками.",
 ];
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Педагог дополнительного образования" isMainPage={false}>
-  <Hero
-    desc="Педагог дополнительного образования детей и взрослых"
-    imgUrl="/assets/images/teacher.png"
-  />
-  <Image src="/assets/images/diploms/teacher.jpg" />
-
-  <About DOMId="teacher" title="Область профессиональной деятельности">
-    <AboutDiplom
-      desc="Работа направлена на помощь детям и взрослым осовоить новые знания, навыки и компетенции. "
-      list={list}
+    <Hero
+            desc="Педагог дополнительного образования детей и взрослых"
+            imgUrl="/assets/images/teacher.png"
     />
-  </About>
+    <Image src="/assets/images/diploms/teacher.jpg"/>
 
-  <Buttons link={next} />
+    <About DOMId="teacher" title="Область профессиональной деятельности">
+        <AboutDiplom
+                desc="Работа направлена на помощь детям и взрослым осовоить новые знания, навыки и компетенции. "
+                list={list}
+        />
+    </About>
+
+    <Buttons link={next}/>
 </Layout>
