@@ -17,11 +17,11 @@ export const diploms = [
     src: "/assets/images/diploms/kpt.jpg",
     page: diplomsRoutes.kpt,
   },
-  // {
-  //   title: "Семейное и детское психологическое консультирование",
-  //   src: "/assets/images/diploms/family.jpg",
-  //   page: diplomsRoutes.family,
-  // },
+  {
+    title: "Семейное и детское психологическое консультирование",
+    src: "/assets/images/diploms/family.jpg",
+    page: diplomsRoutes.family,
+  },
   {
     title:
       "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
@@ -47,7 +47,7 @@ export const diploms = [
 
 export const makePhotosArray = () => {
   const a = [];
-  for (let index = 1; index < 30; index++) {
+  for (let index = 1; index < 29; index++) {
     a.push({
       title: index.toString(),
       src: `/assets/images/gallery/${index}.jpg`,

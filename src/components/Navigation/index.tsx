@@ -1,6 +1,6 @@
 import { type FC, useState } from "react";
 import { navItemsHeader, navItemsHeaderFull } from "data/nav";
-import { PopUp } from "../popUp";
+import { PopUp } from "components/PopUp";
 
 import styles from "./styles.module.css";
 

@@ -3,7 +3,6 @@ export const navItemsHeader = [
   { title: "Кому я буду полезна", href: "/#clients-types" },
   { title: "Терапия", href: "/#therapy" },
   { title: "Образование", href: "/#education" },
-  // { title: "Контакты", href: "/#footer" },
 ];
 
 export const navItemsHeaderFull = [

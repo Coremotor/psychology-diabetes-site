@@ -5,7 +5,7 @@ export const diplomsRoutes: {
   psihologiya: "/diploms/psihologiya/",
   clinic_psy: "/diploms/clinic-psy/",
   kpt: "/diploms/kpt/",
-  // family: "/diploms/family/",
+  family: "/diploms/family/",
   eating_behavior: "/diploms/eating-behavior/",
   teacher: "/diploms/teacher/",
   mac: "/diploms/mac/",
