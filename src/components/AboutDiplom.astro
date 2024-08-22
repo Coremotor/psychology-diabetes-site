@@ -1,68 +1,67 @@
 ---
 interface Props {
-    desc: string;
-    list: string[];
-    vkr: string;
-    diplom: string;
+  desc: string;
+  list: string[];
+  vkr?: string;
+  diplom?: string;
 }
 
-const {desc, list, diplom, vkr} = Astro.props;
+const { desc, list, diplom, vkr } = Astro.props;
 ---
 
 <div class="wrapper">
-    <div class="desc">
-        {desc}
-    </div>
-    <h3 class="subtitle">Основные виды деятельности:</h3>
-    <ul class="list">
-        {list.map((item) =>
-                <li class="item">{item}</li>)}
-    </ul>
-    <div class="desc">
-        <b>{vkr}</b>
-        {diplom}
-    </div>
+  <div class="desc">
+    {desc}
+  </div>
+  <h3 class="subtitle">Основные виды деятельности:</h3>
+  <ul class="list">
+    {list.map((item) => <li class="item">{item}</li>)}
+  </ul>
+  <div class="desc">
+    <b>{vkr}</b>
+    {diplom}
+  </div>
 </div>
 
 <style>
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .desc {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .list {
+    width: 50%;
+    padding: 0 20px 0 60px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 1200px) {
     .desc {
-        width: 50%;
-        margin-top: 20px;
+      width: 80%;
     }
 
     .list {
-        width: 50%;
-        padding: 0 20px 0 60px;
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .desc {
+      width: 90%;
+      margin-top: 20px;
     }
 
-    .item:not(:last-child) {
-        margin-bottom: 10px;
+    .list {
+      width: 90%;
     }
-
-    @media (max-width: 1200px) {
-        .desc {
-            width: 80%;
-        }
-
-        .list {
-            width: 80%;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .desc {
-            width: 90%;
-            margin-top: 20px;
-        }
-
-        .list {
-            width: 90%;
-        }
-    }
+  }
 </style>

@@ -1,53 +1,53 @@
 ---
 interface Props {
-    link: string;
+  link: string;
 }
 
-const {link}: Props = Astro.props;
+const { link }: Props = Astro.props;
 ---
 
 <div class="wrapper">
-    <a class="link" href="/"> На главную</a>
-    <a class="link" href={link}> Смотреть еще</a>
+  <a class="link" href="/"> На главную</a>
+  <a class="link" href={link}> Смотреть еще</a>
 </div>
 
 <style>
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: -100px;
+  }
+
+  .link {
+    width: 150px;
+    text-align: center;
+    border: 1px solid var(--color-bg-third);
+    color: var(--color-bg-third);
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+
+  .link:first-child {
+    margin-right: 20px;
+  }
+
+  .link:hover {
+    background-color: var(--color-bg-third);
+    color: white;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 500px) {
     .wrapper {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-        margin-top: -100px;
+      margin-top: -60px;
     }
 
     .link {
-        width: 150px;
-        text-align: center;
-        border: 1px solid var(--color-bg-third);
-        color: var(--color-bg-third);
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
-        padding: 10px 20px;
-        margin-top: 20px;
+      width: 120px;
     }
-
-    .link:first-child {
-        margin-right: 20px;
-    }
-
-    .link:hover {
-        background-color: var(--color-bg-third);
-        color: white;
-        transition: 0.3s;
-    }
-
-    @media (max-width: 500px) {
-        .wrapper {
-            margin-top: -60px;
-        }
-
-        .link {
-            width: 120px;
-        }
-    }
+  }
 </style>

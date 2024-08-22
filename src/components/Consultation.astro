@@ -1,73 +1,73 @@
 ---
 import About from "layouts/About.astro";
 const list = [
-    "Вы сформулируете суть своей проблемы и поймете в каком направлении двигаться для ее решения.",
-    "Понимание и поддержка психолога поможет вам обрести уверенность в своих силах для решения проблемы.",
-    "Вы научитесь работать со своими мыслями и убеждениями, что успешно помогает бороться со своими страхами.",
-    "Обретете новые знания, которые в дальнейшем сможете применять в своей жизни.",
-    "Вы посмотрите на свой диагноз под другим углом – не диабет управляет вами, а вы им.",
-    "Я помогу вам понять, в чем ваша сила, почувствовать ее и поверить в себя!",
+  "Вы сформулируете суть своей проблемы и поймете в каком направлении двигаться для ее решения.",
+  "Понимание и поддержка психолога поможет вам обрести уверенность в своих силах для решения проблемы.",
+  "Вы научитесь работать со своими мыслями и убеждениями, что успешно помогает бороться со своими страхами.",
+  "Обретете новые знания, которые в дальнейшем сможете применять в своей жизни.",
+  "Вы посмотрите на свой диагноз под другим углом – не диабет управляет вами, а вы им.",
+  "Я помогу вам понять, в чем ваша сила, почувствовать ее и поверить в себя!",
 ];
 ---
 
 <About
-        DOMId="consultation"
-        title="Что Вы получите в результате онлайн консультации?"
+  DOMId="consultation"
+  title="Что Вы получите в результате онлайн консультации?"
 >
-    <section id="consultation" class="consultation">
-        <ul class="list">
-            {
-                list.map((item, index) => (
-                        <li class="item">
-                            <div class="number">{index + 1}</div>
-                            <div class="desc">{item}</div>
-                        </li>
-                ))
-            }
-        </ul>
-    </section>
+  <section id="consultation" class="consultation">
+    <ul class="list">
+      {
+        list.map((item, index) => (
+          <li class="item">
+            <div class="number">{index + 1}</div>
+            <div class="desc">{item}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </About>
 
 <style>
-    .consultation {
-        max-width: 1180px;
-        padding: 0 10px;
-        margin: 0 auto;
-    }
+  .consultation {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
 
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 120px;
+    justify-items: center;
+    padding-right: 40px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+  }
+
+  .number {
+    color: var(--color-bg-third);
+    font-family: "Lucida Handwriting", sans-serif;
+    font-style: italic;
+    font-size: 100px;
+    font-weight: 700;
+    margin-right: 30px;
+  }
+
+  @media (max-width: 860px) {
     .list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 30px;
-        column-gap: 120px;
-        justify-items: center;
-        padding-right: 40px;
+      grid-template-columns: 1fr;
+      justify-items: start;
+      row-gap: 0;
+      column-gap: 0;
     }
 
-    .item {
-        display: flex;
-        align-items: center;
+    .item:not(:last-child) {
+      margin-bottom: 20px;
     }
-
-    .number {
-        color: var(--color-bg-third);
-        font-family: "Lucida Handwriting", sans-serif;
-        font-style: italic;
-        font-size: 100px;
-        font-weight: 700;
-        margin-right: 30px;
-    }
-
-    @media (max-width: 860px) {
-        .list {
-            grid-template-columns: 1fr;
-            justify-items: start;
-            row-gap: 0;
-            column-gap: 0;
-        }
-
-        .item:not(:last-child) {
-            margin-bottom: 20px;
-        }
-    }
+  }
 </style>

@@ -2,118 +2,117 @@
 import Layout from "../layouts/Layout.astro";
 
 const data = [
-    {
-        title: "Индивидуальный",
-        desc: "Индивидуальное консультирование онлайн. Длительность консультации 1 час.",
-        price: 1200,
-        divider: true,
-    },
-    // {
-    //   title: "Родитель-ребенок",
-    //   desc: "Две отдельные онлайн консультации для родителя и для ребенка, длительность каждой 1 час. Работа с парой родитель-ребенок - одна из наиболее эффективных форм психологической помощи. Предполагает еженедельные встречи как с родителем, так и с ребенком.",
-    //   price: 2000,
-    // },
-    {
-        title: "Комплекс из 4 консультативных сессий",
-        desc: "Индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
-        price: 4000,
-        divider: false,
-    },
-    // {
-    //   title: "Комплекс родитель-ребенок 4+4 консультативных сессий",
-    //   desc: "По 4 отдельные онлайн консультации для родителя и для ребенка, длительность каждой 1 час. Работа с парой родитель-ребенок - одна из наиболее эффективных форм психологической помощи. Предполагает еженедельные встречи как с родителем, так и с ребенком в течение 1 месяца. Оплата производится вперед за весь месяц - 8 консультаций.",
-    //   price: 6800,
-    // },
-    // {
-    //     title: "Консультации по коррекции веса и психологии пищевого поведения",
-    //     desc: "индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
-    //     price: 6000,
-    // },
+  {
+    title: "Индивидуальный",
+    desc: "Индивидуальное консультирование онлайн. Длительность консультации 1 час.",
+    price: 1200,
+    divider: true,
+  },
+  // {
+  //   title: "Родитель-ребенок",
+  //   desc: "Две отдельные онлайн консультации для родителя и для ребенка, длительность каждой 1 час. Работа с парой родитель-ребенок - одна из наиболее эффективных форм психологической помощи. Предполагает еженедельные встречи как с родителем, так и с ребенком.",
+  //   price: 2000,
+  // },
+  {
+    title: "Комплекс из 4 консультативных сессий",
+    desc: "Индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
+    price: 4000,
+    divider: false,
+  },
+  // {
+  //   title: "Комплекс родитель-ребенок 4+4 консультативных сессий",
+  //   desc: "По 4 отдельные онлайн консультации для родителя и для ребенка, длительность каждой 1 час. Работа с парой родитель-ребенок - одна из наиболее эффективных форм психологической помощи. Предполагает еженедельные встречи как с родителем, так и с ребенком в течение 1 месяца. Оплата производится вперед за весь месяц - 8 консультаций.",
+  //   price: 6800,
+  // },
+  // {
+  //     title: "Консультации по коррекции веса и психологии пищевого поведения",
+  //     desc: "индивидуальное онлайн консультирование. Включает в себя еженедельные встречи в течение одного месяца. Оплата производится вперед за весь месяц - 4 консультации.",
+  //     price: 6000,
+  // },
 ];
 ---
 
 <Layout title="Тарифы" isMainPage={false}>
-    <h2 class="title">Тарифы и цены</h2>
-    <div class="table">
-        {
-            data.map((item) => (
-                    <>
-                        <div class="row">
-                            <div class="desc">
-                                <h4 class="desc-title">{item.title}</h4>
-                                <div class="desc-text">{item.desc}</div>
-                            </div>
-                            <div class="price">{item.price} ₽</div>
-                        </div>
-                        {item.divider && <div class="divider" />}
-                    </>
-
-            ))
-        }
-    </div>
+  <h2 class="title">Тарифы и цены</h2>
+  <div class="table">
+    {
+      data.map((item) => (
+        <>
+          <div class="row">
+            <div class="desc">
+              <h4 class="desc-title">{item.title}</h4>
+              <div class="desc-text">{item.desc}</div>
+            </div>
+            <div class="price">{item.price} ₽</div>
+          </div>
+          {item.divider && <div class="divider" />}
+        </>
+      ))
+    }
+  </div>
 </Layout>
 
 <style>
-    .title {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    .table {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        padding: 0 20px;
-        margin: 0 auto 100px;
-    }
+  .table {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 20px;
+    margin: 0 auto 100px;
+  }
 
+  .row {
+    max-width: 1180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .divider {
+    height: 4px;
+    background-color: var(--color-bg-third);
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  .desc-title {
+    margin: 0 0 10px;
+  }
+
+  .price {
+    min-width: 100px;
+    font-weight: 700;
+    text-align: end;
+  }
+
+  @media (max-width: 800px) {
     .row {
-        max-width: 1180px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px;
-    }
-
-    .divider {
-        height: 4px;
-        background-color: var(--color-bg-third);
+      display: flex;
+      flex-direction: column;
     }
 
     .desc {
-        display: flex;
-        flex-direction: column;
-        margin-right: 20px;
+      text-align: center;
+      margin-right: 0;
     }
 
     .desc-title {
-        margin: 0 0 10px;
+      text-align: center;
     }
 
     .price {
-        min-width: 100px;
-        font-weight: 700;
-        text-align: end;
+      text-align: center;
+      margin-top: 40px;
     }
-
-    @media (max-width: 800px) {
-        .row {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .desc {
-            text-align: center;
-            margin-right: 0;
-        }
-
-        .desc-title {
-            text-align: center;
-        }
-
-        .price {
-            text-align: center;
-            margin-top: 40px;
-        }
-    }
+  }
 </style>

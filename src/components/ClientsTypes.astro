@@ -1,133 +1,133 @@
 ---
 const list = [
-    {
-        icon: "/assets/icons/type-one.svg",
-        title: "Люди с сахарным диабетом 1 типа",
-    },
-    {
-        icon: "/assets/icons/type-two.svg",
-        title: "Люди с сахарным диабетом 2 типа",
-    },
-    // {
-    //   icon: "/assets/icons/family.svg",
-    //   title: "Родители детей с сахарным диабетом",
-    // },
-    // {
-    //   icon: "/assets/icons/children.svg",
-    //   title: "Дети и подростки с сахарным диабетом",
-    // },
-    {
-        icon: "/assets/icons/pregnancy.svg",
-        title:
-            "Беременные и планирующие беременность женщины с сахарным диабетом 1 типа",
-    },
-    {
-        icon: "/assets/icons/old_v2.svg",
-        title: "Родственники людей с сахарным диабетом",
-    },
+  {
+    icon: "/assets/icons/type-one.svg",
+    title: "Люди с сахарным диабетом 1 типа",
+  },
+  {
+    icon: "/assets/icons/type-two.svg",
+    title: "Люди с сахарным диабетом 2 типа",
+  },
+  // {
+  //   icon: "/assets/icons/family.svg",
+  //   title: "Родители детей с сахарным диабетом",
+  // },
+  // {
+  //   icon: "/assets/icons/children.svg",
+  //   title: "Дети и подростки с сахарным диабетом",
+  // },
+  {
+    icon: "/assets/icons/pregnancy.svg",
+    title:
+      "Беременные и планирующие беременность женщины с сахарным диабетом 1 типа",
+  },
+  {
+    icon: "/assets/icons/old_v2.svg",
+    title: "Родственники людей с сахарным диабетом",
+  },
 ];
 ---
 
 <section id="clients-types" class="clients-types">
-    <h2 class="title">Кому я буду полезна</h2>
-    <ul class="list">
-        {
-            list.map((item) => (
-                    <li class="list-item">
-                        <div class="icon-wrapper">
-                            <img class="icon" src={item.icon} alt="Icon"/>
-                        </div>
-                        <span class="text">{item.title}</span>
-                    </li>
-            ))
-        }
-    </ul>
+  <h2 class="title">Кому я буду полезна</h2>
+  <ul class="list">
+    {
+      list.map((item) => (
+        <li class="list-item">
+          <div class="icon-wrapper">
+            <img class="icon" src={item.icon} alt="Icon" />
+          </div>
+          <span class="text">{item.title}</span>
+        </li>
+      ))
+    }
+  </ul>
 </section>
 
 <style>
-    .clients-types {
-        max-width: 1180px;
-        padding: 0 10px;
-        margin: 0 auto 120px;
-    }
+  .clients-types {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto 120px;
+  }
 
-    .title {
-        text-align: center;
-        margin-bottom: 60px;
-    }
+  .title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
 
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 80px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-item {
+    width: 220px;
+    text-align: center;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .icon-wrapper {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-bg-second);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 1200px) {
     .list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 80px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      grid-template-columns: 1fr 1fr;
     }
+  }
 
+  @media (max-width: 600px) {
     .list-item {
-        width: 220px;
-        text-align: center;
-    }
-
-    .link {
-        text-decoration: none;
+      width: 180px;
     }
 
     .icon-wrapper {
-        width: 220px;
-        height: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background-color: var(--color-bg-second);
-        margin-bottom: 10px;
+      width: 180px;
+      height: 180px;
     }
 
-    @media (max-width: 1200px) {
-        .list {
-            grid-template-columns: 1fr 1fr;
-        }
+    .icon {
+      width: 100px;
+      height: 100px;
     }
 
-    @media (max-width: 600px) {
-        .list-item {
-            width: 180px;
-        }
+    .clients-types {
+      margin-bottom: 60px;
+    }
+  }
 
-        .icon-wrapper {
-            width: 180px;
-            height: 180px;
-        }
-
-        .icon {
-            width: 100px;
-            height: 100px;
-        }
-
-        .clients-types {
-            margin-bottom: 60px;
-        }
+  @media (max-width: 420px) {
+    .title {
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 420px) {
-        .title {
-            margin-bottom: 20px;
-        }
-
-        .list-item {
-            width: 120px;
-        }
-
-        .icon-wrapper {
-            width: 120px;
-            height: 120px;
-        }
-
-        .icon {
-            width: 60px;
-            height: 60px;
-        }
+    .list-item {
+      width: 120px;
     }
+
+    .icon-wrapper {
+      width: 120px;
+      height: 120px;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+    }
+  }
 </style>
