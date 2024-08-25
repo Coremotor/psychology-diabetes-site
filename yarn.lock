@@ -578,26 +578,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@example/basics@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@example/basics@workspace:."
-  dependencies:
-    "@astrojs/react": "npm:^3.6.2"
-    "@types/eslint": "npm:^9"
-    "@types/react": "npm:^18.3.4"
-    "@typescript-eslint/parser": "npm:^8.2.0"
-    astro: "npm:^4.14.4"
-    eslint: "npm:^9.9.0"
-    eslint-plugin-astro: "npm:^1.2.3"
-    prettier: "npm:^3.3.3"
-    prettier-plugin-astro: "npm:^0.14.1"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    swiper: "npm:^11.1.10"
-    typescript: "npm:^5.5.4"
-  languageName: unknown
-  linkType: soft
-
 "@humanwhocodes/module-importer@npm:^1.0.1":
   version: 1.0.1
   resolution: "@humanwhocodes/module-importer@npm:1.0.1"
@@ -3216,6 +3196,26 @@ __metadata:
   checksum: 10c0/e9de6cb49657b6fa70ba2d1448fd3d691a5c4370d8f7bbf1c2f64c24d461270f2117e1b0afe8cb3114f13bbd8e51de158c2a224953960331904e636a5e4c0f2a
   languageName: node
   linkType: hard
+
+"ksu-landing@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ksu-landing@workspace:."
+  dependencies:
+    "@astrojs/react": "npm:^3.6.2"
+    "@types/eslint": "npm:^9"
+    "@types/react": "npm:^18.3.4"
+    "@typescript-eslint/parser": "npm:^8.2.0"
+    astro: "npm:^4.14.4"
+    eslint: "npm:^9.9.0"
+    eslint-plugin-astro: "npm:^1.2.3"
+    prettier: "npm:^3.3.3"
+    prettier-plugin-astro: "npm:^0.14.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    swiper: "npm:^11.1.10"
+    typescript: "npm:^5.5.4"
+  languageName: unknown
+  linkType: soft
 
 "levn@npm:^0.4.1":
   version: 0.4.1
