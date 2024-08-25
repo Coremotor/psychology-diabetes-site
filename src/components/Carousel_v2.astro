@@ -3,7 +3,7 @@ interface Props {
   DOMId: string;
   title: string;
   images: {
-    title: string;
+    title?: string;
     src: string;
     page?: string;
   }[];
@@ -14,7 +14,8 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
 ---
 
 <script>
-  import Swiper, { Pagination, Navigation } from "swiper";
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/pagination";
   import "swiper/css/navigation";
@@ -25,6 +26,7 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
       el: ".swiper-pagination",
       type: "bullets",
     },
+    initialSlide: 2,
     slidesPerView: 1,
     centeredSlides: true,
     breakpoints: {
@@ -35,17 +37,16 @@ const { title, images, DOMId, withBackground }: Props = Astro.props;
   });
 
   const images = document.querySelectorAll("#image");
-  const previewEl = document.querySelector("#preview");
-  const previewImageEl = document.querySelector("#preview-image");
-  const closeEl = document.querySelector("#preview");
+  const previewEl = document.querySelector("#preview") as Element;
+  const previewImageEl = document.querySelector("#preview-image") as Element;
+  const closeEl = document.querySelector("#preview") as Element;
 
   images.forEach((image) => {
     image.addEventListener("click", () => onImageClick(image));
   });
 
   const onImageClick = (image: Element) => {
-    console.log(image.getAttribute("src"));
-    previewImageEl.setAttribute("src", image.getAttribute("src"));
+    previewImageEl.setAttribute("src", image.getAttribute("src") as string);
     previewEl.classList.remove("display-none");
     closeEl.addEventListener("click", () => {
       previewEl.classList.add("display-none");

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { type FC, useState } from "react";
 import { contacts } from "data/contacts";
 
 import styles from "./styles.module.css";

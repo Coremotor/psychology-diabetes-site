@@ -1,5 +1,5 @@
 ---
-import Navigation from "./Navigation";
+import Navigation from "components/Navigation";
 
 export interface Props {
   isMainPage: boolean;
@@ -18,19 +18,32 @@ const { isMainPage }: Props = Astro.props;
 <style>
   .header {
     max-width: 1180px;
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     padding: 20px 20px;
     margin: 0 auto;
   }
+
   .logo {
+    display: flex;
     margin-right: auto;
   }
 
+  @media (max-width: 1200px) {
+    .header {
+      width: 94%;
+    }
+  }
+
   @media (max-width: 500px) {
-    .image {
+    .header {
       width: 90%;
+    }
+
+    .image {
+      width: 80%;
     }
   }
 </style>

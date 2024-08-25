@@ -3,23 +3,26 @@
 </div>
 
 <script>
-  const buttonUpEl = document.querySelector("#scroll-up");
+  const buttonUpEl = document.querySelector("#scroll-up") as HTMLDivElement;
   buttonUpEl.addEventListener("click", () => {
     window.scrollTo(0, 0);
   });
 
-  window.addEventListener("scroll", () => {
-    const x = getTopCoords(buttonUpEl);
-    if (x > 3000) {
-      console.log(x);
-      buttonUpEl.style.visibility = "visible";
-    } else {
-      buttonUpEl.style.visibility = "hidden";
-    }
-  });
+  window.addEventListener(
+    "scroll",
+    () => {
+      const x = getTopCoords(buttonUpEl);
+      if (x > 3000) {
+        buttonUpEl.style.visibility = "visible";
+      } else {
+        buttonUpEl.style.visibility = "hidden";
+      }
+    },
+    true,
+  );
 
-  function getTopCoords(elem) {
-    return elem.getBoundingClientRect().top + window.scrollY;
+  function getTopCoords(element: HTMLDivElement) {
+    return element.getBoundingClientRect().top + window.scrollY;
   }
 </script>
 

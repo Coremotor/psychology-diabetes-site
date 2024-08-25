@@ -12,161 +12,168 @@ interface Props {
   withTitle: boolean;
 }
 
-const {title, images, DOMId, withLink, withBackground}: Props =
-  Astro.props;
+const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
 ---
 
 <script>
-  import Swiper, { Navigation, Pagination } from "swiper";
-    import "swiper/css";
-    import "swiper/css/navigation";
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/navigation";
 
-    const swiper = new Swiper(".swiper", {
-      modules: [Navigation, Pagination],
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
       },
-      slidesPerView: 1,
-      breakpoints: {
-        1024: {
-          slidesPerView: 2,
-        },
-      },
-    });
+    },
+  });
 </script>
 
 <div class={`${withBackground ? "bg" : ""} wrapper`}>
-    <section id={DOMId} class="container">
-        <h2 class="title">{title}</h2>
+  <section id={DOMId} class="container">
+    <h2 class="title">{title}</h2>
 
-        <div class="swiper">
-            <div class="swiper-wrapper">
-              {
-                images.map((i) => (
-                        <a href={i.page} class="swiper-slide image-container">
-                            <img class="image" src={i.src} alt="image"/>
-                          {withLink && (
-                                  <span class="desc">{i.title}</span>
-                                  <div class="link">
-                                      Подробнее
-                                  </div>
-                          )}
-                        </a>
-                ))
-              }
-            </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          images.map((i) => (
+            <a href={i.page} class="swiper-slide image-container">
+              <img class="image" src={i.src} alt="image" />
+              {withLink && (
+                <>
+                  <span class="desc">{i.title}</span>
+                  <div class="link">Подробнее</div>
+                </>
+              )}
+            </a>
+          ))
+        }
+      </div>
 
-            <div class={`swiper-button-prev ${withLink ? 'up' : ''}`}>
-                <img class="swiper-button-prev-img" src="assets/icons/arrow.svg" alt="image">
-            </div>
-            <div class={`swiper-button-next ${withLink ? 'up' : ''}`}>
-                <img class="swiper-button-next-img" src="assets/icons/arrow.svg" alt="image">
-            </div>
-        </div>
-    </section>
+      <div class={`swiper-button-prev ${withLink ? "up" : ""}`}>
+        <img
+          class="swiper-button-prev-img"
+          src="assets/icons/arrow.svg"
+          alt="image"
+        />
+      </div>
+      <div class={`swiper-button-next ${withLink ? "up" : ""}`}>
+        <img
+          class="swiper-button-next-img"
+          src="assets/icons/arrow.svg"
+          alt="image"
+        />
+      </div>
+    </div>
+  </section>
 </div>
 
 <style>
+  .wrapper {
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    max-width: 1280px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  .bg {
+    background-color: var(--color-bg-second);
+  }
+
+  .up {
+    top: 40%;
+  }
+
+  .title {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-button-prev {
+    left: -5px;
+  }
+
+  .swiper-button-next {
+    right: -5px;
+  }
+
+  .swiper-button-prev::after {
+    content: "";
+  }
+
+  .swiper-button-next::after {
+    content: "";
+  }
+
+  .swiper-button-prev-img {
+    transform: rotate(180deg);
+  }
+
+  .swiper-pagination {
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .image {
+    width: 85%;
+    object-fit: cover;
+  }
+
+  .link {
+    border: 1px solid var(--color-bg-third);
+    color: var(--color-bg-third);
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+
+  .link:hover {
+    background-color: var(--color-bg-third);
+    color: white;
+    transition: 0.3s;
+  }
+
+  .desc {
+    width: 70%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 500px) {
     .wrapper {
-        padding: 60px 0;
-        margin-bottom: 40px;
-    }
-
-    .container {
-        max-width: 1280px;
-        padding: 0 10px;
-        margin: 0 auto;
-    }
-
-    .bg {
-        background-color: var(--color-bg-second);
-    }
-
-    .up {
-        top: 40%;
-    }
-
-    .title {
-        text-align: center;
-        margin-top: 0;
+      margin-bottom: 0;
     }
 
     .swiper {
-        width: 100%;
+      width: 100%;
+      margin-left: -10px;
     }
-
-    .swiper-button-prev {
-        left: -5px;
-    }
-
-    .swiper-button-next {
-        right: -5px;
-    }
-
-    .swiper-button-prev::after {
-        content: '';
-    }
-
-    .swiper-button-next::after {
-        content: '';
-    }
-
-    .swiper-button-prev-img {
-        transform: rotate(180deg);
-    }
-
-    .swiper-pagination {
-
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-    }
-
-    .image-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .image {
-        width: 85%;
-        object-fit: cover;
-    }
-
-    .link {
-        border: 1px solid var(--color-bg-third);
-        color: var(--color-bg-third);
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
-        padding: 10px 20px;
-        margin-top: 20px;
-    }
-
-    .link:hover {
-        background-color: var(--color-bg-third);
-        color: white;
-        transition: 0.3s;
-    }
-
-    .desc {
-        width: 70%;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    @media (max-width: 500px) {
-        .wrapper {
-            margin-bottom: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            margin-left: -10px;
-        }
-    }
+  }
 </style>

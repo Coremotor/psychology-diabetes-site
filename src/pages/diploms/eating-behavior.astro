@@ -1,13 +1,13 @@
 ---
 import { diplomsRoutes } from "data/routes";
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/Hero.astro";
-import About from "../../layouts/About.astro";
-import AboutDiplom from "../../components/AboutDiplom.astro";
-import Image from "../../components/Image.astro";
+import Layout from "layouts/Layout.astro";
+import Hero from "components/Hero.astro";
+import About from "layouts/About.astro";
+import AboutDiplom from "components/AboutDiplom.astro";
+import Image from "components/Image.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
-import Buttons from "../../components/Buttons.astro";
+import Buttons from "components/Buttons.astro";
 
 const list = [
   "психологические аспекты проблемы переедания и избыточного веса;",
@@ -28,6 +28,7 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
     imgUrl="/assets/images/eating-behavior.png"
   />
   <Image src="/assets/images/diploms/eating-behavior.jpg" />
+  <Image src="/assets/images/diploms/nutritionology.jpg" maxWidth={460} />
 
   <About DOMId="eating-behavior" title="Область профессиональной деятельности">
     <AboutDiplom

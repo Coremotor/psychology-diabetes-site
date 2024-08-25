@@ -1,6 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "components/Header.astro";
+import Footer from "components/Footer.astro";
 
 export interface Props {
   title: string;
@@ -10,7 +10,7 @@ export interface Props {
 const { title, isMainPage } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -18,9 +18,11 @@ const { title, isMainPage } = Astro.props;
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
+
       gtag("js", new Date());
 
       gtag("config", "G-DKS5JXDJ04");
@@ -37,7 +39,7 @@ const { title, isMainPage } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="container">
+    <div class="layout-container">
       <Header isMainPage={isMainPage} />
       <slot />
       <Footer isMainPage={isMainPage} />
@@ -66,7 +68,7 @@ const { title, isMainPage } = Astro.props;
         document,
         "script",
         "https://mc.yandex.ru/metrika/tag.js",
-        "ym"
+        "ym",
       );
 
       ym(90648789, "init", {
@@ -76,8 +78,8 @@ const { title, isMainPage } = Astro.props;
         webvisor: true,
       });
     </script>
-    <noscript
-      ><div>
+    <noscript>
+      <div>
         <img
           src="https://mc.yandex.ru/watch/90648789"
           style="position:absolute; left:-9999px;"
@@ -130,8 +132,11 @@ const { title, isMainPage } = Astro.props;
         margin: 0;
       }
 
-      .container {
+      .layout-container {
+        display: flex;
+        flex-direction: column;
         min-width: 360px;
+        min-height: 100vh;
         overflow-x: hidden;
         margin: 0 auto;
       }

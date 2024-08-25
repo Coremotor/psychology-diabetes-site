@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "ksu-landing",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -11,11 +11,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^2.1.1",
-    "@types/react": "^18.0.21",
-    "astro": "^2.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "swiper": "^8.4.2"
+    "@astrojs/react": "^3.6.2",
+    "astro": "^4.14.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^11.1.10"
+  },
+  "packageManager": "yarn@4.4.0",
+  "devDependencies": {
+    "@types/eslint": "^9",
+    "@types/react": "^18.3.4",
+    "@typescript-eslint/parser": "^8.2.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.5.4"
   }
 }

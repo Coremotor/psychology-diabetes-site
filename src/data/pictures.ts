@@ -23,11 +23,6 @@ export const diploms = [
     page: diplomsRoutes.family,
   },
   {
-    title: "Метафорические ассоциативные карты как инструмент работы психолога",
-    src: "/assets/images/diploms/mac.jpg",
-    page: diplomsRoutes.mac,
-  },
-  {
     title:
       "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
     src: "/assets/images/diploms/eating-behavior.jpg",
@@ -39,6 +34,11 @@ export const diploms = [
     page: diplomsRoutes.teacher,
   },
   {
+    title: "Метафорические ассоциативные карты как инструмент работы психолога",
+    src: "/assets/images/diploms/mac.jpg",
+    page: diplomsRoutes.mac,
+  },
+  {
     title: "Квалификация - фельдшер по специальности «Лечебное дело»",
     src: "/assets/images/diploms/lechebnoe_delo_1.jpg",
     page: diplomsRoutes.lechebnoe_delo,
@@ -47,7 +47,7 @@ export const diploms = [
 
 export const makePhotosArray = () => {
   const a = [];
-  for (let index = 1; index < 26; index++) {
+  for (let index = 1; index < 29; index++) {
     a.push({
       title: index.toString(),
       src: `/assets/images/gallery/${index}.jpg`,
@@ -85,4 +85,6 @@ export const reviews = [
   { src: "/assets/images/reviews/6.jpg" },
   { src: "/assets/images/reviews/7.jpg" },
   { src: "/assets/images/reviews/8.jpg" },
+  { src: "/assets/images/reviews/9.jpg" },
+  { src: "/assets/images/reviews/10.jpg" },
 ];

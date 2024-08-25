@@ -9,7 +9,7 @@ import Details from "components/Details";
 import Therapy from "components/Therapy.astro";
 import Carousel from "components/Carousel.astro";
 import Carousel_v2 from "components/Carousel_v2.astro";
-import { diploms, certificates, makePhotosArray } from "../data/pictures";
+import { diploms, makePhotosArray } from "data/pictures";
 import { reviews } from "data/pictures";
 import ScrollUp from "components/ScrollUp.astro";
 ---
@@ -36,19 +36,19 @@ import ScrollUp from "components/ScrollUp.astro";
     images={reviews}
     withBackground={false}
   />
-  <Carousel
-    DOMId="certificates"
-    title="Сертификаты"
-    images={certificates}
-    withLink={false}
-    withBackground={true}
-    withTitle={false}
-  />
+  <!--<Carousel-->
+  <!--        DOMId="certificates"-->
+  <!--        title="Сертификаты"-->
+  <!--        images={certificates}-->
+  <!--        withLink={false}-->
+  <!--        withBackground={true}-->
+  <!--        withTitle={false}-->
+  <!--/>-->
   <Carousel_v2
     DOMId="gallery"
     title="Галерея"
     images={makePhotosArray()}
-    withBackground={false}
+    withBackground={true}
   />
   <ScrollUp />
 </Layout>

@@ -6,9 +6,9 @@ export const diplomsRoutes: {
   clinic_psy: "/diploms/clinic-psy/",
   kpt: "/diploms/kpt/",
   family: "/diploms/family/",
-  mac: "/diploms/mac/",
   eating_behavior: "/diploms/eating-behavior/",
   teacher: "/diploms/teacher/",
+  mac: "/diploms/mac/",
 };
 
 export const routesList = (routes: { [key: string]: string }) => {
