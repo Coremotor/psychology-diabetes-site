@@ -45,12 +45,12 @@ export const diploms = [
   },
 ];
 
-export const makePhotosArray = () => {
+export const makePhotosArray = (filesCount: number) => {
   const a = [];
-  for (let index = 1; index < 29; index++) {
+  for (let index = 1; index < filesCount + 1; index++) {
     a.push({
       title: index.toString(),
-      src: `/assets/images/gallery/${index}.jpg`,
+      src: `/assets/images/gallery/${index}.png`,
     });
   }
   return a;
@@ -76,15 +76,13 @@ export const certificates = [
   },
 ];
 
-export const reviews = [
-  { src: "/assets/images/reviews/1.jpg" },
-  { src: "/assets/images/reviews/2.jpg" },
-  { src: "/assets/images/reviews/3.jpg" },
-  { src: "/assets/images/reviews/4.jpg" },
-  { src: "/assets/images/reviews/5.jpg" },
-  { src: "/assets/images/reviews/6.jpg" },
-  { src: "/assets/images/reviews/7.jpg" },
-  { src: "/assets/images/reviews/8.jpg" },
-  { src: "/assets/images/reviews/9.jpg" },
-  { src: "/assets/images/reviews/10.jpg" },
-];
+export const makeReviewsArray = (filesCount: number) => {
+  const a = [];
+  for (let index = 1; index < filesCount + 1; index++) {
+    a.push({
+      title: index.toString(),
+      src: `/assets/images/reviews/${index}.jpg`,
+    });
+  }
+  return a;
+};

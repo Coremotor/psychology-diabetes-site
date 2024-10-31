@@ -19,3 +19,11 @@ export const routesList = (routes: { [key: string]: string }) => {
   }
   return arr;
 };
+
+export const rootRoutes: {
+  [key: string]: string;
+} = {
+  consultationInfo: "/consultation-info/",
+  home: "/",
+  tariffs: "/tariffs",
+};

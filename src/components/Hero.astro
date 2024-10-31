@@ -9,13 +9,15 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 
 <div class="hero-container">
   <section id="hero" class="hero">
+    <div class="desc">
+      <span class="text">{desc}</span>
+
+      <button class="button">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</button>
+    </div>
+
     <picture class="hero-image-container">
       <img class="image" src={imgUrl} alt="hero image" />
     </picture>
-
-    <div class="desc">
-      <span class="text">{desc}</span>
-    </div>
   </section>
 </div>
 
@@ -24,40 +26,53 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     display: flex;
     justify-content: center;
     overflow: visible;
-    background: var(--color-bg-gradient);
-    margin-bottom: 120px;
+    background: var(--color-bg-third);
+    margin-bottom: 80px;
   }
 
   .hero {
+    display: flex;
     width: 100%;
     max-width: 1600px;
-    position: relative;
+    justify-content: center;
   }
 
   .hero-image-container {
-    display: flex;
+    width: 100%;
+    align-self: flex-end;
   }
 
   .image {
-    object-fit: cover;
-    margin-left: 60px;
+    width: 100%;
+    margin-right: -100px;
   }
 
   .desc {
-    width: 35%;
-    max-width: 640px;
-    position: absolute;
-    top: 140px;
-    right: 210px;
-    bottom: -40px;
-    background-color: var(--color-bg-third);
-    padding: 120px 40px;
+    margin-top: 140px;
+    margin-right: 40px;
+    margin-left: 80px;
+    width: 100%;
   }
 
   .text {
+    display: flex;
     font-size: var(--font-size-xl);
     color: #ffffff;
     font-family: "Comfortaa", sans-serif;
+    margin-bottom: 80px;
+  }
+
+  .button {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-bg-akcent);
+    color: var(--color-bg);
+    font-size: 20px;
+    border: none;
+  }
+
+  .button:hover {
+    cursor: pointer;
   }
 
   @media (min-width: 1600px) {
@@ -66,44 +81,15 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     }
   }
 
-  @media (max-width: 1300px) {
-    .container {
-      margin-bottom: 180px;
-    }
-
-    .desc {
-      width: 80%;
-      top: 600px;
-      left: 50%;
-      bottom: auto;
-      transform: translate(-50%, 0);
-      text-align: center;
-      padding: 40px;
+  @media (max-width: 1100px) {
+    .text {
+      font-size: 40px;
     }
   }
 
   @media (max-width: 520px) {
-    .container {
-      margin-bottom: 120px;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: center;
-    }
-
-    picture {
-      width: 100%;
-    }
-
-    .image {
-      width: 100%;
-      margin-left: 0;
-    }
-
-    .desc {
-      top: 90%;
-      padding: 20px;
+    .text {
+      font-size: 30px;
     }
   }
 </style>

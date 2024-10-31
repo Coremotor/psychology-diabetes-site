@@ -1,0 +1,102 @@
+---
+import Layout from "layouts/Layout.astro";
+import PersonalTherapy from "components/consultation-info/personalTherapy.astro";
+import AdditionalBlock from "components/consultation-info/additionalBlock.astro";
+import { additionalBlocksText } from "components/consultation-info/additional-blocks-text";
+import AdditionalBlockList from "components/consultation-info/additionalBlockList.astro";
+import ChildParentRelationships from "components/consultation-info/childParentRelationships.astro";
+import DiabetesSchool from "components/consultation-info/diabetesSchool.astro";
+import DiaBurnout from "components/consultation-info/diaBurnout.astro";
+---
+
+<Layout title="Подробнее о консультации" isMainPage={false}>
+  <h2 class="title">Подробнее о консультации</h2>
+
+  <div class="content">
+    <div class="main">
+      <PersonalTherapy />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[0]} />
+        <AdditionalBlock text={additionalBlocksText[1]} />
+      </div>
+
+      <ChildParentRelationships />
+      <div class="mobile">
+        <AdditionalBlockList />
+        <AdditionalBlock text={additionalBlocksText[2]} />
+      </div>
+
+      <DiabetesSchool />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[3]} />
+        <AdditionalBlock text={additionalBlocksText[4]} />
+      </div>
+
+      <DiaBurnout />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[5]} />
+        <AdditionalBlock text={additionalBlocksText[6]} />
+      </div>
+    </div>
+
+    <div class="second">
+      <AdditionalBlock text={additionalBlocksText[0]} />
+      <AdditionalBlock text={additionalBlocksText[1]} />
+      <AdditionalBlockList />
+      <AdditionalBlock text={additionalBlocksText[2]} />
+      <AdditionalBlock text={additionalBlocksText[3]} />
+      <AdditionalBlock text={additionalBlocksText[4]} />
+      <AdditionalBlock text={additionalBlocksText[5]} />
+      <AdditionalBlock text={additionalBlocksText[6]} />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    max-width: 1180px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .second {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 800px) {
+    .content {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    .second {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+</style>
