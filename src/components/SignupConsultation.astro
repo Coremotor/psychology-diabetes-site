@@ -1,0 +1,82 @@
+<script>
+  const buttonEl = document.querySelector("#button");
+  const popupContainerEl = document.querySelector("#popup-container");
+  const popupInnerEl = document.querySelector("#popup-inner");
+
+  buttonEl?.addEventListener("click", () => {
+    popupContainerEl?.classList.remove("display-none");
+  });
+
+  popupContainerEl?.addEventListener("click", () => {
+    popupContainerEl?.classList.add("display-none");
+  });
+
+  popupInnerEl?.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+</script>
+
+<div>
+  <div id="button">
+    <slot />
+  </div>
+
+  <div id="popup-container" class="popup-container display-none">
+    <div id="popup-inner" class="popup">
+      <header class="header">Записаться на консультацию</header>
+
+      <div class="content">
+        <span>
+          Для того, чтобы записаться на консультацию вы можете связаться со мной
+          удобным для вас способом: WhatsApp, Telegram, VK. Напишите какой вид
+          консультации Вам необходим. <br />Мы подберем удобное для вас время.
+        </span>
+
+        <div class="links">
+          <a target="_blank" href="https://wa.me/79371137735">WhatsApp</a>
+          <a target="_blank" href="https://t.me/+79371137735">Telegram</a>
+          <a target="_blank" href="https://vk.com/demakovaks">VK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .popup-container {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .popup {
+    width: 50%;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: var(--color-bg-akcent);
+    color: white;
+    padding: 40px 120px;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .content {
+    background-color: white;
+    padding: 40px 120px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

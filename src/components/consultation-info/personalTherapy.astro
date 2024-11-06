@@ -1,5 +1,6 @@
 ---
 import { anchors } from "data/anchors";
+import SignupConsultation from "components/SignupConsultation.astro";
 import Button from "components/Button.astro";
 ---
 
@@ -49,7 +50,9 @@ import Button from "components/Button.astro";
   </ul>
 
   <div class="button">
-    <Button title="Записаться на консультацию" />
+    <SignupConsultation client:load>
+      <Button title="Записаться на консультацию" />
+    </SignupConsultation>
   </div>
 </article>
 

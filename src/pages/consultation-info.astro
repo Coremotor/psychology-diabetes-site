@@ -7,6 +7,7 @@ import AdditionalBlockList from "components/consultation-info/additionalBlockLis
 import ChildParentRelationships from "components/consultation-info/childParentRelationships.astro";
 import DiabetesSchool from "components/consultation-info/diabetesSchool.astro";
 import DiaBurnout from "components/consultation-info/diaBurnout.astro";
+import Discount from "components/consultation-info/discount.astro";
 ---
 
 <Layout title="Подробнее о консультации" isMainPage={false}>
@@ -50,6 +51,8 @@ import DiaBurnout from "components/consultation-info/diaBurnout.astro";
       <AdditionalBlock text={additionalBlocksText[6]} />
     </div>
   </div>
+
+  <Discount />
 </Layout>
 
 <style>

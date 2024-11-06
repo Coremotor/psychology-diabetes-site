@@ -1,0 +1,60 @@
+---
+import { anchors } from "data/anchors";
+import Button from "components/Button.astro";
+---
+
+<article class="container" id={anchors.discount}>
+  <h2>Подробнее о скидках. Выгода от 10% до 15%.</h2>
+
+  <ul class="list">
+    <li>
+      Абонемент на 4 консультации действует 1 месяц. Цена 7200₽ (1800₽ за одну
+      консультацию).
+    </li>
+
+    <li>
+      Абонемент на 8 консультаций действует 2 месяца. Цена 14000₽ (1750₽ за одну
+      консультацию).
+    </li>
+
+    <li>
+      Абонемент на 12 консультаций действует 3 месяца. Цена 20400₽ (1700₽ за
+      одну консультацию).
+    </li>
+
+    <li class="list-item">
+      При покупке абонемента для работы с детьми дополнительная консультация с
+      родителем оплачивается отдельно.<br /> Стоимость консультации зависит от оплаченного
+      абонемента
+    </li>
+  </ul>
+
+  <div class="button">
+    <Button title="Записаться на консультацию" />
+  </div>
+</article>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-bg-akcent);
+    color: white;
+    margin: 0 0 100px;
+    padding-bottom: 40px;
+  }
+
+  .list {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .list-item {
+    text-align: center;
+  }
+</style>
