@@ -1,0 +1,58 @@
+---
+interface Props {
+  desc: string;
+  imgUrl: string;
+}
+
+const { desc, imgUrl }: Props = Astro.props;
+---
+
+<div class="hero-container">
+  <section id="hero" class="hero">
+    <div class="desc">
+      <span class="text">{desc}</span>
+    </div>
+
+    <picture class="hero-image-container">
+      <img class="image" src={imgUrl} alt="diplom image" />
+    </picture>
+  </section>
+</div>
+
+<style>
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    background: var(--color-bg-third);
+    margin-bottom: 80px;
+    max-height: 800px;
+    padding: 100px 0;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: center;
+  }
+
+  .desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .text {
+    font-size: 46px;
+    color: #ffffff;
+    font-family: "Comfortaa", sans-serif;
+  }
+</style>
