@@ -1,4 +1,5 @@
 ---
+import SignupConsultation from "components/SignupConsultation.astro";
 interface Props {
   desc: string;
   imgUrl?: string;
@@ -12,7 +13,9 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     <div class="desc">
       <span class="text">{desc}</span>
 
-      <button class="button">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</button>
+      <SignupConsultation>
+        <button class="button">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</button>
+      </SignupConsultation>
     </div>
 
     <picture class="hero-image-container">
@@ -28,6 +31,7 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     overflow: visible;
     background: var(--color-bg-third);
     margin-bottom: 80px;
+    max-height: 800px;
   }
 
   .hero {
@@ -77,19 +81,48 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
 
   @media (min-width: 1600px) {
     .text {
-      font-size: 50px;
+      font-size: var(--font-size-lg);
     }
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1000px) {
+    .button {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 900px) {
     .text {
-      font-size: 40px;
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    .desc {
+      margin-top: 60px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .text {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+    .button {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      flex-direction: column;
     }
   }
 
   @media (max-width: 520px) {
     .text {
-      font-size: 30px;
+      font-size: 20px;
     }
   }
 </style>

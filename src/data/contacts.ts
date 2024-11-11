@@ -11,12 +11,12 @@ export const contacts = [
     href: "https://t.me/+79371137735",
     desc: "Telegram",
   },
-  {
-    srcWhite: "/assets/icons/viber-white.svg",
-    srcRed: "/assets/icons/viber-red.svg",
-    href: "viber://chat?number=%2B79371137735",
-    desc: "Viber",
-  },
+  // {
+  //   srcWhite: "/assets/icons/viber-white.svg",
+  //   srcRed: "/assets/icons/viber-red.svg",
+  //   href: "viber://chat?number=%2B79371137735",
+  //   desc: "Viber",
+  // },
   {
     srcWhite: "/assets/icons/VK-white.svg",
     srcRed: "/assets/icons/VK-red.svg",

@@ -10,7 +10,28 @@ export interface Props {
 const { title, isMainPage } = Astro.props;
 ---
 
-<!doctype html>
+<!--for sign up consultation pop up-->
+<script>
+  const popupContainerEl = document.querySelector("#popup-container");
+  const popupInnerEl = document.querySelector("#popup-inner");
+
+  popupContainerEl?.addEventListener("click", () => {
+    popupContainerEl?.classList.add("popup-display-none");
+  });
+
+  popupInnerEl?.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  const buttons = document.querySelectorAll("#popup-button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      popupContainerEl?.classList.remove("popup-display-none");
+    });
+  });
+</script>
+<!--end for sign up consultation pop up-->
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->

@@ -1,27 +1,10 @@
-<script>
-  const buttonEl = document.querySelector("#button");
-  const popupContainerEl = document.querySelector("#popup-container");
-  const popupInnerEl = document.querySelector("#popup-inner");
-
-  buttonEl?.addEventListener("click", () => {
-    popupContainerEl?.classList.remove("display-none");
-  });
-
-  popupContainerEl?.addEventListener("click", () => {
-    popupContainerEl?.classList.add("display-none");
-  });
-
-  popupInnerEl?.addEventListener("click", (event) => {
-    event.stopPropagation();
-  });
-</script>
-
+<!--script fo this block in Layout.astro-->
 <div>
-  <div id="button">
+  <div id="popup-button">
     <slot />
   </div>
 
-  <div id="popup-container" class="popup-container display-none">
+  <div id="popup-container" class="popup-container popup-display-none">
     <div id="popup-inner" class="popup">
       <header class="header">Записаться на консультацию</header>
 
@@ -52,7 +35,7 @@
     z-index: 100;
   }
 
-  .display-none {
+  .popup-display-none {
     display: none;
   }
 

@@ -1,13 +1,15 @@
 ---
 import Layout from "layouts/Layout.astro";
-import PersonalTherapy from "components/consultation-info/personalTherapy.astro";
-import AdditionalBlock from "components/consultation-info/additionalBlock.astro";
+import PersonalTherapy from "components/consultation-info/PersonalTherapy.astro";
+import AdditionalBlock from "components/consultation-info/AdditionalBlock.astro";
 import { additionalBlocksText } from "components/consultation-info/additional-blocks-text";
-import AdditionalBlockList from "components/consultation-info/additionalBlockList.astro";
-import ChildParentRelationships from "components/consultation-info/childParentRelationships.astro";
-import DiabetesSchool from "components/consultation-info/diabetesSchool.astro";
-import DiaBurnout from "components/consultation-info/diaBurnout.astro";
-import Discount from "components/consultation-info/discount.astro";
+import AdditionalBlockList from "components/consultation-info/AdditionalBlockList.astro";
+import ChildParentRelationships from "components/consultation-info/ChildParentRelationships.astro";
+import DiabetesSchool from "components/consultation-info/DiabetesSchool.astro";
+import DiaBurnout from "components/consultation-info/DiaBurnout.astro";
+import Discount from "components/consultation-info/Discount.astro";
+import AdditionalBlockList_2 from "components/consultation-info/AdditionalBlockList_2.astro";
+import FirstConsultation from "components/consultation-info/FirstConsultation.astro";
 ---
 
 <Layout title="Подробнее о консультации" isMainPage={false}>
@@ -15,40 +17,48 @@ import Discount from "components/consultation-info/discount.astro";
 
   <div class="content">
     <div class="main">
-      <PersonalTherapy />
+      <FirstConsultation />
       <div class="mobile">
         <AdditionalBlock text={additionalBlocksText[0]} />
-        <AdditionalBlock text={additionalBlocksText[1]} />
+        <AdditionalBlockList />
       </div>
 
-      <ChildParentRelationships />
+      <PersonalTherapy />
       <div class="mobile">
-        <AdditionalBlockList />
+        <AdditionalBlock text={additionalBlocksText[1]} />
         <AdditionalBlock text={additionalBlocksText[2]} />
       </div>
 
-      <DiabetesSchool />
+      <ChildParentRelationships />
       <div class="mobile">
         <AdditionalBlock text={additionalBlocksText[3]} />
         <AdditionalBlock text={additionalBlocksText[4]} />
       </div>
 
-      <DiaBurnout />
+      <DiabetesSchool />
       <div class="mobile">
         <AdditionalBlock text={additionalBlocksText[5]} />
         <AdditionalBlock text={additionalBlocksText[6]} />
+      </div>
+
+      <DiaBurnout />
+      <div class="mobile">
+        <AdditionalBlockList_2 />
+        <AdditionalBlock text={additionalBlocksText[7]} />
       </div>
     </div>
 
     <div class="second">
       <AdditionalBlock text={additionalBlocksText[0]} />
-      <AdditionalBlock text={additionalBlocksText[1]} />
       <AdditionalBlockList />
+      <AdditionalBlock text={additionalBlocksText[1]} />
       <AdditionalBlock text={additionalBlocksText[2]} />
       <AdditionalBlock text={additionalBlocksText[3]} />
       <AdditionalBlock text={additionalBlocksText[4]} />
       <AdditionalBlock text={additionalBlocksText[5]} />
       <AdditionalBlock text={additionalBlocksText[6]} />
+      <AdditionalBlockList_2 />
+      <AdditionalBlock text={additionalBlocksText[7]} />
     </div>
   </div>
 
