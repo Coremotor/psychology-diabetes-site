@@ -1,7 +1,7 @@
 ---
 import { diplomsRoutes } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
 import Image from "components/Image.astro";
@@ -19,20 +19,25 @@ const list = [
   "телесная терапия при нарушениях пищевого поведения.",
 ];
 
+const desc =
+  "Пищевое поведение – это отношение к пище и ее приему, включающее в себя установки и привычки, формы поведения и эмоциональное отношение к еде. Специалист по психологии пищевого поведения исследует пищевое поведение, механизмы формирования нарушений отношения к пище. Исследование включает в себя биологические, психологические факторы, влияние наследственности и склонности характера и личности к зависимости. Также рассматривается немаловажный фактор влияния семейных традиций и психологической обстановки в семье, социального окружения человека. Пищевые привычки формируются под влиянием семьи и общества, собственного опыта, свойств личности. Специалист по коррекции пищевого поведения грамотно подбирает метод помощи, исходя из комплекса причин, вызвавших нарушения, помогает вернуть вес к норме, а человека – к полноценной жизни.";
+
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Психология пищевого поведения" isMainPage={false}>
-  <Hero
+  <HeroDiplom
     desc="Квалификация - консультант по коррекции веса и психологии пищевого поведения"
-    imgUrl="/assets/images/eating-behavior.png"
+    imgUrl="/assets/images/diploms/eating-behavior.jpg"
   />
-  <Image src="/assets/images/diploms/eating-behavior.jpg" />
-  <Image src="/assets/images/diploms/nutritionology.jpg" maxWidth={460} />
+  <div class="images">
+    <Image src="/assets/images/diploms/nutritionology.jpg" />
+    <Image src="/assets/images/diploms/child-nutritionology.jpg" />
+  </div>
 
   <About DOMId="eating-behavior" title="Область профессиональной деятельности">
     <AboutDiplom
-      desc="Пищевое поведение – это отношение к пище и ее приему, включающее в себя установки и привычки, формы поведения и эмоциональное отношение к еде. Специалист по психологии пищевого поведения исследует пищевое поведение, механизмы формирования нарушений отношения к пище. Исследование включает в себя биологические, психологические факторы, влияние наследственности и склонности характера и личности к зависимости. Также рассматривается немаловажный фактор влияния семейных традиций и психологической обстановки в семье, социального окружения человека. Пищевые привычки формируются под влиянием семьи и общества, собственного опыта, свойств личности. Специалист по коррекции пищевого поведения грамотно подбирает метод помощи, исходя из комплекса причин, вызвавших нарушения, помогает вернуть вес к норме, а человека – к полноценной жизни."
+      desc={desc}
       list={list}
       vkr="Практикумы:"
       diplom="«по телесной терапии»."
@@ -41,3 +46,18 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 
   <Buttons link={next} />
 </Layout>
+
+<style>
+  .images {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1000px) {
+    .images {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

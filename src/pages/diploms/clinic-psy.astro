@@ -1,36 +1,37 @@
 ---
 import { diplomsRoutes } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import Image from "components/Image.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
 
 const list = [
-  "компетенции в вовпросах нейропсихологии, патопсихологии и психотерапии;",
+  "компетенции в вопросах нейропсихологии, патопсихологии и психотерапии;",
   "оказание профессиональной психологической помощи в экстремальных ситуациях и состояниях, идентифицировать проявления психических нарушений;",
   "базовые знания в гештальт-терапии в клинической психологии, НЛП и транзактного анализа, обучены применять данные знания на практике;",
   "психосоматика;",
-  "клиническая психология в геронталогии;",
+  "клиническая психология в геронтологии;",
   "клиническая психология в онкологии.",
 ];
+
+const desc =
+  "Психология в медицине или клиническая психология — область медицинской психологии, изучающая психические факторы происхождения и течения болезней, влияние болезней на личность, психологические аспекты целебных воздействий.";
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Клинический психолог" isMainPage={false}>
-  <Hero
-    desc="Квалификация - клинический психолог"
-    imgUrl="/assets/images/clinic_psy.png"
+  <HeroDiplom
+    desc="Квалификация - клинический психолог, профессиональная переподготовка"
+    imgUrl="/assets/images/diploms/clinic_psy.jpg"
   />
-  <Image src="/assets/images/diploms/clinic_psy.jpg" />
 
   <About DOMId="clinic-psy" title="Область профессиональной деятельности">
     <AboutDiplom
-      desc="Психология в медицине или клиническая психология — область медицинской психологии, изучающая психические факторы происхождения и течения болезней, влияние болезней на личность, психологические аспекты целебных воздействий."
+      desc={desc}
       list={list}
       diplom="«по патопсихологии и нейропсихологической диагностике» и «по детской патопсихологии»."
       vkr="Практикумы"

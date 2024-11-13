@@ -39,6 +39,16 @@ export const diploms = [
     page: diplomsRoutes.mac,
   },
   {
+    title: "Терапия принятия и ответственности (АСТ-терапия)",
+    src: "/assets/images/diploms/ast.jpg",
+    page: diplomsRoutes.ast,
+  },
+  {
+    title: "Психотерапия ПТСР. Специфика работы со взрослыми",
+    src: "/assets/images/diploms/ptsr.jpg",
+    page: diplomsRoutes.ptsr,
+  },
+  {
     title: "Квалификация - фельдшер по специальности «Лечебное дело»",
     src: "/assets/images/diploms/lechebnoe_delo_1.jpg",
     page: diplomsRoutes.lechebnoe_delo,

@@ -9,6 +9,8 @@ export const diplomsRoutes: {
   eating_behavior: "/diploms/eating-behavior/",
   teacher: "/diploms/teacher/",
   mac: "/diploms/mac/",
+  ast: "/diploms/ast/",
+  ptsr: "/diploms/ptsr/",
 };
 
 export const routesList = (routes: { [key: string]: string }) => {

@@ -1,10 +1,9 @@
 ---
 import { diplomsRoutes } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import Image from "components/Image.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
@@ -20,26 +19,22 @@ const list = [
   "Mindfullness – терапия, основанная на осознанности;",
   "диалектико-поведенческая терапия;",
   "десенсебилизация и переработка движениями глаз;",
-  "схематерапия.",
 ];
+
+const desc =
+  "Когнитивно-поведенческая психотерапия помогает клиенту увидеть и понять причины психологических проблем, найти внутренние ресурсы для их решения, научиться позитивному поведению, принять себя.";
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Когнитивно-поведенческая психотерапия" isMainPage={false}>
-  <Hero
+  <HeroDiplom
     desc="Когнитивно-поведенческая психотерапия в практике психолога"
-    imgUrl="/assets/images/kpt.png"
+    imgUrl="/assets/images/diploms/kpt.jpg"
   />
-  <Image src="/assets/images/diploms/kpt.jpg" />
 
   <About DOMId="kpt" title="Область профессиональной деятельности">
-    <AboutDiplom
-      desc="Когнитивно-поведенческая психотерапия помогает клиенту увидеть и понять причины психологических проблем, найти внутренние ресурсы для их решения, научиться позитивному поведению, принять себя."
-      list={list}
-      diplom=""
-      vkr=""
-    />
+    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
   </About>
 
   <Buttons link={next} />
