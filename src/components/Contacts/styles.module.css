@@ -13,17 +13,18 @@
 .window {
   background-blend-mode: multiply;
   background-image: url("/assets/images/popup-bg.jpg");
-  background-color: #033277;
+  background-color: #4f8cdd;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px;
+  padding: 20px 20px 40px;
+  border-radius: 10px;
 }
 
 .title {
   max-width: 60vw;
   color: white;
-  margin: 0 0 20px;
+  margin: 0 0 40px;
 }
 
 .list {

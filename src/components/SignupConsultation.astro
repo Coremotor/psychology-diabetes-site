@@ -11,15 +11,30 @@
       <div class="content">
         <span>
           Для того, чтобы записаться на консультацию вы можете связаться со мной
-          удобным для вас способом: WhatsApp, Telegram, VK. Напишите какой вид
-          консультации Вам необходим. <br />Мы подберем удобное для вас время.
+          удобным для вас способом: <span class="red-akcent"
+            ><a class="link" href="https://wa.me/79371137735" target="_blank"
+              >WhatsApp</a
+            >, <a class="link" href="https://t.me/+79371137735" target="_blank"
+              >Telegram</a
+            >, <a class="link" href="https://vk.com/demakovaks" target="_blank"
+              >VK</a
+            ></span
+          >.
         </span>
 
-        <div class="links">
-          <a target="_blank" href="https://wa.me/79371137735">WhatsApp</a>
-          <a target="_blank" href="https://t.me/+79371137735">Telegram</a>
-          <a target="_blank" href="https://vk.com/demakovaks">VK</a>
-        </div>
+        <span>Напишите какой вид консультации Вам необходим.</span>
+
+        <span>
+          Мы подберем удобное для Вас время. Консультации проводятся по <span
+            class="red-akcent">МОСКОВСКОМУ</span
+          > времени.
+        </span>
+
+        <!--<div class="links">-->
+        <!--  <a target="_blank" href="https://wa.me/79371137735">WhatsApp</a>-->
+        <!--  <a target="_blank" href="https://t.me/+79371137735">Telegram</a>-->
+        <!--  <a target="_blank" href="https://vk.com/demakovaks">VK</a>-->
+        <!--</div>-->
       </div>
     </div>
   </div>
@@ -40,26 +55,61 @@
   }
 
   .popup {
-    width: 50%;
-    padding: 20px;
+    width: 800px;
+    box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.1);
   }
 
   .header {
     background-color: var(--color-bg-akcent);
     color: white;
-    padding: 40px 120px;
+    padding: 20px 40px;
     font-size: 38px;
     font-weight: 700;
     text-align: center;
   }
 
   .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1.5;
     background-color: white;
-    padding: 40px 120px;
+    padding: 20px 60px;
   }
 
   .links {
     display: flex;
     flex-direction: column;
+  }
+
+  .red-akcent {
+    color: var(--color-bg-akcent);
+    font-weight: 700;
+  }
+
+  .link {
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (max-width: 850px) {
+    .popup {
+      width: 500px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .popup {
+      width: 360px;
+    }
+    .header {
+      padding: 20px;
+      font-size: 20px;
+    }
+    .content {
+      line-height: 1;
+      padding: 20px;
+    }
   }
 </style>
