@@ -7,6 +7,7 @@ export interface Props {
 }
 
 const { isMainPage }: Props = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer id="footer" class="footer">
@@ -25,7 +26,7 @@ const { isMainPage }: Props = Astro.props;
   <div class="text-container">
     <small
       >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2019
-      - 2024</small
+      - {currentYear}</small
     >
     <small>ИНН: 121519516570</small>
   </div>

@@ -1,10 +1,10 @@
 export const contacts = [
-  {
-    srcWhite: "/assets/icons/whatsapp-white.svg",
-    srcRed: "/assets/icons/whatsapp-red.svg",
-    href: "https://wa.me/79371137735",
-    desc: "WhatsApp",
-  },
+  // {
+  //   srcWhite: "/assets/icons/whatsapp-white.svg",
+  //   srcRed: "/assets/icons/whatsapp-red.svg",
+  //   href: "https://wa.me/79371137735",
+  //   desc: "WhatsApp",
+  // },
   {
     srcWhite: "/assets/icons/telegram-white.svg",
     srcRed: "/assets/icons/telegram-red.svg",
@@ -21,7 +21,13 @@ export const contacts = [
     srcWhite: "/assets/icons/VK-white.svg",
     srcRed: "/assets/icons/VK-red.svg",
     href: "https://vk.com/demakovaks",
-    desc: "https://vk.com/demakovaks",
+    desc: "VK",
+  },
+  {
+    srcWhite: "/assets/icons/VK-white.svg",
+    srcRed: "/assets/icons/VK-red.svg",
+    href: "https://max.ru",
+    desc: "Max",
   },
   // {
   //   srcWhite: "/assets/icons/mail-white.svg",

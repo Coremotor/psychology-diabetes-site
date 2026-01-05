@@ -1,17 +1,35 @@
+---
+const EXPERIENCE_START_YEAR = 2019;
+const MEDICAL_EXPERENCE_START_YEAR = 2008;
+const DIABETES_EXPERENCE_START_YEAR = 2002;
+const experienceYears = Math.max(
+  0,
+  new Date().getFullYear() - EXPERIENCE_START_YEAR
+);
+const medicalExperienceYears = Math.max(
+  0,
+  new Date().getFullYear() - MEDICAL_EXPERENCE_START_YEAR
+);
+const diabetesExperienceYears = Math.max(
+  0,
+  new Date().getFullYear() - DIABETES_EXPERENCE_START_YEAR
+);
+---
+
 <section id="experience" class="experience">
   <div class="wrapper">
     <div class="info">
-      <div class="main-text">6 лет</div>
+      <div class="main-text">{experienceYears} лет</div>
       <div class="second-text">опыт работы психологом</div>
     </div>
 
     <div class="info">
-      <div class="main-text">17 лет</div>
+      <div class="main-text">{medicalExperienceYears} лет</div>
       <div class="second-text">медицинский стаж</div>
     </div>
 
     <div class="info">
-      <div class="main-text">23 года</div>
+      <div class="main-text">{diabetesExperienceYears} лет</div>
       <div class="second-text">стаж сахарного диабета</div>
     </div>
   </div>

@@ -22,9 +22,10 @@ const { title, images, DOMId, withLink, withBackground, version }: Props =
   import { Navigation, Pagination } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
+  import "swiper/css/pagination";
 
   const swiper = new Swiper(".swiper-container-1", {
-    modules: [Navigation, Pagination],
+    modules: [Pagination, Navigation],
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -124,11 +125,11 @@ const { title, images, DOMId, withLink, withBackground, version }: Props =
   }
 
   .swiper-button-prev {
-    left: -5px;
+    left: -10px !important;
   }
 
   .swiper-button-next {
-    right: -5px;
+    right: -10px !important;
   }
 
   .swiper-button-prev::after {
@@ -137,6 +138,13 @@ const { title, images, DOMId, withLink, withBackground, version }: Props =
 
   .swiper-button-next::after {
     content: "";
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    svg {
+      display: none;
+    }
   }
 
   .swiper-button-prev-img {

@@ -12,6 +12,7 @@ import Carousel from "components/Carousel.astro";
 import { diploms, makePhotosArray } from "data/pictures";
 import { makeReviewsArray } from "data/pictures";
 import ScrollUp from "components/ScrollUp.astro";
+import TG from "components/TG.astro";
 
 import fs from "node:fs";
 const filesCount = (dir: string) => fs.readdirSync(dir).length;
@@ -53,5 +54,6 @@ const filesCount = (dir: string) => fs.readdirSync(dir).length;
     withTitle={true}
     version={1}
   />
+  <TG />
   <ScrollUp />
 </Layout>
