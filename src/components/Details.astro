@@ -1,5 +1,5 @@
 <section id="details" class="details">
-  <span class="text">Узнать подробности о консультации</span>
+  <a href="/tariffs" class="text">Узнать подробности о консультации</a>
 </section>
 
 <style>
@@ -15,11 +15,13 @@
   }
 
   .details:hover {
-    opacity: 0.7;
+    background-color: #73224b;
   }
 
   .text {
+    color: var(--color-second-text);
     font-size: var(--font-size-xl);
+    text-decoration: none;
   }
 
   @media (max-width: 520px) {

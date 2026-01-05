@@ -14,7 +14,6 @@ import { makeReviewsArray } from "data/pictures";
 import ScrollUp from "components/ScrollUp.astro";
 
 import fs from "node:fs";
-import SignupConsultation from "components/SignupConsultation.astro";
 const filesCount = (dir: string) => fs.readdirSync(dir).length;
 ---
 
@@ -25,9 +24,7 @@ const filesCount = (dir: string) => fs.readdirSync(dir).length;
   <ClientsTypes />
   <AboutMe />
   <Consultation />
-  <SignupConsultation>
-    <Details />
-  </SignupConsultation>
+  <Details />
   <Therapy />
   <Carousel
     DOMId="education"

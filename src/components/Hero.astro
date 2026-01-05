@@ -1,5 +1,4 @@
 ---
-import SignupConsultation from "components/SignupConsultation.astro";
 interface Props {
   desc: string;
   imgUrl?: string;
@@ -13,9 +12,9 @@ const { desc, imgUrl = "/assets/images/hero.png" }: Props = Astro.props;
     <div class="desc">
       <span class="text">{desc}</span>
 
-      <SignupConsultation>
+      <a href="/tariffs">
         <button class="button">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</button>
-      </SignupConsultation>
+      </a>
     </div>
 
     <picture class="hero-image-container">

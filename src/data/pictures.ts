@@ -23,6 +23,11 @@ export const diploms = [
     page: diplomsRoutes.family,
   },
   {
+    title: "Ведение школы для больных сахарным диабетом”",
+    src: "/assets/images/diploms/enc.jpg",
+    page: diplomsRoutes.enc,
+  },
+  {
     title:
       "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
     src: "/assets/images/diploms/eating-behavior.jpg",
@@ -57,7 +62,7 @@ export const diploms = [
 
 export const makePhotosArray = (filesCount: number) => {
   const a = [];
-  for (let index = 1; index < filesCount + 1; index++) {
+  for (let index = 1; index < filesCount; index++) {
     a.push({
       title: index.toString(),
       src: `/assets/images/gallery/${index}.png`,

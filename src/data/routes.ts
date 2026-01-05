@@ -11,6 +11,7 @@ export const diplomsRoutes: {
   mac: "/diploms/mac/",
   ast: "/diploms/ast/",
   ptsr: "/diploms/ptsr/",
+  enc: "/diploms/enc/",
 };
 
 export const routesList = (routes: { [key: string]: string }) => {
