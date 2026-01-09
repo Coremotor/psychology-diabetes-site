@@ -9,6 +9,9 @@ export const diplomsRoutes: {
   eating_behavior: "/diploms/eating-behavior/",
   teacher: "/diploms/teacher/",
   mac: "/diploms/mac/",
+  ast: "/diploms/ast/",
+  ptsr: "/diploms/ptsr/",
+  enc: "/diploms/enc/",
 };
 
 export const routesList = (routes: { [key: string]: string }) => {
@@ -18,4 +21,12 @@ export const routesList = (routes: { [key: string]: string }) => {
     arr.push(str);
   }
   return arr;
+};
+
+export const rootRoutes: {
+  [key: string]: string;
+} = {
+  consultationInfo: "/consultation-info/",
+  home: "/",
+  tariffs: "/tariffs",
 };

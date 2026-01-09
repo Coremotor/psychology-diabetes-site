@@ -1,6 +1,6 @@
 import { type FC, useState } from "react";
 import { navItemsFooter, navItemsFooterFull } from "data/nav";
-import { PopUp } from "components/PopUp";
+import { PopUp } from "components/Contacts";
 
 import styles from "./styles.module.css";
 

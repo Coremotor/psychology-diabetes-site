@@ -1,0 +1,37 @@
+---
+import { diplomsRoutes } from "data/routes";
+import Layout from "layouts/Layout.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import About from "layouts/About.astro";
+import AboutDiplom from "components/AboutDiplom.astro";
+import { routesList } from "data/routes";
+import { nextPage } from "helpers";
+import Buttons from "components/Buttons.astro";
+
+const list = [
+  "психологическая диагностика ПТСР;",
+  "укрепление адаптационных механизмов психики;",
+  "подготовка внутренних ресурсов, которые помогут преодолеть травматический опыт;",
+  "стабилизация эмоционального состояния;",
+  "работа с пиковыми переживаниями;",
+  "помощь клиенту в переосмыслении травмирующего опыта и его интеграция в повседневную жизнь.",
+];
+
+const desc =
+  "Терапия посттравматических стрессовых расстройств поможет проработать и пережить травму, переосмыслить негативный опыт и продолжить жить дальше, быть счастливым, наладить личную жизнь и профессиональную деятельность.";
+
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
+---
+
+<Layout title="ПТСР" isMainPage={false}>
+  <HeroDiplom
+    desc="Психотерапия ПТСР. Специфика работы со взрослыми"
+    imgUrl="/assets/images/diploms/ptsr.jpg"
+  />
+
+  <About DOMId="ptsr" title="Область профессиональной деятельности">
+    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
+  </About>
+
+  <Buttons link={next} />
+</Layout>

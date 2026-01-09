@@ -1,0 +1,115 @@
+---
+import Layout from "layouts/Layout.astro";
+import PersonalTherapy from "components/consultation-info/PersonalTherapy.astro";
+import AdditionalBlock from "components/consultation-info/AdditionalBlock.astro";
+import { additionalBlocksText } from "components/consultation-info/additional-blocks-text";
+import AdditionalBlockList from "components/consultation-info/AdditionalBlockList.astro";
+import ChildParentRelationships from "components/consultation-info/ChildParentRelationships.astro";
+import DiabetesSchool from "components/consultation-info/DiabetesSchool.astro";
+import DiaBurnout from "components/consultation-info/DiaBurnout.astro";
+import Discount from "components/consultation-info/Discount.astro";
+import AdditionalBlockList_2 from "components/consultation-info/AdditionalBlockList_2.astro";
+import FirstConsultation from "components/consultation-info/FirstConsultation.astro";
+---
+
+<Layout title="Подробнее о консультации" isMainPage={false}>
+  <h2 class="title">Подробнее о консультации</h2>
+
+  <div class="content">
+    <div class="main">
+      <FirstConsultation />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[0]} />
+        <AdditionalBlockList />
+      </div>
+
+      <PersonalTherapy />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[1]} />
+        <AdditionalBlock text={additionalBlocksText[2]} />
+      </div>
+
+      <ChildParentRelationships />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[3]} />
+        <AdditionalBlock text={additionalBlocksText[4]} />
+      </div>
+
+      <DiabetesSchool />
+      <div class="mobile">
+        <AdditionalBlock text={additionalBlocksText[5]} />
+        <AdditionalBlock text={additionalBlocksText[6]} />
+      </div>
+
+      <DiaBurnout />
+      <div class="mobile">
+        <AdditionalBlockList_2 />
+        <AdditionalBlock text={additionalBlocksText[7]} />
+      </div>
+    </div>
+
+    <div class="second">
+      <AdditionalBlock text={additionalBlocksText[0]} />
+      <AdditionalBlockList />
+      <AdditionalBlock text={additionalBlocksText[1]} />
+      <AdditionalBlock text={additionalBlocksText[2]} />
+      <AdditionalBlock text={additionalBlocksText[3]} />
+      <AdditionalBlock text={additionalBlocksText[4]} />
+      <AdditionalBlock text={additionalBlocksText[5]} />
+      <AdditionalBlock text={additionalBlocksText[6]} />
+      <AdditionalBlockList_2 />
+      <AdditionalBlock text={additionalBlocksText[7]} />
+    </div>
+  </div>
+
+  <Discount />
+</Layout>
+
+<style>
+  .title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    max-width: 1180px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .second {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 800px) {
+    .content {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    .second {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+</style>

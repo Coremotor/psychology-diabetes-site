@@ -1,10 +1,9 @@
 ---
 import { diplomsRoutes } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import Image from "components/Image.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
@@ -22,15 +21,14 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Педагог дополнительного образования" isMainPage={false}>
-  <Hero
+  <HeroDiplom
     desc="Педагог дополнительного образования детей и взрослых"
-    imgUrl="/assets/images/teacher.png"
+    imgUrl="/assets/images/diploms/teacher.jpg"
   />
-  <Image src="/assets/images/diploms/teacher.jpg" />
 
   <About DOMId="teacher" title="Область профессиональной деятельности">
     <AboutDiplom
-      desc="Работа направлена на помощь детям и взрослым осовоить новые знания, навыки и компетенции. "
+      desc="Работа направлена на помощь детям и взрослым освоить новые знания, навыки и компетенции."
       list={list}
     />
   </About>

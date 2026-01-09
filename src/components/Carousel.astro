@@ -10,9 +10,11 @@ interface Props {
   withLink: boolean;
   withBackground: boolean;
   withTitle: boolean;
+  version: 1 | 2;
 }
 
-const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
+const { title, images, DOMId, withLink, withBackground, version }: Props =
+  Astro.props;
 ---
 
 <script>
@@ -20,9 +22,10 @@ const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
   import { Navigation, Pagination } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
+  import "swiper/css/pagination";
 
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation, Pagination],
+  const swiper = new Swiper(".swiper-container-1", {
+    modules: [Pagination, Navigation],
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -34,13 +37,30 @@ const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
       },
     },
   });
+
+  const swiper2 = new Swiper(".swiper-container-2", {
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+    },
+  });
 </script>
 
 <div class={`${withBackground ? "bg" : ""} wrapper`}>
   <section id={DOMId} class="container">
     <h2 class="title">{title}</h2>
 
-    <div class="swiper">
+    <div class=`swiper-container-${version} swiper`>
       <div class="swiper-wrapper">
         {
           images.map((i) => (
@@ -105,11 +125,11 @@ const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
   }
 
   .swiper-button-prev {
-    left: -5px;
+    left: -10px !important;
   }
 
   .swiper-button-next {
-    right: -5px;
+    right: -10px !important;
   }
 
   .swiper-button-prev::after {
@@ -118,6 +138,13 @@ const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
 
   .swiper-button-next::after {
     content: "";
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    svg {
+      display: none;
+    }
   }
 
   .swiper-button-prev-img {
@@ -171,7 +198,12 @@ const { title, images, DOMId, withLink, withBackground }: Props = Astro.props;
       margin-bottom: 0;
     }
 
-    .swiper {
+    .swiper1 {
+      width: 100%;
+      margin-left: -10px;
+    }
+
+    .swiper2 {
       width: 100%;
       margin-left: -10px;
     }

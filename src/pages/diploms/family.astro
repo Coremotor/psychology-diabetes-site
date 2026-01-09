@@ -1,10 +1,9 @@
 ---
 import { diplomsRoutes, routesList } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import Image from "components/Image.astro";
 import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
 
@@ -17,19 +16,21 @@ const list = [
   "психологическое консультирование по проблемам в детско-родительских отношениях. Тренинг детско-родительских отношений.",
 ];
 
+const desc =
+  "К семейному психологу обращаются люди, которые хотят преодолеть кризис в супружеских отношениях, сгладить конфликт поколений, восстановить доверительное общение с детьми, пережить развод, разобраться с созависимыми отношениями. Комплексная психологическая работа со всеми членами семьи часто эффективнее, чем индивидуальная терапия. Персональная проработка проблем сводится на нет, если травмирующие поведенческие сценарии домочадцев не меняются.";
+
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Семейная психология" isMainPage={false}>
-  <Hero
-    desc="Семейное и детское психологическое консультирование"
-    imgUrl="/assets/images/family.png"
+  <HeroDiplom
+    desc="Семейное и детское психологическое консультирование. Системная семейная психотерапия"
+    imgUrl="/assets/images/diploms/family.jpg"
   />
-  <Image src="/assets/images/diploms/family.jpg" />
 
   <About DOMId="family" title="Область профессиональной деятельности">
     <AboutDiplom
-      desc="К семейному психологу обращаются люди, которые хотят преодолеть кризис в супружеских отношениях, сгладить конфликт поколений, восстановить доверительное общение с детьми, пережить развод, разобраться с созависимыми отношениями. Комплексная психологическая работа со всеми членами семьи часто эффективнее, чем индивидуальная терапия. Персональная проработка проблем сводится на нет, если травмирующие поведенческие сценарии домочадцев не меняются."
+      desc={desc}
       list={list}
       diplom="«по семейной терапии»."
       vkr="Практикум:"

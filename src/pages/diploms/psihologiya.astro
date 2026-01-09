@@ -1,10 +1,9 @@
 ---
 import { diplomsRoutes } from "data/routes";
 import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
 import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import Image from "components/Image.astro";
 import Buttons from "components/Buttons.astro";
 import { routesList } from "data/routes";
 import { nextPage } from "helpers";
@@ -17,19 +16,21 @@ const list = [
   "формирование установок, направленных на гармоничное развитие, продуктивное преодоление жизненных трудностей, толерантности во взаимодействии с окружающим миром.",
 ];
 
+const desc =
+  "Включает исследовательскую и практическую деятельность в сфере психологии в учреждениях образования и здравоохранения, в общественных, социальных и бизнес-структурах, органах государственной власти, научно-исследовательских и консалтинговых организациях, а также в сфере частной практики.";
+
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Психология диабета" isMainPage={false}>
-  <Hero
+  <HeroDiplom
     desc="Квалификация - бакалавр по специальности “Психология”"
-    imgUrl="/assets/images/psihologiya.png"
+    imgUrl="/assets/images/diploms/psihologiya.jpg"
   />
-  <Image src="/assets/images/diploms/psihologiya.jpg" />
 
   <About DOMId="psihologiya" title="Область профессиональной деятельности">
     <AboutDiplom
-      desc="Включает исследовательскую и практическую деятельность в сфере психологии в учреждениях образования и здравоохранения, в общественных, социальных и бизнес-структурах, органах государственной власти, научно-исследовательских и консалтинговых организациях, а также в сфере частной практики."
+      desc={desc}
       list={list}
       diplom="«Социально-психологическая адаптация младших школьников: особенности и взаимосвязь с межличностными отношениями»."
       vkr="Выпускная квалификационная работа на тему:"

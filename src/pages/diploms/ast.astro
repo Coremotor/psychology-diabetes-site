@@ -1,0 +1,39 @@
+---
+import { diplomsRoutes } from "data/routes";
+import Layout from "layouts/Layout.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import About from "layouts/About.astro";
+import AboutDiplom from "components/AboutDiplom.astro";
+import { routesList } from "data/routes";
+import { nextPage } from "helpers";
+import Buttons from "components/Buttons.astro";
+
+const list = [
+  "работа с выгоранием;",
+  "РПП и неудовлетворенность своим телом;",
+  "зависимости;",
+  "гнев и самокритика;",
+  "практика выявления ценностей;",
+  "проработка проблем социальной тревоги и эмоционального контроля;",
+  "эффективно справляться с дез-адаптивными мыслями;",
+  "развитие гибкости мышления.",
+];
+
+const desc =
+  "Терапия принятия и ответственности (или АСТ-терапия) поможет научиться осознанно относиться к своим негативным чувствам и ощущениям, не подавлять их, а принимать и жить дальше, чтобы добиваться своих целей. Цель данной терапии - научить человека эффективно справляться с трудными ситуациями с помощью поведения и мышления.";
+
+const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
+---
+
+<Layout title="АСТ" isMainPage={false}>
+  <HeroDiplom
+    desc="Терапия принятия и ответсвенности (АСТ-терапия) как метод психологической гибкости"
+    imgUrl="/assets/images/diploms/ast.jpg"
+  />
+
+  <About DOMId="ptsr" title="Область профессиональной деятельности">
+    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
+  </About>
+
+  <Buttons link={next} />
+</Layout>

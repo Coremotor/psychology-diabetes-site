@@ -1,0 +1,21 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text }: Props = Astro.props;
+---
+
+<article class="container">
+  {text}
+</article>
+
+<style>
+  .container {
+    padding: 20px;
+    background-color: var(--color-bg-second);
+    color: var(--color-bg-third);
+    font-size: 16px;
+    font-weight: 700;
+  }
+</style>

@@ -23,6 +23,11 @@ export const diploms = [
     page: diplomsRoutes.family,
   },
   {
+    title: "Ведение школы для больных сахарным диабетом”",
+    src: "/assets/images/diploms/enc.jpg",
+    page: diplomsRoutes.enc,
+  },
+  {
     title:
       "Квалификация - консультант по коррекции веса и психологии пищевого поведения",
     src: "/assets/images/diploms/eating-behavior.jpg",
@@ -39,18 +44,28 @@ export const diploms = [
     page: diplomsRoutes.mac,
   },
   {
+    title: "Терапия принятия и ответственности (АСТ-терапия)",
+    src: "/assets/images/diploms/ast.jpg",
+    page: diplomsRoutes.ast,
+  },
+  {
+    title: "Психотерапия ПТСР. Специфика работы со взрослыми",
+    src: "/assets/images/diploms/ptsr.jpg",
+    page: diplomsRoutes.ptsr,
+  },
+  {
     title: "Квалификация - фельдшер по специальности «Лечебное дело»",
     src: "/assets/images/diploms/lechebnoe_delo_1.jpg",
     page: diplomsRoutes.lechebnoe_delo,
   },
 ];
 
-export const makePhotosArray = () => {
+export const makePhotosArray = (filesCount: number) => {
   const a = [];
-  for (let index = 1; index < 29; index++) {
+  for (let index = 1; index < filesCount; index++) {
     a.push({
       title: index.toString(),
-      src: `/assets/images/gallery/${index}.jpg`,
+      src: `/assets/images/gallery/${index}.png`,
     });
   }
   return a;
@@ -76,15 +91,13 @@ export const certificates = [
   },
 ];
 
-export const reviews = [
-  { src: "/assets/images/reviews/1.jpg" },
-  { src: "/assets/images/reviews/2.jpg" },
-  { src: "/assets/images/reviews/3.jpg" },
-  { src: "/assets/images/reviews/4.jpg" },
-  { src: "/assets/images/reviews/5.jpg" },
-  { src: "/assets/images/reviews/6.jpg" },
-  { src: "/assets/images/reviews/7.jpg" },
-  { src: "/assets/images/reviews/8.jpg" },
-  { src: "/assets/images/reviews/9.jpg" },
-  { src: "/assets/images/reviews/10.jpg" },
-];
+export const makeReviewsArray = (filesCount: number) => {
+  const a = [];
+  for (let index = 1; index < filesCount + 1; index++) {
+    a.push({
+      title: index.toString(),
+      src: `/assets/images/reviews/${index}.jpg`,
+    });
+  }
+  return a;
+};

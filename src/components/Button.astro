@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title }: Props = Astro.props;
+---
+
+<button class="button">{title}</button>
+
+<style>
+  .button {
+    border: 1px solid var(--color-bg-third);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--color-bg-third);
+    font-size: 20px;
+  }
+
+  .button:hover {
+    color: var(--color-bg-third);
+    transition: 0.3s;
+    background-color: var(--color-bg-second);
+  }
+</style>

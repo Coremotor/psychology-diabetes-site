@@ -18,6 +18,10 @@
   white-space: nowrap;
 }
 
+.link:hover {
+  color: #d60015 !important;
+}
+
 @media (max-width: 860px) {
   .list {
     margin-bottom: 60px;

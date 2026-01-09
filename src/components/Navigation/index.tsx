@@ -1,12 +1,18 @@
 import { type FC, useState } from "react";
 import { navItemsHeader, navItemsHeaderFull } from "data/nav";
-import { PopUp } from "components/PopUp";
+import { PopUp } from "components/Contacts";
 
 import styles from "./styles.module.css";
 
 interface Props {
   isMainPage: boolean;
 }
+
+const TELGRAM_CHANNEL_URL = "https://t.me/clinicpsy_DKA";
+
+const openTelegramChannel = () => {
+  window.open(TELGRAM_CHANNEL_URL, "_blank");
+};
 
 const Navigation: FC<Props> = ({ isMainPage }) => {
   const [showNav, setShowNav] = useState(false);
@@ -29,11 +35,16 @@ const Navigation: FC<Props> = ({ isMainPage }) => {
             </a>
           </li>
         ))}
-        <li onClick={toggleNav} key="Контакты" className={styles.listItem}>
-          <div className={styles.mobileLink} onClick={togglePopUp}>
+
+        <li key="Живой ТГ-канал" className={styles.listItem}>
+          {/* <div className={styles.mobileLink} onClick={togglePopUp}>
             Контакты
+          </div> */}
+          <div className={styles.mobileLink} onClick={openTelegramChannel}>
+            Живой ТГ-канал
           </div>
         </li>
+
         <li key="Тарифы" className={styles.listItem}>
           <a className={styles.link} href="/tariffs">
             Тарифы
@@ -61,7 +72,8 @@ const Navigation: FC<Props> = ({ isMainPage }) => {
               </a>
             </li>
           ))}
-          <li
+
+          {/* <li
             onClick={toggleNav}
             key="Контакты"
             className={styles.mobileListItem}
@@ -69,7 +81,18 @@ const Navigation: FC<Props> = ({ isMainPage }) => {
             <div className={styles.mobileLink} onClick={togglePopUp}>
               Контакты
             </div>
+          </li> */}
+          
+          <li
+            onClick={toggleNav}
+            key="Живой ТГ-канал"
+            className={styles.mobileListItem}
+          >
+            <div className={styles.mobileLink} onClick={openTelegramChannel}>
+              Живой ТГ-канал
+            </div>
           </li>
+
           <li
             onClick={toggleNav}
             key="Тарифы"

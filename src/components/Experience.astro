@@ -1,0 +1,92 @@
+---
+const EXPERIENCE_START_YEAR = 2019;
+const MEDICAL_EXPERENCE_START_YEAR = 2008;
+const DIABETES_EXPERENCE_START_YEAR = 2002;
+const experienceYears = Math.max(
+  0,
+  new Date().getFullYear() - EXPERIENCE_START_YEAR
+);
+const medicalExperienceYears = Math.max(
+  0,
+  new Date().getFullYear() - MEDICAL_EXPERENCE_START_YEAR
+);
+const diabetesExperienceYears = Math.max(
+  0,
+  new Date().getFullYear() - DIABETES_EXPERENCE_START_YEAR
+);
+---
+
+<section id="experience" class="experience">
+  <div class="wrapper">
+    <div class="info">
+      <div class="main-text">{experienceYears} лет</div>
+      <div class="second-text">опыт работы психологом</div>
+    </div>
+
+    <div class="info">
+      <div class="main-text">{medicalExperienceYears} лет</div>
+      <div class="second-text">медицинский стаж</div>
+    </div>
+
+    <div class="info">
+      <div class="main-text">{diabetesExperienceYears} лет</div>
+      <div class="second-text">стаж сахарного диабета</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto 80px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main-text {
+    color: var(--color-bg-akcent);
+    font-size: 72px;
+    font-weight: 700;
+  }
+
+  .second-text {
+    font-size: 24px;
+  }
+
+  @media (max-width: 1200px) {
+    .wrapper {
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .main-text {
+      font-size: 42px;
+    }
+
+    .second-text {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+</style>
