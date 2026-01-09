@@ -21,6 +21,7 @@ interface ItemProps {
     srcRed: string;
     href: string;
     desc: string;
+    iconPath: string;
   };
 }
 
@@ -39,6 +40,7 @@ const Item: FC<ItemProps> = ({ item }) => {
       >
         <img
           src={hover ? item.srcRed : item.srcWhite}
+          // src={item.iconPath}
           alt={item.href}
           className={styles.contactsListItemLinkImage}
         />
