@@ -1,26 +1,25 @@
 ---
-import { diplomsRoutes } from "data/routes";
-import Layout from "layouts/Layout.astro";
-import HeroDiplom from "components/HeroDiplom.astro";
-import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import { routesList } from "data/routes";
-import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import { diplomsRoutes, routesList } from "data/routes";
+import { nextPage } from "helpers";
+import About from "layouts/About.astro";
+import Layout from "layouts/Layout.astro";
 
 const list = [
-  "работа с выгоранием;",
-  "РПП и неудовлетворенность своим телом;",
-  "зависимости;",
-  "гнев и самокритика;",
-  "практика выявления ценностей;",
-  "проработка проблем социальной тревоги и эмоционального контроля;",
-  "эффективно справляться с дез-адаптивными мыслями;",
-  "развитие гибкости мышления.",
+	"работа с выгоранием;",
+	"РПП и неудовлетворенность своим телом;",
+	"зависимости;",
+	"гнев и самокритика;",
+	"практика выявления ценностей;",
+	"проработка проблем социальной тревоги и эмоционального контроля;",
+	"эффективно справляться с дез-адаптивными мыслями;",
+	"развитие гибкости мышления.",
 ];
 
 const desc =
-  "Терапия принятия и ответственности (или АСТ-терапия) поможет научиться осознанно относиться к своим негативным чувствам и ощущениям, не подавлять их, а принимать и жить дальше, чтобы добиваться своих целей. Цель данной терапии - научить человека эффективно справляться с трудными ситуациями с помощью поведения и мышления.";
+	"Терапия принятия и ответственности (или АСТ-терапия) поможет научиться осознанно относиться к своим негативным чувствам и ощущениям, не подавлять их, а принимать и жить дальше, чтобы добиваться своих целей. Цель данной терапии - научить человека эффективно справляться с трудными ситуациями с помощью поведения и мышления.";
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---

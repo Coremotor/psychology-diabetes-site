@@ -1,13 +1,86 @@
 ---
-import Header from "components/Header.astro";
 import Footer from "components/Footer.astro";
+import Header from "components/Header.astro";
+import { defaultSeo, seoByPath, siteName, siteUrl } from "data/seo";
 
 export interface Props {
-  title: string;
-  isMainPage: boolean;
+	title: string;
+	isMainPage: boolean;
+	description?: string;
+	keywords?: string[];
+	image?: string;
 }
 
-const { title, isMainPage } = Astro.props;
+const { title, isMainPage, description, keywords, image } = Astro.props;
+const pathname = Astro.url.pathname.endsWith("/")
+	? Astro.url.pathname
+	: `${Astro.url.pathname}/`;
+const pageSeo = seoByPath[pathname] ?? defaultSeo;
+const metaTitle = title.includes("|") ? title : `${title} | Ксения Демакова`;
+const metaDescription = description ?? pageSeo.description;
+const metaKeywords = keywords ?? pageSeo.keywords ?? defaultSeo.keywords;
+const metaImage = image ?? pageSeo.image ?? defaultSeo.image;
+const canonicalUrl = new URL(pathname, siteUrl).toString();
+const absoluteImageUrl = new URL(metaImage, siteUrl).toString();
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": `${siteUrl}/#website`,
+			url: siteUrl,
+			name: siteName,
+			inLanguage: "ru-RU",
+		},
+		{
+			"@type": "Person",
+			"@id": `${siteUrl}/#person`,
+			name: "Ксения Демакова",
+			jobTitle: "Клинический психолог",
+			description:
+				"Клинический психолог с личным опытом жизни с сахарным диабетом, специалист по психологической поддержке людей с СД.",
+			url: siteUrl,
+			image: absoluteImageUrl,
+			knowsAbout: [
+				"сахарный диабет",
+				"клиническая психология",
+				"психологическая поддержка при диабете",
+				"когнитивно-поведенческая терапия",
+				"терапия принятия и ответственности",
+				"психология пищевого поведения",
+			],
+			sameAs: ["https://t.me/clinicpsy_DKA", "https://vk.com/demakovaks"],
+		},
+		{
+			"@type": "ProfessionalService",
+			"@id": `${siteUrl}/#service`,
+			name: "Психологическая поддержка при сахарном диабете",
+			url: siteUrl,
+			image: absoluteImageUrl,
+			priceRange: "2000-12500 RUB",
+			areaServed: "RU",
+			availableLanguage: "ru",
+			founder: { "@id": `${siteUrl}/#person` },
+			serviceType: [
+				"Онлайн консультация психолога",
+				"Психологическая поддержка при сахарном диабете",
+				"КПТ",
+				"ACT-терапия",
+				"Психология пищевого поведения",
+			],
+		},
+		{
+			"@type": "WebPage",
+			"@id": `${canonicalUrl}#webpage`,
+			url: canonicalUrl,
+			name: metaTitle,
+			description: metaDescription,
+			isPartOf: { "@id": `${siteUrl}/#website` },
+			about: { "@id": `${siteUrl}/#person` },
+			inLanguage: "ru-RU",
+		},
+	],
+};
 ---
 
 <!--for sign up consultation pop up-->
@@ -37,7 +110,8 @@ const { title, isMainPage } = Astro.props;
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKS5JXDJ04"
     ></script>
-    <script>
+    <script is:inline>
+      // @ts-nocheck
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
@@ -50,87 +124,26 @@ const { title, isMainPage } = Astro.props;
     </script>
 
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Психологическая поддержка людей с сахарным диабетом.
-      Семейная психология.
-      Расстройство пищевого поведения.
-      Когнитивно-поведенческая терапия.
-      ACT-терапия.
-      Терапия принятия и ответственности.
-      Школа диабета.
-      Компенсация диабета"
-    />
-    <meta
-      name="keywords"
-      content="Психологическая поддержка при диабете,
-      Психология и сахарный диабет,
-      Управление стрессом при диабете,
-      Эмоциональное здоровье диабетиков,
-      Диабет и психическое здоровье,
-      Консультации психолога для диабетиков,
-      Депрессия и диабет,
-      Тревожность и диабет,
-      Как справиться с диабетом,
-      Психологические аспекты диабета,
-      Жизнь с диабетом: психологические советы,
-      Психотерапия для пациентов с диабетом,
-      Когнитивно-поведенческая терапия и диабет,
-      Эмоциональная поддержка при хронических заболеваниях,
-      Психологические техники для управления диабетом,
-      Психологическая адаптация при диабете,
-      Как жить с диабетом,
-      Диабет и стресс,
-      Поддержка семьи при диабете,
-      Диабетическое выгорание,
-      Психологическое консультирование для диабетиков,
-      Диабет и качество жизни,
-      Эмоциональная устойчивость при диабете,
-      Психологическая помощь при диагнозе диабет,
-      Диабет и самопринятие,
-      Влияние диабета на психику,
-      Самооценка при диабете,
-      Поддержка подростков с диабетом,
-      Психологическая помощь при инсулинозависимости,
-      Психологическая поддержка для родителей детей с диабетом,
-      Мотивация и диабет,
-      Психология диабета 1 типа,
-      Психология диабета 2 типа,
-      Поддержка при диабетической тревожности,
-      Психологические проблемы при диабете,
-      Диабет и эмоциональная поддержка,
-      Психологическая помощь диабетикам,
-      Диабет и психотерапия,
-      Психологическая помощь при диабетической депрессии,
-      Как справиться с диагнозом диабет,
-      Психологические стратегии для диабетиков,
-      Психологическая помощь при диабетическом стрессе,
-      Поддержка при диабетическом кризисе,
-      Психологическая помощь при диабетическом выгорании,
-      Диабет и психосоматика,
-      Питание и диабет,
-      Беременность и диабет,
-      Гестационный сахарный диабет,
-      Психологическая помощь при диабетическом питании,
-      Психологическая помощь при диабетической боли,
-      Психологическая помощь при диабетических осложнениях,
-      Психологическая помощь при диабетическом уходе,
-      Психологическая помощь при диабетическом контроле,
-      Психологическая помощь при диабетическом лечении,
-      Психологическая помощь при диабетическом самоконтроле,
-      Психологическая помощь при диабетическом образе жизни,
-      Психологическая помощь при диабетическом стрессе на работе,
-      Психологическая помощь при диабетическом стрессе в семье,
-      Психологическая помощь при диабетическом стрессе в школе,
-      Психологическая помощь при диабетическом стрессе в отношениях,
-      Психологическая помощь при диабетическом стрессе в спорте,
-      Психологическая помощь при диабетическом стрессе в путешествиях,
-      Психологическая помощь при диабетическом стрессе в социальных сетях"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="description" content={metaDescription} />
+    <meta name="keywords" content={metaKeywords.join(", ")} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={absoluteImageUrl} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <title>{metaTitle}</title>
   </head>
   <body>
     <div class="layout-container">
@@ -139,7 +152,7 @@ const { title, isMainPage } = Astro.props;
       <Footer isMainPage={isMainPage} />
     </div>
 
-    <script type="text/javascript">
+    <script type="text/javascript" is:inline>
       (function (m, e, t, r, i, k, a) {
         m[i] =
           m[i] ||

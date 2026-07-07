@@ -1,0 +1,26 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"correctness": {
+				"noUnusedImports": "off",
+				"noUnusedVariables": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"useKeyWithClickEvents": "off",
+				"noStaticElementInteractions": "off"
+			},
+			"complexity": {
+				"noImportantStyles": "off"
+			}
+		}
+	},
+	"assist": {
+		"enabled": true
+	}
+}
