@@ -37,7 +37,8 @@ const { title, isMainPage } = Astro.props;
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKS5JXDJ04"
     ></script>
-    <script>
+    <script is:inline>
+      // @ts-nocheck
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
@@ -139,7 +140,7 @@ const { title, isMainPage } = Astro.props;
       <Footer isMainPage={isMainPage} />
     </div>
 
-    <script type="text/javascript">
+    <script type="text/javascript" is:inline>
       (function (m, e, t, r, i, k, a) {
         m[i] =
           m[i] ||

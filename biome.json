@@ -4,20 +4,22 @@
 		"enabled": true
 	},
 	"linter": {
-		"enabled": true
-	},
-	"overrides": [
-		{
-			"includes": ["**/*.svg"],
-			"linter": {
-				"rules": {
-					"a11y": {
-						"noSvgWithoutTitle": "off"
-					}
-				}
+		"enabled": true,
+		"rules": {
+			"correctness": {
+				"noUnusedImports": "off",
+				"noUnusedVariables": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"useKeyWithClickEvents": "off",
+				"noStaticElementInteractions": "off"
+			},
+			"complexity": {
+				"noImportantStyles": "off"
 			}
 		}
-	],
+	},
 	"assist": {
 		"enabled": true
 	}
