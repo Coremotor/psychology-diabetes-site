@@ -1,47 +1,47 @@
 ---
-import { anchors } from "data/anchors";
-import Layout from "layouts/Layout.astro";
-import { rootRoutes } from "data/routes";
 import Button from "components/Button.astro";
+import { anchors } from "data/anchors";
+import { rootRoutes } from "data/routes";
+import Layout from "layouts/Layout.astro";
 
 type TItem = {
-  price: string;
-  name: string;
-  desc: string;
-  anchor: string;
+	price: string;
+	name: string;
+	desc: string;
+	anchor: string;
 };
 
 const data: TItem[] = [
-  {
-    price: "2500 ₽",
-    name: "Первая консультация",
-    desc: "Знакомимся, уточняем запрос, намечаем план психотерапии. Длительность встречи 90 минут.",
-    anchor: anchors.firstConsultation,
-  },
-  {
-    price: "2000 ₽",
-    name: "Личная терапия",
-    desc: "Индивидуальное консультирование онлайн. Длительность консультации 60 минут.",
-    anchor: anchors.personalTherapy,
-  },
-  {
-    price: "от 2000 ₽",
-    name: "Детско-родительские отношения",
-    desc: "Первая консультация для родителей длится 90 минут. Консультация ребенка длится 60 минут. ",
-    anchor: anchors.childParentRelationships,
-  },
-  {
-    price: "5000 ₽",
-    name: "Школа диабета для взрослых пациентов, для родителей детей с СД, для детей с СД.",
-    desc: "Разовая встреча, длительность 2,5 часа. Бонус: доп. материалы, ссылки на важные ресурсы и приложения.",
-    anchor: anchors.diabetesSchool,
-  },
-  {
-    price: "12500 ₽",
-    name: "Диа-выгорание, сложности в компенсации диабета",
-    desc: "4-недельное сопровождение, помощь в компенсации, психологическая поддержка.",
-    anchor: anchors.diaBurnout,
-  },
+	{
+		price: "2500 ₽",
+		name: "Первая консультация",
+		desc: "Знакомимся, уточняем запрос, намечаем план психотерапии. Длительность встречи 90 минут.",
+		anchor: anchors.firstConsultation,
+	},
+	{
+		price: "2000 ₽",
+		name: "Личная терапия",
+		desc: "Индивидуальное консультирование онлайн. Длительность консультации 60 минут.",
+		anchor: anchors.personalTherapy,
+	},
+	{
+		price: "от 2000 ₽",
+		name: "Детско-родительские отношения",
+		desc: "Первая консультация для родителей длится 90 минут. Консультация ребенка длится 60 минут. ",
+		anchor: anchors.childParentRelationships,
+	},
+	{
+		price: "5000 ₽",
+		name: "Школа диабета для взрослых пациентов, для родителей детей с СД, для детей с СД.",
+		desc: "Разовая встреча, длительность 2,5 часа. Бонус: доп. материалы, ссылки на важные ресурсы и приложения.",
+		anchor: anchors.diabetesSchool,
+	},
+	{
+		price: "12500 ₽",
+		name: "Диа-выгорание, сложности в компенсации диабета",
+		desc: "4-недельное сопровождение, помощь в компенсации, психологическая поддержка.",
+		anchor: anchors.diaBurnout,
+	},
 ];
 ---
 

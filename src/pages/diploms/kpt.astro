@@ -1,28 +1,27 @@
 ---
-import { diplomsRoutes } from "data/routes";
-import Layout from "layouts/Layout.astro";
-import HeroDiplom from "components/HeroDiplom.astro";
-import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import { routesList } from "data/routes";
-import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import { diplomsRoutes, routesList } from "data/routes";
+import { nextPage } from "helpers";
+import About from "layouts/About.astro";
+import Layout from "layouts/Layout.astro";
 
 const list = [
-  "КПТ в работе с аддикцией;",
-  "КПТ в работе с депрессивными симптомами;",
-  "КПТ в работе с тревожностью, фобиями;",
-  "КПТ в работе с расстройствами пищевого поведения;",
-  "КПТ в работе с обсессивно-компульсивными расстройствами;",
-  "КПТ в преодолении прокрастинации;",
-  "метакогнитивный подход;",
-  "Mindfullness – терапия, основанная на осознанности;",
-  "диалектико-поведенческая терапия;",
-  "десенсебилизация и переработка движениями глаз;",
+	"КПТ в работе с аддикцией;",
+	"КПТ в работе с депрессивными симптомами;",
+	"КПТ в работе с тревожностью, фобиями;",
+	"КПТ в работе с расстройствами пищевого поведения;",
+	"КПТ в работе с обсессивно-компульсивными расстройствами;",
+	"КПТ в преодолении прокрастинации;",
+	"метакогнитивный подход;",
+	"Mindfullness – терапия, основанная на осознанности;",
+	"диалектико-поведенческая терапия;",
+	"десенсебилизация и переработка движениями глаз;",
 ];
 
 const desc =
-  "Когнитивно-поведенческая психотерапия помогает клиенту увидеть и понять причины психологических проблем, найти внутренние ресурсы для их решения, научиться позитивному поведению, принять себя.";
+	"Когнитивно-поведенческая психотерапия помогает клиенту увидеть и понять причины психологических проблем, найти внутренние ресурсы для их решения, научиться позитивному поведению, принять себя.";
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---

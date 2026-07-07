@@ -1,20 +1,19 @@
 ---
-import Layout from "layouts/Layout.astro";
-import Hero from "components/Hero.astro";
-import ClientsTypes from "components/ClientsTypes.astro";
+import fs from "node:fs";
 import AboutMe from "components/AboutMe.astro";
-import Problems from "components/Problems.astro";
-import Experience from "components/Experience.astro";
+import Carousel from "components/Carousel.astro";
+import ClientsTypes from "components/ClientsTypes.astro";
 import Consultation from "components/Consultation.astro";
 import Details from "components/Details.astro";
-import Therapy from "components/Therapy.astro";
-import Carousel from "components/Carousel.astro";
-import { diploms, makePhotosArray } from "data/pictures";
-import { makeReviewsArray } from "data/pictures";
+import Experience from "components/Experience.astro";
+import Hero from "components/Hero.astro";
+import Problems from "components/Problems.astro";
 import ScrollUp from "components/ScrollUp.astro";
 import TG from "components/TG.astro";
+import Therapy from "components/Therapy.astro";
+import { diploms, makePhotosArray, makeReviewsArray } from "data/pictures";
+import Layout from "layouts/Layout.astro";
 
-import fs from "node:fs";
 const filesCount = (dir: string) => fs.readdirSync(dir).length;
 ---
 

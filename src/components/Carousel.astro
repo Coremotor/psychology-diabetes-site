@@ -1,20 +1,20 @@
 ---
 interface Props {
-  DOMId: string;
-  title: string;
-  images: {
-    title?: string;
-    src: string;
-    page?: string;
-  }[];
-  withLink: boolean;
-  withBackground: boolean;
-  withTitle: boolean;
-  version: 1 | 2;
+	DOMId: string;
+	title: string;
+	images: {
+		title?: string;
+		src: string;
+		page?: string;
+	}[];
+	withLink: boolean;
+	withBackground: boolean;
+	withTitle: boolean;
+	version: 1 | 2;
 }
 
 const { title, images, DOMId, withLink, withBackground, version }: Props =
-  Astro.props;
+	Astro.props;
 ---
 
 <script>

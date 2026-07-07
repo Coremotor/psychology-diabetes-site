@@ -1,24 +1,23 @@
 ---
-import { diplomsRoutes } from "data/routes";
-import Layout from "layouts/Layout.astro";
-import HeroDiplom from "components/HeroDiplom.astro";
-import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import { routesList } from "data/routes";
-import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import { diplomsRoutes, routesList } from "data/routes";
+import { nextPage } from "helpers";
+import About from "layouts/About.astro";
+import Layout from "layouts/Layout.astro";
 
 const list = [
-  "психологическая диагностика ПТСР;",
-  "укрепление адаптационных механизмов психики;",
-  "подготовка внутренних ресурсов, которые помогут преодолеть травматический опыт;",
-  "стабилизация эмоционального состояния;",
-  "работа с пиковыми переживаниями;",
-  "помощь клиенту в переосмыслении травмирующего опыта и его интеграция в повседневную жизнь.",
+	"психологическая диагностика ПТСР;",
+	"укрепление адаптационных механизмов психики;",
+	"подготовка внутренних ресурсов, которые помогут преодолеть травматический опыт;",
+	"стабилизация эмоционального состояния;",
+	"работа с пиковыми переживаниями;",
+	"помощь клиенту в переосмыслении травмирующего опыта и его интеграция в повседневную жизнь.",
 ];
 
 const desc =
-  "Терапия посттравматических стрессовых расстройств поможет проработать и пережить травму, переосмыслить негативный опыт и продолжить жить дальше, быть счастливым, наладить личную жизнь и профессиональную деятельность.";
+	"Терапия посттравматических стрессовых расстройств поможет проработать и пережить травму, переосмыслить негативный опыт и продолжить жить дальше, быть счастливым, наладить личную жизнь и профессиональную деятельность.";
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---

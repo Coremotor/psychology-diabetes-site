@@ -1,20 +1,19 @@
 ---
-import { diplomsRoutes } from "data/routes";
-import Layout from "layouts/Layout.astro";
-import HeroDiplom from "components/HeroDiplom.astro";
-import About from "layouts/About.astro";
 import AboutDiplom from "components/AboutDiplom.astro";
-import { routesList } from "data/routes";
-import { nextPage } from "helpers";
 import Buttons from "components/Buttons.astro";
+import HeroDiplom from "components/HeroDiplom.astro";
+import { diplomsRoutes, routesList } from "data/routes";
+import { nextPage } from "helpers";
+import About from "layouts/About.astro";
+import Layout from "layouts/Layout.astro";
 
 const list = [
-  "исследование способностей и уровня подготовки, индивидуальных особенностей ребенка или взрослого для занятий конкретным видом деятельности;",
-  "комплектация групп и организация образовательного процесса;",
-  "разработка и реализация образовательной программы и уроков с учетом половозрастных, культурных и личностных особенностей учащихся;",
-  "создание безопасной и комфортной атмосферы на занятиях;",
-  "анализ эффективности работы и при необходимости корректировка программы, плана занятий;",
-  "оценка эффективности усвоения программы учениками.",
+	"исследование способностей и уровня подготовки, индивидуальных особенностей ребенка или взрослого для занятий конкретным видом деятельности;",
+	"комплектация групп и организация образовательного процесса;",
+	"разработка и реализация образовательной программы и уроков с учетом половозрастных, культурных и личностных особенностей учащихся;",
+	"создание безопасной и комфортной атмосферы на занятиях;",
+	"анализ эффективности работы и при необходимости корректировка программы, плана занятий;",
+	"оценка эффективности усвоения программы учениками.",
 ];
 
 const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
