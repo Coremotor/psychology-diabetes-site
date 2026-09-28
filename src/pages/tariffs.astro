@@ -13,32 +13,32 @@ type TItem = {
 
 const data: TItem[] = [
 	{
-		price: "2500 ₽",
+		price: "3000 ₽",
 		name: "Первая консультация",
 		desc: "Знакомимся, уточняем запрос, намечаем план психотерапии. Длительность встречи 90 минут.",
 		anchor: anchors.firstConsultation,
 	},
 	{
-		price: "2000 ₽",
-		name: "Личная терапия",
+		price: "2500 ₽",
+		name: "Психологическая работа",
 		desc: "Индивидуальное консультирование онлайн. Длительность консультации 60 минут.",
 		anchor: anchors.personalTherapy,
 	},
 	{
-		price: "от 2000 ₽",
+		price: "от 2500 ₽",
 		name: "Детско-родительские отношения",
 		desc: "Первая консультация для родителей длится 90 минут. Консультация ребенка длится 60 минут. ",
 		anchor: anchors.childParentRelationships,
 	},
 	{
 		price: "5000 ₽",
-		name: "Школа диабета для взрослых пациентов, для родителей детей с СД, для детей с СД.",
-		desc: "Разовая встреча, длительность 2,5 часа. Бонус: доп. материалы, ссылки на важные ресурсы и приложения.",
+		name: "Информационно-психологическая поддержка при диабете",
+		desc: "Разбираем практические аспекты жизни с диабетом: понимание принципов самоконтроля (мониторинг, помпа), основы питания и подсчёта углеводов.",
 		anchor: anchors.diabetesSchool,
 	},
 	{
-		price: "12500 ₽",
-		name: "Диа-выгорание, сложности в компенсации диабета",
+		price: "14000 ₽",
+		name: "Работа с выгоранием при диабете: индивидульная программа психологической поддержки",
 		desc: "4-недельное сопровождение, помощь в компенсации, психологическая поддержка.",
 		anchor: anchors.diaBurnout,
 	},
@@ -46,101 +46,96 @@ const data: TItem[] = [
 ---
 
 <Layout title="Тарифы" isMainPage={false}>
-  <h2 class="title">Стоимость и виды консультаций</h2>
-  <div class="table">
-    {
-      data.map((item) => (
-        <div class="card">
-          <div class="price">{item.price}</div>
-          <div class="name">{item.name}</div>
-          <div class="desc">{item.desc}</div>
-          <a
-            class="link"
-            href={rootRoutes.consultationInfo + "#" + item.anchor}
-          >
-            <Button title="Подробнее о консультации" />
-          </a>
-        </div>
-      ))
-    }
+	<h2 class="title">Стоимость и виды консультаций</h2>
+	<div class="table">
+		{data.map((item) => (
+	<div class="card">
+		<div class="price">{item.price}</div>
+		<div class="name">{item.name}</div>
+		<div class="desc">{item.desc}</div>
+		<a class="link" href={rootRoutes.consultationInfo + "#" + item.anchor}>
+			<Button title="Подробнее о консультации" />
+		</a>
+	</div>
+))}
 
-    <div class="card">
-      <div class="price">СКИДКА 10%</div>
-      <div class="info-wrapper">
-        <div class="info">При покупке абонемента</div>
-        <div class="info">на 4-8-12 консультаций</div>
-      </div>
-      <a
-        class="link"
-        href={rootRoutes.consultationInfo + "#" + anchors.discount}
-      >
-        <Button title="Подробнее о скидках" />
-      </a>
-    </div>
-  </div>
+		<div class="card">
+			<div class="price">СКИДКА 10%</div>
+			<div class="info-wrapper">
+				<div class="info">При покупке абонемента</div>
+				<div class="info">на 4-8-12 консультаций</div>
+			</div>
+			<a
+				class="link"
+				href={rootRoutes.consultationInfo + "#" + anchors.discount}
+			>
+				<Button title="Подробнее о скидках" />
+			</a>
+		</div>
+	</div>
 </Layout>
 
 <style>
-  .title {
-    text-align: center;
-    margin-bottom: 60px;
-  }
+.title {
+	text-align: center;
+	margin-bottom: 60px;
+}
 
-  .table {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin: 0 auto 60px;
-    padding: 0 10px;
-  }
+.table {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin: 0 auto 60px;
+	padding: 0 10px;
+}
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color-bg-second);
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 500px;
-  }
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--color-bg-second);
+	padding: 40px;
+	border-radius: 10px;
+	max-width: 500px;
+}
 
-  .price {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 25px;
-  }
+.price {
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
 
-  .name {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 25px;
-  }
+.name {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
 
-  .desc {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: auto;
-  }
+.desc {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: auto;
+}
 
-  .info {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 400;
-  }
+.info {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 400;
+}
 
-  .info-wrapper {
-    margin-bottom: auto;
-  }
+.info-wrapper {
+	margin-bottom: auto;
+}
 
-  .link {
-    margin-top: 60px;
-  }
+.link {
+	margin-top: 60px;
+}
 
-  @media (max-width: 800px) {
-    .table {
-      grid-template-columns: 1fr;
-    }
-  }
+@media (max-width: 800px) {
+	.table {
+		grid-template-columns: 1fr;
+	}
+}
 </style>

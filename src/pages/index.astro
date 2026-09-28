@@ -9,7 +9,6 @@ import Experience from "components/Experience.astro";
 import Hero from "components/Hero.astro";
 import Problems from "components/Problems.astro";
 import ScrollUp from "components/ScrollUp.astro";
-import TG from "components/TG.astro";
 import Therapy from "components/Therapy.astro";
 import { diploms, makePhotosArray, makeReviewsArray } from "data/pictures";
 import Layout from "layouts/Layout.astro";
@@ -17,42 +16,44 @@ import Layout from "layouts/Layout.astro";
 const filesCount = (dir: string) => fs.readdirSync(dir).length;
 ---
 
-<Layout title="Клинический психолог с сахарным диабетом | Ксения Демакова" isMainPage={true}>
-  <Hero desc="Психологическая поддержка людей с сахарным диабетом" />
-  <Experience />
-  <Problems />
-  <ClientsTypes />
-  <AboutMe />
-  <Consultation />
-  <Details />
-  <Therapy />
-  <Carousel
-    DOMId="education"
-    title="Образование"
-    images={diploms}
-    withLink={true}
-    withBackground={true}
-    withTitle={true}
-    version={1}
-  />
-  <Carousel
-    DOMId="reviews"
-    title="Отзывы"
-    images={makeReviewsArray(filesCount("./public/assets/images/reviews"))}
-    withBackground={false}
-    withLink={false}
-    withTitle={true}
-    version={2}
-  />
-  <Carousel
-    DOMId="gallery"
-    title="Галерея"
-    images={makePhotosArray(filesCount("./public/assets/images/gallery"))}
-    withBackground={true}
-    withLink={false}
-    withTitle={true}
-    version={1}
-  />
-  <TG />
-  <ScrollUp />
+<Layout
+	title="Клинический психолог с сахарным диабетом | Ксения Демакова"
+	isMainPage={true}
+>
+	<Hero desc="Психологическая поддержка людей с сахарным диабетом" />
+	<Experience />
+	<Problems />
+	<ClientsTypes />
+	<AboutMe />
+	<Consultation />
+	<Details />
+	<Therapy />
+	<Carousel
+		DOMId="education"
+		title="Образование"
+		images={diploms}
+		withLink={true}
+		withBackground={true}
+		withTitle={true}
+		version={1}
+	/>
+	<Carousel
+		DOMId="reviews"
+		title="Отзывы"
+		images={makeReviewsArray(filesCount("./public/assets/images/reviews"))}
+		withBackground={false}
+		withLink={false}
+		withTitle={true}
+		version={2}
+	/>
+	<Carousel
+		DOMId="gallery"
+		title="Галерея"
+		images={makePhotosArray(filesCount("./public/assets/images/gallery"))}
+		withBackground={true}
+		withLink={false}
+		withTitle={true}
+		version={1}
+	/>
+	<ScrollUp />
 </Layout>

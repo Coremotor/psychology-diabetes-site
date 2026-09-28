@@ -9,17 +9,19 @@ const pages = [
 	...routesList(diplomsRoutes),
 ];
 
-const normalizePath = (path: string) => (path.endsWith("/") ? path : `${path}/`);
+const normalizePath = (path: string) =>
+	path.endsWith("/") ? path : `${path}/`;
 
 export function GET() {
 	const urls = pages
 		.map((path) => {
 			const normalizedPath = normalizePath(path);
-			const priority = normalizedPath === "/"
-				? "1.0"
-				: normalizedPath.startsWith("/diploms/")
-					? "0.6"
-					: "0.9";
+			const priority =
+				normalizedPath === "/"
+					? "1.0"
+					: normalizedPath.startsWith("/diploms/")
+						? "0.6"
+						: "0.9";
 			const changefreq = normalizedPath.startsWith("/diploms/")
 				? "monthly"
 				: "weekly";
@@ -34,14 +36,17 @@ export function GET() {
 		})
 		.join("");
 
-	return new Response(`<?xml version="1.0" encoding="UTF-8"?>
+	return new Response(
+		`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
-</urlset>`, {
-		headers: {
-			"Content-Type": "application/xml; charset=utf-8",
+</urlset>`,
+		{
+			headers: {
+				"Content-Type": "application/xml; charset=utf-8",
+			},
 		},
-	});
+	);
 }
 
 export const prerender = true;

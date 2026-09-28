@@ -8,19 +8,19 @@ const { src, maxWidth } = Astro.props;
 ---
 
 <div class="image-wrapper" style={{ maxWidth: `${maxWidth}px` }}>
-  <img class="image" src={src} alt="diplom" />
+	<img class="image" src={src} alt="diplom">
 </div>
 
 <style>
-  .image-wrapper {
-    max-width: 1180px;
-    display: flex;
-    justify-content: center;
-    padding: 20px 20px;
-    margin: 0 auto 60px;
-  }
+.image-wrapper {
+	max-width: 1180px;
+	display: flex;
+	justify-content: center;
+	padding: 20px 20px;
+	margin: 0 auto 60px;
+}
 
-  .image {
-    width: 100%;
-  }
+.image {
+	width: 100%;
+}
 </style>

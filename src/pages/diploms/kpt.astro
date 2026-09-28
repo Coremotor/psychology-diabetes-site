@@ -27,14 +27,14 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Когнитивно-поведенческая психотерапия" isMainPage={false}>
-  <HeroDiplom
-    desc="Когнитивно-поведенческая психотерапия в практике психолога"
-    imgUrl="/assets/images/diploms/kpt.jpg"
-  />
+	<HeroDiplom
+		desc="Когнитивно-поведенческая психотерапия в практике психолога"
+		imgUrl="/assets/images/diploms/kpt.jpg"
+	/>
 
-  <About DOMId="kpt" title="Область профессиональной деятельности">
-    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
-  </About>
+	<About DOMId="kpt" title="Область профессиональной деятельности">
+		<AboutDiplom desc={desc} list={list} diplom="" vkr="" />
+	</About>
 
-  <Buttons link={next} />
+	<Buttons link={next} />
 </Layout>

@@ -1,5 +1,5 @@
 export const nextPage = (routesList: string[], pathname: string) => {
-	const currentIndex = routesList.findIndex((route) => route === pathname);
+	const currentIndex = routesList.indexOf(pathname);
 
 	if (currentIndex === routesList.length - 1) return routesList[0];
 
