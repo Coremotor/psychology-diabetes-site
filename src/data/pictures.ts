@@ -23,7 +23,7 @@ export const diploms = [
 		page: diplomsRoutes.family,
 	},
 	{
-		title: "Ведение школы для больных сахарным диабетом”",
+		title: "Ведение школы для больных сахарным диабетом",
 		src: "/assets/images/diploms/enc.jpg",
 		page: diplomsRoutes.enc,
 	},
@@ -74,19 +74,19 @@ export const makePhotosArray = (filesCount: number) => {
 export const certificates = [
 	{
 		title:
-			"Онлайн - тренинг: Психологическое консультирование с применением метафорических ассоциативных карт",
+			"Онлайн-тренинг: Психологическое консультирование с применением метафорических ассоциативных карт",
 		src: "/assets/images/certificates/mac.jpg",
 	},
 	{
-		title: "Онлайн - тренинг: Мир детских эмоций",
+		title: "Онлайн-тренинг: Мир детских эмоций",
 		src: "/assets/images/certificates/world_children_emotions.jpg",
 	},
 	{
-		title: "Онлайн - тренинг: МАМА.ПАПА",
+		title: "Онлайн-тренинг: МАМА.ПАПА",
 		src: "/assets/images/certificates/mother-father.jpg",
 	},
 	{
-		title: "Онлайн - тренинг: АРХЕТИПЫ И ОТНОШЕНИЯ",
+		title: "Онлайн-тренинг: АРХЕТИПЫ И ОТНОШЕНИЯ",
 		src: "/assets/images/certificates/archetypes-relationships.jpg",
 	},
 ];
