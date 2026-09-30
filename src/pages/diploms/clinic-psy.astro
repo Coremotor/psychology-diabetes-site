@@ -23,19 +23,19 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Клинический психолог" isMainPage={false}>
-  <HeroDiplom
-    desc="Квалификация - клинический психолог, профессиональная переподготовка"
-    imgUrl="/assets/images/diploms/clinic_psy.jpg"
-  />
+	<HeroDiplom
+		desc="Квалификация - клинический психолог, профессиональная переподготовка"
+		imgUrl="/assets/images/diploms/clinic_psy.jpg"
+	/>
 
-  <About DOMId="clinic-psy" title="Область профессиональной деятельности">
-    <AboutDiplom
-      desc={desc}
-      list={list}
-      diplom="«по патопсихологии и нейропсихологической диагностике» и «по детской патопсихологии»."
-      vkr="Практикумы"
-    />
-  </About>
+	<About DOMId="clinic-psy" title="Область профессиональной деятельности">
+		<AboutDiplom
+			desc={desc}
+			list={list}
+			diplom="«по патопсихологии и нейропсихологической диагностике» и «по детской патопсихологии»."
+			vkr="Практикумы"
+		/>
+	</About>
 
-  <Buttons link={next} />
+	<Buttons link={next} />
 </Layout>

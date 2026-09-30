@@ -15,9 +15,9 @@ const list = [
 	"КПТ в работе с обсессивно-компульсивными расстройствами;",
 	"КПТ в преодолении прокрастинации;",
 	"метакогнитивный подход;",
-	"Mindfullness – терапия, основанная на осознанности;",
+	"Mindfulness – терапия, основанная на осознанности;",
 	"диалектико-поведенческая терапия;",
-	"десенсебилизация и переработка движениями глаз;",
+	"десенсибилизация и переработка движениями глаз;",
 ];
 
 const desc =
@@ -27,14 +27,14 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="Когнитивно-поведенческая психотерапия" isMainPage={false}>
-  <HeroDiplom
-    desc="Когнитивно-поведенческая психотерапия в практике психолога"
-    imgUrl="/assets/images/diploms/kpt.jpg"
-  />
+	<HeroDiplom
+		desc="Когнитивно-поведенческая психотерапия в практике психолога"
+		imgUrl="/assets/images/diploms/kpt.jpg"
+	/>
 
-  <About DOMId="kpt" title="Область профессиональной деятельности">
-    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
-  </About>
+	<About DOMId="kpt" title="Область профессиональной деятельности">
+		<AboutDiplom desc={desc} list={list} diplom="" vkr="" />
+	</About>
 
-  <Buttons link={next} />
+	<Buttons link={next} />
 </Layout>

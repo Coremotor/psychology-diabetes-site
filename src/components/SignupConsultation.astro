@@ -1,122 +1,267 @@
-<!--script fo this block in Layout.astro-->
+<!--script for this block in Layout.astro-->
 <div>
-  <div id="popup-button">
-    <slot />
-  </div>
+	<div id="popup-button">
+		<slot />
+	</div>
 
-  <div id="popup-container" class="popup-container popup-display-none">
-    <div id="popup-inner" class="popup">
-      <header class="header">Записаться на консультацию</header>
+	<div id="popup-container" class="popup-container popup-display-none">
+		<div id="popup-inner" class="popup">
+			<header class="header">Записаться на консультацию</header>
 
-      <div class="content">
-        <span>
-          Для того, чтобы записаться на консультацию вы можете связаться со мной
-          удобным для вас способом: <span class="red-akcent">
-            <!-- <a class="link" href="https://wa.me/79371137735" target="_blank"
-              >WhatsApp</a
-            >,  -->
-            <a class="link" href="https://t.me/+79371137735" target="_blank"
-              >Telegram</a
-            >,
-            <a class="link" href="https://vk.com/demakovaks" target="_blank"
-              >VK</a
-            >,
-            <a
-              class="link"
-              href="https://max.ru/u/f9LHodD0cOIuLzJD8t6uXa4iMHeQtiCVD-EhMV0-CMi74YSTUOqz8BGNVjc"
-              target="_blank">Max</a
-            ></span
-          >.
-        </span>
+			<div class="content" data-consent-form>
+				<span>
+					Перед тем, как записаться на консультацию, вам необходимо ознакомиться
+					с&nbsp;
+					<a
+						class="link"
+						href="/assets/offerta.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						>условиями публичной оферты</a
+					>&nbsp; и с&nbsp;
+					<a
+						class="link"
+						href="/assets/personal.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						>согласием на обработку персональных данных</a
+					>
+				</span>
 
-        <span>Напишите какой вид консультации Вам необходим.</span>
+				<div>
+					<label class="consent">
+						<input type="checkbox" data-consent>
+						<span
+							>Я ознакомлен(а) и принимаю условия&nbsp;
+							<a
+								class="link"
+								href="/assets/offerta.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								>публичной оферты</a
+							></span
+						>
+					</label>
 
-        <span>
-          Мы подберем удобное для Вас время. Консультации проводятся по <span
-            class="red-akcent">МОСКОВСКОМУ</span
-          > времени.
-        </span>
+					<label class="consent">
+						<input type="checkbox" data-consent>
+						<span
+							>Я даю согласие на&nbsp;
+							<a
+								class="link"
+								href="/assets/personal.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								>обработку персональных данных</a
+							></span
+						>
+					</label>
+				</div>
 
-        <!--<div class="links">-->
-        <!--  <a target="_blank" href="https://wa.me/79371137735">WhatsApp</a>-->
-        <!--  <a target="_blank" href="https://t.me/+79371137735">Telegram</a>-->
-        <!--  <a target="_blank" href="https://vk.com/demakovaks">VK</a>-->
-        <!--</div>-->
-      </div>
-    </div>
-  </div>
+				<div class="contacts">
+					<a
+						class="contact-button"
+						data-contact-url="https://max.ru/u/f9LHodD0cOIuLzJD8t6uXa4iMHeQtiCVD-EhMV0-CMi74YSTUOqz8BGNVjc"
+						aria-disabled="true"
+						tabindex="-1"
+						rel="noopener noreferrer"
+						target="_blank"
+						>Max</a
+					>
+					<a
+						class="contact-button"
+						data-contact-url="https://vk.com/demakovaks"
+						aria-disabled="true"
+						tabindex="-1"
+						target="_blank"
+						rel="noopener noreferrer"
+						>VK</a
+					>
+					<a
+						class="contact-button"
+						data-contact-url="https://t.me/+79371137735"
+						aria-disabled="true"
+						tabindex="-1"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Telegram</a
+					>
+				</div>
+
+				<span>Напишите, какой вид консультации вам необходим.</span>
+
+				<span>
+					Мы подберем удобное для Вас время. Консультации проводятся по
+					<span class="red-akcent">&nbsp;МОСКОВСКОМУ&nbsp;</span>
+					времени.
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 
+<script>
+document
+	.querySelectorAll<HTMLElement>("[data-consent-form]")
+	.forEach((form) => {
+		const checkboxes = [
+			...form.querySelectorAll<HTMLInputElement>("[data-consent]"),
+		];
+		const contacts =
+			form.querySelectorAll<HTMLAnchorElement>("[data-contact-url]");
+
+		const updateContacts = () => {
+			const enabled = checkboxes.every((checkbox) => checkbox.checked);
+			contacts.forEach((contact) => {
+				contact.setAttribute("aria-disabled", String(!enabled));
+				if (enabled) {
+					contact.setAttribute("href", contact.dataset.contactUrl!);
+					contact.removeAttribute("tabindex");
+				} else {
+					contact.removeAttribute("href");
+					contact.setAttribute("tabindex", "-1");
+				}
+			});
+		};
+
+		checkboxes.forEach((checkbox) =>
+			checkbox.addEventListener("change", updateContacts),
+		);
+		updateContacts();
+		window.addEventListener("pageshow", updateContacts);
+	});
+</script>
+
 <style>
-  .popup-container {
-    display: grid;
-    place-items: center;
-    position: fixed;
-    inset: 0;
-    backdrop-filter: blur(10px);
-    z-index: 100;
-  }
+.consent {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	line-height: 1.5;
+}
 
-  .popup-display-none {
-    display: none;
-  }
+.consent input {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	margin-top: 0.4em;
+	cursor: pointer;
+}
 
-  .popup {
-    width: 800px;
-    box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.1);
-  }
+.contacts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 10px;
+}
 
-  .header {
-    background-color: var(--color-bg-akcent);
-    color: white;
-    padding: 20px 40px;
-    font-size: 38px;
-    font-weight: 700;
-    text-align: center;
-  }
+.contact-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 1 110px;
+	min-width: 110px;
+	padding: 10px 20px;
+	border: 1px solid var(--color-bg-third);
+	border-radius: 10px;
+	background-color: var(--color-bg-third);
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    line-height: 1.5;
-    background-color: white;
-    padding: 20px 60px;
-  }
+.contact-button[aria-disabled="true"] {
+	background-color: #eee;
+	border-color: #ccc;
+	color: #777;
+	cursor: not-allowed;
+}
 
-  .links {
-    display: flex;
-    flex-direction: column;
-  }
+.contact-button:not([aria-disabled="true"]):hover,
+.contact-button:not([aria-disabled="true"]):focus-visible {
+	background-color: var(--color-bg-second);
+	color: var(--color-bg-third);
+	transition:
+		background-color 0.3s,
+		color 0.3s;
+}
 
-  .red-akcent {
-    color: var(--color-bg-akcent);
-    font-weight: 700;
-  }
+.popup-container {
+	display: grid;
+	place-items: center;
+	position: fixed;
+	inset: 0;
+	backdrop-filter: blur(10px);
+	z-index: 100;
+}
 
-  .link {
-    color: inherit;
-    text-decoration: underline;
-    cursor: pointer;
-  }
+.popup-display-none {
+	display: none;
+}
 
-  @media (max-width: 850px) {
-    .popup {
-      width: 500px;
-    }
-  }
+.popup {
+	width: 800px;
+	max-width: 100%;
+	max-height: 100dvh;
+	overflow-y: auto;
+	box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.1);
+}
 
-  @media (max-width: 650px) {
-    .popup {
-      width: 360px;
-    }
-    .header {
-      padding: 20px;
-      font-size: 20px;
-    }
-    .content {
-      line-height: 1;
-      padding: 20px;
-    }
-  }
+.header {
+	background-color: var(--color-bg-akcent);
+	color: white;
+	padding: 20px 40px;
+	font-size: 38px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 100%;
+	gap: 20px;
+	line-height: 1.5;
+	background-color: white;
+	padding: 20px;
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+}
+
+.red-akcent {
+	color: var(--color-bg-akcent);
+	font-weight: 700;
+}
+
+.link {
+	color: inherit;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+@media (max-width: 850px) {
+	.popup {
+		width: 500px;
+	}
+}
+
+@media (max-width: 650px) {
+	.popup {
+		width: 360px;
+	}
+
+	.header {
+		padding: 20px;
+		font-size: 20px;
+	}
+
+	.content {
+		line-height: 1;
+		padding: 20px;
+	}
+}
 </style>

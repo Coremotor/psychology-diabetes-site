@@ -1,6 +1,6 @@
 import { PopUp } from "components/Contacts";
 import { navItemsHeader, navItemsHeaderFull } from "data/nav";
-import { type FC, useState } from "react";
+import { type FC, type MouseEvent, useState } from "react";
 
 import styles from "./styles.module.css";
 
@@ -19,8 +19,8 @@ const Navigation: FC<Props> = ({ isMainPage }) => {
 	const toggleNav = () => setShowNav((prev) => !prev);
 
 	const [showPopUp, setShowPopUp] = useState(false);
-	const togglePopUp = (e?: any) => {
-		e.stopPropagation();
+	const togglePopUp = (e?: MouseEvent) => {
+		e?.stopPropagation();
 		setShowPopUp((prev) => !prev);
 	};
 

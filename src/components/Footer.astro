@@ -11,109 +11,118 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer id="footer" class="footer">
-  <div class="wrapper">
-    <div class="logo-wrapper">
-      <a href="/#header">
-        <img class="logo" src="/assets/images/logo-in-footer.svg" alt="LOGO" />
-      </a>
-    </div>
+	<div class="wrapper">
+		<div class="logo-wrapper">
+			<a href="/#header">
+				<img class="logo" src="/assets/images/logo-in-footer.svg" alt="LOGO">
+			</a>
+		</div>
 
-    <NavigationInFooter client:load isMainPage={isMainPage} />
+		<NavigationInFooter client:load isMainPage={isMainPage} />
 
-    <ContactsListInFooter client:load />
-  </div>
+		<ContactsListInFooter client:load />
+	</div>
 
-  <div class="text-container">
-    <small
-      >&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2019
-      - {currentYear}</small
-    >
-    <small>ИНН: 121519516570</small>
-  </div>
+	<div class="text-container">
+		<small>
+			<a
+				class="link"
+				href="/assets/policity.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				>Политика обработки персональных данных</a
+			>
+		</small>
+		<small
+			>&copy;&nbsp;Психология диабета Клинический психолог Ксения Демакова 2019
+			- {currentYear}</small
+		>
+		<small>ИНН: 121519516570</small>
+	</div>
 
-  <a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
-    >Created by</a
-  >
+	<a class="link-dev" target="_blank" href="https://vk.com/demakov_a_i"
+		>Created by</a
+	>
 </footer>
 
 <style>
-  .footer {
-    position: relative;
-    color: white;
-    background-color: #00112a;
-    padding: 40px 10px;
-  }
+.footer {
+	position: relative;
+	color: white;
+	background-color: #00112a;
+	padding: 40px 10px;
+}
 
-  .wrapper {
-    max-width: 1180px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 auto 60px;
-  }
+.wrapper {
+	max-width: 1180px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0 auto 60px;
+}
 
-  .logo-wrapper {
-    width: 33%;
-  }
+.logo-wrapper {
+	width: 33%;
+}
 
-  .list {
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.list {
+	width: 33%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
-  .list-item:not(:last-child) {
-    margin-bottom: 20px;
-  }
+.list-item:not(:last-child) {
+	margin-bottom: 20px;
+}
 
-  .link {
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
-  }
+.link {
+	color: white;
+	text-decoration: none;
+	white-space: nowrap;
+}
 
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+.text-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
 
-  .link-dev {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: block;
-    color: white;
-    font-size: 12px;
-    padding: 10px;
-  }
+.link-dev {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: block;
+	color: white;
+	font-size: 12px;
+	padding: 10px;
+}
 
-  @media (max-width: 860px) {
-    .wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
+@media (max-width: 860px) {
+	.wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .logo-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+	.logo-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 40px;
+	}
 
-    .list {
-      margin-bottom: 60px;
-    }
-  }
+	.list {
+		margin-bottom: 60px;
+	}
+}
 
-  @media (max-width: 520px) {
-    .contacts-list {
-      width: 140px;
-    }
-  }
+@media (max-width: 520px) {
+	.contacts-list {
+		width: 140px;
+	}
+}
 </style>

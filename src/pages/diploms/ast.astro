@@ -14,7 +14,7 @@ const list = [
 	"гнев и самокритика;",
 	"практика выявления ценностей;",
 	"проработка проблем социальной тревоги и эмоционального контроля;",
-	"эффективно справляться с дез-адаптивными мыслями;",
+	"эффективно справляться с дезадаптивными мыслями;",
 	"развитие гибкости мышления.",
 ];
 
@@ -25,14 +25,14 @@ const next = nextPage(routesList(diplomsRoutes), Astro.url.pathname);
 ---
 
 <Layout title="АСТ" isMainPage={false}>
-  <HeroDiplom
-    desc="Терапия принятия и ответсвенности (АСТ-терапия) как метод психологической гибкости"
-    imgUrl="/assets/images/diploms/ast.jpg"
-  />
+	<HeroDiplom
+		desc="Терапия принятия и ответственности (АСТ-терапия) как метод психологической гибкости"
+		imgUrl="/assets/images/diploms/ast.jpg"
+	/>
 
-  <About DOMId="ptsr" title="Область профессиональной деятельности">
-    <AboutDiplom desc={desc} list={list} diplom="" vkr="" />
-  </About>
+	<About DOMId="ptsr" title="Область профессиональной деятельности">
+		<AboutDiplom desc={desc} list={list} diplom="" vkr="" />
+	</About>
 
-  <Buttons link={next} />
+	<Buttons link={next} />
 </Layout>

@@ -1,103 +1,103 @@
 ---
 const list = [
-	"КПТ - когнитивно-поведенческая психотерапия.",
-	"АСТ - терапия принятия и ответственности.",
-	"Семейное консультирование: детско-родительские отношения, конфликты, дисгармонии, созависимость.",
-	"Психотерапия посттравматических стрессовых расстройств. Работа со взрослыми.",
-	"Коррекция веса и психология пищевого поведения.",
-	"МАК - консультирование. Метафорические ассоциативные карты - проективная методика работы, которая позволит заглянуть в мир бессознательного.",
+	"КПТ — когнитивно-поведенческий подход. Работа с мыслями, убеждениями и поведенческими паттернами",
+	"АКТ — терапия принятия и ответственности (ACT). Помощь в адаптации к сложным жизненным ситуациям",
+	"Семейное консультирование — детско-родительские отношения, семейные кризисы, созависимое поведение",
+	"Работа с последствиями психологических травм (для взрослых)",
+	"Психология пищевого поведения и отношения к телу",
+	"МАК-консультирование — метафорические ассоциативные карты, проективная методика для исследования внутреннего мира",
 ];
 ---
 
 <section id="therapy" class="therapy">
-  <h2 class="title">Направление терапии</h2>
-  <img class="image" src="/assets/images/therapy-v2.jpg" alt="image" />
-  <ul class="list">
-    {list.map((item) => <li class="list-item">{item}</li>)}
-  </ul>
+	<h2 class="title">Направления терапии</h2>
+	<img class="image" src="/assets/images/therapy-v2.jpg" alt="image">
+	<ul class="list">
+		{list.map((item) => <li class="list-item">{item}</li>)}
+	</ul>
 </section>
 
 <style>
-  .therapy {
-    max-width: 1180px;
-    display: grid;
-    grid-template-areas:
-      "title image"
-      "list image"
-      "list image";
-    padding: 0 10px;
-    margin: 0 auto 120px;
-  }
+.therapy {
+	max-width: 1180px;
+	display: grid;
+	grid-template-areas:
+		"title image"
+		"list image"
+		"list image";
+	padding: 0 10px;
+	margin: 0 auto 120px;
+}
 
-  .image {
-    grid-area: image;
-  }
+.image {
+	grid-area: image;
+}
 
-  .title {
-    grid-area: title;
-  }
+.title {
+	grid-area: title;
+}
 
-  .list {
-    grid-area: list;
-    padding: 0 20px;
-    margin: 0 auto;
-  }
+.list {
+	grid-area: list;
+	padding: 0 20px;
+	margin: 0 auto;
+}
 
-  .list-item:not(:last-child) {
-    margin-bottom: 40px;
-  }
+.list-item:not(:last-child) {
+	margin-bottom: 20px;
+}
 
-  .image {
-    object-fit: cover;
-    margin-left: 40px;
-  }
+.image {
+	object-fit: cover;
+	margin-left: 40px;
+}
 
-  .title {
-    text-align: center;
-    margin-top: 0;
-  }
+.title {
+	text-align: center;
+	margin-top: 0;
+}
 
-  @media (max-width: 1024px) {
-    .therapy {
-      grid-template-areas:
-        "title"
-        "list"
-        "image";
-      justify-items: center;
-    }
+@media (max-width: 1024px) {
+	.therapy {
+		grid-template-areas:
+			"title"
+			"list"
+			"image";
+		justify-items: center;
+	}
 
-    .title {
-      text-align: center;
-    }
+	.title {
+		text-align: center;
+	}
 
-    .image {
-      margin-left: 0;
-      margin-top: 20px;
-    }
+	.image {
+		margin-left: 0;
+		margin-top: 20px;
+	}
 
-    .list {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-    }
+	.list {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+	}
 
-    .list-item:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
+	.list-item:not(:last-child) {
+		margin-bottom: 10px;
+	}
+}
 
-  @media (max-width: 520px) {
-    .therapy {
-      margin-bottom: 60px;
-    }
+@media (max-width: 520px) {
+	.therapy {
+		margin-bottom: 60px;
+	}
 
-    .image {
-      width: 100%;
-    }
+	.image {
+		width: 100%;
+	}
 
-    .list {
-      width: 90%;
-      padding: 0 40px 0 20px;
-    }
-  }
+	.list {
+		width: 90%;
+		padding: 0 40px 0 20px;
+	}
+}
 </style>
